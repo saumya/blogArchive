@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Things to consider for Cordova (phonegap) development | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='iOS notifications from developer&#039;s view' href='http://saumya.github.io/blogArchive/archives/1184' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/1168' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=1168' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-1168 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/1163" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/1184" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-1168" class="post-1168 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-mobile category-opensource category-tutorial tag-css3 tag-html5 tag-javascript tag-mobile">
+	<header class="entry-header">
+		<h1 class="entry-title">Things to consider for Cordova (phonegap) development</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1168" title="11:58 am" rel="bookmark"><time class="entry-date" datetime="2013-03-25T11:58:39+00:00">March 25, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>This came to me as a learning from my first <a href="http://cordova.apache.org/">Cordova</a>(phonegap) application development.<br />
+The first thing one comes across while developing in Phonegap is &#8220;the need for a GUI lib&#8221; and the first thing to get in a search result is jQuery, its mobile version and the UI lib. There are many other good libs out there, but this one seems quite ok. While one may choose to use a UI lib or build own lib its up to the developer. In my experience its easy to get started with jQueryMobile and its UI, which uses &#8220;Theme roller&#8221; to theme the UI.<br />
+If one is using jQueryMobile then the trick is to try and solve all the UI problems with this lib itself (not hacking the CSS and JS all over the place in the project). That way the performance will be more and pain to solve all the UI problems is less.</p>
+<p>One can just start to make one Cordova application without any libraries, but to be productive soon, the minimum required libraries are<br />
+1. <a href="http://jquery.com/">jQuery</a><br />
+2. <a href="http://jquerymobile.com/">jQueryMobile</a><br />
+3. <a href="http://cordova.apache.org/">cordova</a></p>
+<p>Now the most important library which might not be required for the project as a project dependency but is a real time saver is<br />
+1. <a href="http://underscorejs.org/">UnderscoreJS</a><br />
+After some playing around with the library and from the suggestion from the community I found <a href="http://lodash.com/">Lo-Dash</a> library, which is a drop-in replacement for UnderscoreJS with performance enhancements. So I would recommend using<br />
+1. <a href="http://lodash.com/">Lo-Dash</a></p>
+<p><strong>Now to coding tips</strong>, if one knows the &#8220;scope&#8221; and &#8220;this&#8221; in javascript, then writing javascript applications are just fun. So prepare yourself with javascript and how it works, so as to make your life easier developing the application.</p>
+<p><strong>Target platform and the library support :</strong><br />
+The current Cordova lib might not support your required target platform !! Yeah, that is another thing which might take up sometime to know in the beginning. With each release these libraries kind of deprecate support for old platforms, so check that out in the beginning itself.<br />
+The same goes for jQuery and jQueryMbile. Check out whether the latest version of the library supports your target platform.</p>
+<p><strong>Native Notifications in Cordova is not supported :</strong><br />
+Cordova (phonegap) does not support native notifications. It only supports &#8220;alerts&#8221;,&#8221;confirm&#8221; (kind of alert only),&#8221;beep&#8221;(sound) and &#8220;vibrate&#8221; (device vibration). But then if you expect to do &#8220;alert&#8221; notification as iOS and Android devices do (like showing the alerts to user when the application is running in background), then Cordova (phonegap) does not help. One has to write native libraries in native languages and call them from javascript through Cordova.</p>
+<p><strong>jQuery tips :</strong><br />
+<strong>Adding an element to a page and displaying it :</strong><br />
+jQuery &#8220;<a href="http://api.jquery.com/append/">append()</a>&#8221; and &#8220;<a href="http://api.jquery.com/prepend/">prepend()</a>&#8221; does not update the UI (or DOM), so the added elements are not visible by default. we can hack it by dispatching a jQuery event called &#8220;create&#8221;, the code will look as below</p>
+<pre lang='javascript'>
+$("#p_4_content").prepend("hello World").trigger( "create" );
+</pre>
+<p>That will tell jQuery to render the UI again, resulting in displaying the added item.</p>
+<p><strong>Defining EventHandler Scope :</strong><br />
+Another nice thing is calling the event handler in required &#8220;scope&#8221;. The jQuery library provides a handy method for adding event event handlers as</p>
+<pre lang='javascript'>
+$('#id_btn').on( 'tap', onBtnTapped );
+</pre>
+<p>But then it will be scoped to the same scope as where its being written. If you are writing things in an Object, you might want to  get the &#8220;scope&#8221; in the handler(which is &#8220;this&#8221;), in order to do that, jQuery provides a &#8220;third&#8221; parameter option, and one can pass the scope in there. The optional parameter is at the middle instead of at the end (as comparing to other object oriented programming convention)!! But then its the way to go. So the modified code will look as below</p>
+<pre lang='javascript'>
+$('#id_btn').on( 'tap', this, onBtnTapped ); //Look at the middle parameter
+//and the handler code looks as below
+onBtnTapped :function(event){
+    	//just saving the scope, may be we need it in future here
+    	var that = event.data; //here event.data=this (which we passed as second param)
+    }
+</pre>
+<p>That way inside the handler  we can get the &#8220;scope&#8221; as below</p>
+<pre lang='javscript'>
+var that = event.data;
+</pre>
+<p>The second parameter sent while binding the handler to the event, can be got inside the event handler as &#8220;event.data&#8221;. Since we are just passing &#8220;this&#8221;, we can get that in the handler as the example shown above.</p>
+<p><strong>Writing the EventHandler :</strong><br />
+Well, now the trick writing an eventhandler without making the application behave unreasonably is a challenge. It might sound silly but it is not. If you write an event handler as</p>
+<pre lang='javascript'>
+onBtnTapped: function(event){
+    	//Do something
+    }
+</pre>
+<p>Then its bound to get in your way of the behavior of your application. The jQuery fix is to do a &#8220;return false&#8221; in all the handlers. But then that might not be the case of your handler as that might return in between the code itself. So the fix is make a call to &#8220;preventDefault&#8221; as soon as you are inside the handler method. the modified code will look as below</p>
+<pre lang='javascript'>
+onBtnTapped: function(event){
+        event.preventDefault();
+    	//Do something
+    }
+</pre>
+<p>That is the start, I will post more tips as I fight through the scenarios.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/mobile" rel="tag">mobile</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/1168" title="Permalink to Things to consider for Cordova (phonegap) development" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-1168 -->
+
+						<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			2 thoughts on &ldquo;<span>Things to consider for Cordova (phonegap) development</span>&rdquo;		</h2>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-81">
+		<article id="comment-81" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/0c022cc75c69763213162bc1f64e7db0?s=68&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn"><a href='http://www.rightwaysolution.com/phonegap-mobile-app-development.html' rel='external nofollow' class='url'>Aanya D'souza</a></span> on <a href="http://saumya.github.io/blogArchive/archives/1168#comment-81"><time datetime="2013-04-18T17:56:46+00:00">April 18, 2013 at 5:56 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>This is completely very informative. I had little bit idea about this but after reading your blog I can say I have quality of information. <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  I am surely gonna bookmark your post. <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-saumya bypostauthor odd alt depth-2" id="li-comment-82">
+		<article id="comment-82" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/8870fd415be0cd76928f6128760eafa6?s=39&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D39&amp;r=G' class='avatar avatar-39 photo' height='39' width='39' /><span class="fn">saumya</span> on <a href="http://saumya.github.io/blogArchive/archives/1168#comment-82"><time datetime="2013-04-20T18:24:26+00:00">April 20, 2013 at 6:24 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>ohh dear !<br />
+Thank you so much for the kind words.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+</ul>
+</li>
+		</ol>
+
+		
+				<p class="nocomments">Comments are closed.</p>
+		
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

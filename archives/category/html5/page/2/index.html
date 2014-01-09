@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>html5 | saumya | Page 2</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="archive paged category category-html5 category-4 custom-background paged-2 category-paged-2 two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">Category Archives: <span>html5</span></h1>
+
+									</header>
+
+						<nav id="nav-above">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/category/html5/page/3" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/category/html5/" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+								
+					
+	<article id="post-1136" class="post-1136 post type-post status-publish format-standard hentry category-html5 category-javascript category-mobile tag-dartlang tag-javas tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1136" title="Permalink to Dartlang for devices with Rikulo" rel="bookmark">Dartlang for devices with Rikulo</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1136" title="10:01 am" rel="bookmark"><time class="entry-date" datetime="2013-01-18T10:01:09+00:00">January 18, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/admin" title="View all posts by admin" rel="author">admin</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>While working with <a href="http://rikulo.org/">Rikulo</a> is as straight forward as working with <a href="http://pub.dartlang.org/">any other packages of Dart</a>, to make this work in devices, one has to keep following things in mind.<br />
+First of all &#8220;Rikulo&#8221; itself is not capable of doing device level development, rather it depends upon &#8220;<a href="http://phonegap.com/">phonegap</a>&#8221; (now <a href="http://cordova.apache.org/">cordova</a>) and to compile against this, there is another package named &#8220;<a href="https://github.com/rikulo/gap">Rikulo Gap</a>&#8220;. So the basic pub setup looks as this.</p>
+<pre>
+dependencies:
+  rikulo:
+  rikulo_gap:
+</pre>
+<p>Once installed the development process is straight forward as Dart itself while taking advantage of the Cordova APIs.<br />
+Upon completion of the development process, jump into &#8220;Dart to Javascript&#8221; compiler and generate the javascript file for the project. Fortunately thats as simple as going to &#8220;Tools&#8221; menu and clicking &#8220;Generate Javascript&#8221; in the Dart Editor. One has to select the &#8220;.dart&#8221;  file first, for which the javascript file has to be generated. Upon successful generation of the file, the generated file name would be something like &#8220;myProject.dart.js&#8221;.<br />
+Now you have to add this &#8220;js&#8221; file in your &#8220;html&#8221; file like the usual &#8220;script&#8221; tag. That means to deploy to Cordova, you have to add two script tags as below.</p>
+<pre lang="html">
+<script src="packages/browser/dart.js"></script>
+<script src="myProject.dart.js"></script>
+</pre>
+<p>Once done, open up the Eclipse or which ever IDE you are using to develop the Cordova (phonegap) applications, copy the &#8220;.html&#8221; and &#8220;.js&#8221; file into the respective folders of the Cordova project.<br />
+Lastly, but most importantly, remove the version number from the cordova JS file (for example cordova-2.3.0.js to cordova.js).<br />
+Now we have a workable native application built with Dart, Rikulo and Cordova.</p>
+<p>Happy Darting !</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/dartlang" rel="tag">dartlang</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javas" rel="tag">javas</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1136 -->
+
+				
+					
+	<article id="post-1111" class="post-1111 post type-post status-publish format-standard hentry category-html5 category-mobile category-tutorial tag-dartlang tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1111" title="Permalink to Dartlang, the basics" rel="bookmark">Dartlang, the basics</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1111" title="11:42 pm" rel="bookmark"><time class="entry-date" datetime="2013-01-17T23:42:04+00:00">January 17, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/admin" title="View all posts by admin" rel="author">admin</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>The basic things, which will help one, moving ahead in the Dart language are as below.<br />
+Its class based.<br />
+Every class has got a constructor. If one is not written, its been added by the language itself.<br />
+Constructor is not inherited.<br />
+Multiple constructors are possible.<br />
+<script src="https://gist.github.com/4546231.js"></script><br />
+Private properties are written with an underscore.
+<pre>int _age=20;</pre>
+<p>The getter and setter are just methods with &#8220;get&#8221; and &#8220;set&#8221; added before it.
+<pre>int get userAge{}</pre>
+<p>Inside a string the if something is written between &#8220;${&#8221; and &#8220;}&#8221; that value will be evaluated and appended to the string.
+<pre> 'Person is of age ${j.userAge}'</pre>
+<p>Hope that helps to get you started in the language.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/dartlang" rel="tag">dartlang</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1111 -->
+
+				
+					
+	<article id="post-1109" class="post-1109 post type-post status-publish format-standard hentry category-html5 category-javascript category-opensource tag-javascript tag-nodejs">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1109" title="Permalink to Two absolutely necessary Node packages, within a week of Nodding" rel="bookmark">Two absolutely necessary Node packages, within a week of Nodding</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1109" title="7:52 pm" rel="bookmark"><time class="entry-date" datetime="2013-01-15T19:52:07+00:00">January 15, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/admin" title="View all posts by admin" rel="author">admin</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>As my learning continues with NodeJS, it is now becoming obvious to me that probably I could never live without Node in future from now on, even if I do not continue developing on NodeJS. In just about a week there are the below two packages which became absolutely necessary for me in day to day work, while doing front-end web work or just playing around with javascript in general.<br />
+<a href="https://npmjs.org/package/serve" target="_blank">serve</a><br />
+<a href="https://npmjs.org/package/nodemon" target="_blank">nodemon</a><br />
+These two enable any folder to act as a web server. Once installed from &#8220;npm&#8221; one can directly fire up these commands and see the folder as a website through a browser.<br />
+If you want to run the webserver at port &#8220;1234&#8243;, just navigate to the folder you want to serve as a website and fire up the command below.</p>
+<pre lang=''>
+serve -p 1234
+</pre>
+<p>If you do not care about the port, just</p>
+<pre lang=''>serve</pre>
+<p>will do the job, where the site will be served at a default port &#8220;3000&#8243;.<br />
+Now to access the website go to &#8220;http://localhost:3000/&#8221; in your favorite browser.<br />
+If you change a file, you have to manually restart the server.<br />
+Now &#8220;nodemon&#8221; helps us in automatically restarting the server on any file change. If one is working on any web application and does continuous changes to the files, one just have to refresh the webpage (No need to restart the server over and again for updates). That gives continuous focus on development.<br />
+Happy Nodding <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nodejs" rel="tag">nodeJS</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1109 -->
+
+				
+					
+	<article id="post-1008" class="post-1008 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-iphone-development category-javascript category-opensource tag-cross-compile tag-crossplatfrom tag-haxe tag-nme">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1008" title="Permalink to NME 3.2 is released" rel="bookmark">NME 3.2 is released</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1008" title="1:43 am" rel="bookmark"><time class="entry-date" datetime="2012-02-16T01:43:03+00:00">February 16, 2012</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This seems to be one of the most active projects. The last beta release and this final release of <a href="http://www.haxenme.org/blog/2012/02/13/nme-3-2-its-official/">NME 3.2</a> is a proof of that.<br />
+Well with this release it is now confirmed that NME supports SWF assets to publish to SWF and C++ targets. This is just one of the many advantages one get while using NME.</p>
+<p><a href="http://www.joshuagranick.com/blog/2012/02/07/project-file-improvements-in-nme-3-2/">The new project file improvements are noted here</a>.<br />
+Again I am putting the same here for a quick reference.</p>
+<pre lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+<meta title="Project" package="com.template.project" version="1.0.0" company="Example, Inc." />
+<app main="Project" file="Project" path="Export" />
+<window width="800" height="600" unless="mobile" />
+<window fps="30" />
+<source path="Source" />
+<haxelib name="nme" />
+<assets path="Assets" rename="assets" include="*" exclude="nme.svg" />
+<icon path="Assets/nme.svg" />
+<ndll name="std" />
+<ndll name="regexp" />
+<ndll name="zlib" />
+<ndll name="nme" haxelib="nme" />
+</project>
+</pre>
+<p>Happy haXe -ing</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-compile" rel="tag">cross-compile</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatfrom" rel="tag">crossplatfrom</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nme" rel="tag">NME</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1008 -->
+
+				
+					
+	<article id="post-1005" class="post-1005 post type-post status-publish format-standard hentry category-css3 category-html5 category-inspiration category-ipad-development category-iphone-development category-javascript category-opensource category-tutorial tag-cross-device-development tag-cross-compile tag-crossplatform tag-haxe tag-nme">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1005" title="Permalink to haXe : Conditional compiling" rel="bookmark">haXe : Conditional compiling</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1005" title="5:23 pm" rel="bookmark"><time class="entry-date" datetime="2012-02-09T17:23:01+00:00">February 9, 2012</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>A nice and exciting feature about haXe is conditional compilation. That means one can specify which code to compile depending upon the target chosen at the compile time. Hah, that does not make sense ? Ya, I know. Let me explain again.<br />
+There is a compiler and while providing argument to it we have to specify which target we are compiling to. Like in case of haXe and NME we can compile it to a lot of different targets. The compiler argument for flash or swf output looks as below</p>
+<pre lang='haxe'>
+haxelib run nme test app.nmml flash
+</pre>
+<p>Now we can compile the code to HTML5 with the following argument</p>
+<pre lang='haxe'>
+haxelib run nme test app.nmml html5
+</pre>
+<p>Thats the beauty of the language. Most of the time its the same code, but then there are times when we need to write different codes for different targets (may be layout, view elements, can be anything). But then one does not need to keep a separate project for all the different cases. The solution is conditional compiling. What it does is depending upon the target type specified to compiler, it picks up the right code from the same file. Whoaa!! Magic <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /><br />
+How does it do it or how we make it aware of this ?! You asked it. Lets see it.</p>
+<pre lang='haxe'>
+#if flash
+//Code for SWF output
+#elseif js
+//Code for HTML5/js output
+#else
+#end
+</pre>
+<p>Thats simple. Its one file, completely in itself, but when it comes to compiler it picks up the right code part depending upon the target type.</p>
+<p>One thing to remember though, that when specifying HTML5 target, it picks up conditions from &#8220;js&#8221;, it does not have a &#8220;html5&#8243; option. This particular thing took me sometime to figure out. Just thought would point out here saving someone&#8217;s time out there.</p>
+<p>Happy haxe -ing <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-device-development" rel="tag">cross device development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/cross-compile" rel="tag">cross-compile</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatform" rel="tag">crossplatform</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nme" rel="tag">NME</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1005 -->
+
+				
+					
+	<article id="post-1001" class="post-1001 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-iphone-development category-javascript category-opensource tag-haxe tag-nme">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1001" title="Permalink to NME 3.2 Beta is here" rel="bookmark">NME 3.2 Beta is here</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1001" title="11:56 pm" rel="bookmark"><time class="entry-date" datetime="2012-02-08T23:56:27+00:00">February 8, 2012</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This is another exciting release of NME. And with this comes the support of SWF directly. Though its only for creating SWF and C++ targets but thats huge (Windows, Mac, Linux, Android, iOS, webOS), only thing not present is HTML5.</p>
+<p>Now I am waiting to get my hands dirty with the new version.</p>
+<p><a href="http://www.haxenme.org/blog/2012/02/08/nme-3-2-beta-release" target="_blank">The official blog entry.</a><br />
+<a href="http://www.joshuagranick.com/blog/2012/01/24/embedding-swfs-makes-nme-meme-friendly/" target="_blank">A tutorial for the SWF support.</a></p>
+<p>Happy haXe -ing <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nme" rel="tag">NME</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1001 -->
+
+				
+					
+	<article id="post-988" class="post-988 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-objectivec category-opensource tag-cross-device-development tag-crossplatform tag-haxe tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/988" title="Permalink to NME 3.1.1 is released" rel="bookmark">NME 3.1.1 is released</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/988" title="12:26 am" rel="bookmark"><time class="entry-date" datetime="2011-12-23T00:26:40+00:00">December 23, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>In between our learning time, the NMe team has updated the library to its latest version. The new <a href="http://www.haxenme.org/blog/2011/12/13/well-folks-nme-3-1-is-here/">NME version is 3.1.1</a>. Go straight away to the download section and start playing in the new toy.</p>
+<p>Happy haXe -ing</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-device-development" rel="tag">cross device development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatform" rel="tag">crossplatform</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-988 -->
+
+				
+					
+	<article id="post-976" class="post-976 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-iphone-development category-javascript category-tutorial tag-cross-device-development tag-cross-compile tag-crossplatform tag-haxe">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/976" title="Permalink to haXe : adding image to a project" rel="bookmark">haXe : adding image to a project</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/976" title="1:25 am" rel="bookmark"><time class="entry-date" datetime="2011-12-22T01:25:32+00:00">December 22, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Well, while its all well and good to create graphics and animations on runtime with code. We must agree that there are situations, when we need to external images in our project. This is done by defining a tag in our .nmml file. The exact thing looks as below.</p>
+<pre lang='html'>
+&lt;assets path="src/assets/" rename="assets/all/" include="*"&gt;&lt;/assets&gt;
+</pre>
+<p>In the tag above we are defining that all the files inside &#8220;src/assets&#8221; folder will be copied over to our final project under folder &#8220;assets/all&#8221;. Thats one part of the story. Now in our haXe code, we access the assets with their path as below.</p>
+<pre lang="haxe">import nme.Assets;//import the Class
+var img:Bitmap = new Bitmap (Assets.getBitmapData ("assets/all/home.jpg"));//get the asset</pre>
+<p>The code above the pretty self explanatory. First we need to import the &#8220;nme.Assets&#8221; and then use it to get the asset into our project. Things to note, while providing path to access the resource, its the &#8220;renamed&#8221; path we define in the &#8220;XML&#8221; while adding the asset.<br />
+Happy haXe -ing</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-device-development" rel="tag">cross device development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/cross-compile" rel="tag">cross-compile</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatform" rel="tag">crossplatform</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-976 -->
+
+				
+					
+	<article id="post-984" class="post-984 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-opensource category-saumya tag-cross-device-development tag-crossplatform tag-haxe">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/984" title="Permalink to haXe : some haxe references" rel="bookmark">haXe : some haxe references</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/984" title="1:53 am" rel="bookmark"><time class="entry-date" datetime="2011-12-21T01:53:00+00:00">December 21, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>There are plenty of libraries to extend the capability of haXe and NME. some of the refereces are as follows.<br />
+1. <a href="http://lib.haxe.org/all" target="_blank">http://lib.haxe.org/all</a><br />
+2. <a href="http://haxe.org/doc/libraries" target="_blank">http://haxe.org/doc/libraries</a><br />
+3. <a href="https://github.com/search?q=haxe" target="_blank">haxe on gitHub</a><br />
+4. <a href="http://code.google.com/hosting/search?q=label:haxe" target="_blank">haXe on google code</a></p>
+<p>Happy haXe -ing</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-device-development" rel="tag">cross device development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatform" rel="tag">crossplatform</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-984 -->
+
+				
+					
+	<article id="post-946" class="post-946 post type-post status-publish format-standard hentry category-css3 category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-objectivec category-opensource tag-cross-device-development tag-crossplatform tag-haxe tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/946" title="Permalink to haXe : doing a regular update and NME" rel="bookmark">haXe : doing a regular update and NME</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/946" title="7:53 pm" rel="bookmark"><time class="entry-date" datetime="2011-12-13T19:53:20+00:00">December 13, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This came to me as a surprise while trying to write a script, which can run in iOS, HTML5, Flash and Neko. I knew it can be done by cross-compiling through NME to all these target platforms. While this hold good almost in every case but when it comes to regular stage update or the ENTER_FRAME event, it is a problem.<br />
+Well, if you are a flash developer and depend on ENTER_FRAME event for a long time, then it may come to you as a surprise like me. The game loop as the gaming engines call it, now has to be worked upon. Fortunately we have a timer function in haXe and that quite fits the game.<br />
+Before going ahead in timer, lets see the unreliable nature of ENTER_FRAME for all targets. Firstly I was creating different circles in stage area with an ENTER_FRAME, while that worked well in all platforms, I thought its good to go for all. But then I tried to rely upon the same ENTER_FRAME event with a drag and drop and position change of the elements. Whoa!! That does not work! I stopped relying on the ENTER_FRAME event and changed that with Timer and everything is back in the action again.<br />
+The haXe timer code is a little different than Flash timer and the code looks as below.</p>
+<pre lang='haxe'>
+var timer = new Timer(10); //10 is the time difference in milliseconds between the timer call
+timer.run = onEachTimerTick;//its kind of event listener
+function onEachTimerTick():Void {}
+</pre>
+<p>For me, ENTER_FRAME event only worked for Flash targets and nothing else. So be careful if you want to target other delivery methods.</p>
+<p>Happy coding!</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-device-development" rel="tag">cross device development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatform" rel="tag">crossplatform</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-946 -->
+
+				
+						<nav id="nav-below">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/category/html5/page/3" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/category/html5/" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+			
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4" selected="selected">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

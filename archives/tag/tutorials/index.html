@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>tutorials | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="archive tag tag-tutorials tag-81 custom-background two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">Tag Archives: <span>tutorials</span></h1>
+
+									</header>
+
+				
+								
+					
+	<article id="post-821" class="post-821 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-tutorial tag-html5 tag-javascript tag-tutorial tag-tutorials">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/821" title="Permalink to HTML5 : animating on a Canvas with sprite sheet" rel="bookmark">HTML5 : animating on a Canvas with sprite sheet</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/821" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-29T01:00:16+00:00">September 29, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>We have already seen how to animate on Canvas in one of our last tutorials. That was quite straight forward as we were using Canvas drawing straight out of the box. Here we will use our newly learnt tools(loading and drawing bitmap image in canvas) to make an animation.<br />
+<a href="http://www.box.net/shared/e8xxhdcsx83a2a15apgm" target="_blank">The source files are here for you to download and play.</a><br />
+The concept is the same though as in re-drawing in the canvas at a regular interval, but instead of drawing with drawing API, we will be drawing image.<br />
+First of all lets understand what a sprite sheet is? The sprite sheet is an image! Just an image? Yes, its just an image file. In that image file, we should have almost all the images needed for our purpose. That means, one image file consisting of all the images required in a project. Why its necessary? Good question. The reason being we have just one call to the server and all our image data is loaded. The next reason is to update the image data. Suppose we want to update the graphics all at once, we just have to update one image file.<br />
+If you are going through the image file in our source, the image file has 12 different images of a character. All we are going to do is, cycle over each character over a time. That we can do with a &#8220;setInterval()&#8221; javascript function.<br />
+Lets see the javascript code first and then we will go learn it.</p>
+<pre lang="javascript">
+$.ready()
+{
+	//------------- 1. defining the variables and functions----------------
+	var resetCanvas,resetContext,
+		canvas_1,context_1,
+		image_data,photo,loadPhoto,imageLoaded,timer,onTimer,counter,animate;
+	//------------- 2. configuring ---------------------------------------
+	//get the canvas and context
+	canvas_1=$('#board_one').get(0);
+	context_1=canvas_1.getContext('2d');
+	counter=1;
+	//---------------functions----------------------------------
+	//resetting the width and height, it automatically resets the canvas
+	//clear the board, quick and dirty, its a HACK!!
+	resetCanvas = function (canvasRef){
+		canvasRef.width=canvasRef.width;
+		canvasRef.height=canvasRef.height;
+	};
+	//clear the board
+	resetContext=function(canvasRef,contextRef){
+		contextRef.clearRect(0,0,canvasRef.width,canvasRef.height);
+	};
+	
+	imageLoaded=function(evt)
+	{
+		var originalPic=evt.target; 
+		animate();
+	};
+	
+	loadPhoto=function(path)
+	{
+		photo.src=path;
+	};
+	
+	animate=function(){
+		timer=setInterval(onTimer,150);
+	};
+	
+	onTimer=function(){
+		resetContext(canvas_1,context_1);
+		
+		//draw again
+		if(counter>=12)
+		{
+			counter=0;
+		}
+		context_1.drawImage(photo, 97*counter, 0, 97, 95, 230, 110, 97, 95);
+		counter++;
+		//clearInterval(timer);//incase we need to stop the animation
+	};
+	
+	//----------------3. using-----------------------------
+	image_data=context_1.createImageData(canvas_1.width,canvas_1.height);
+	photo=new Image();
+	photo.onload=imageLoaded;
+	loadPhoto('images/walkSheet.png');
+};
+</pre>
+<p>In the beginning we have just defined the variables, then populating them with the required values and scripts. Lastly we are calling our methods and using these variables.<br />
+In the beginning we get our canvas and its context. Intitialised the &#8220;counter&#8221; to 1 as we have 12 different positions of the image, we will be needing a counter to move to next position. So once these properties are populated, we have created some functions, which we use. Then moving on to the actions, firstly there is an &#8220;image_data&#8221; object, I have created, but not used. That is just to show we can create an image data object from the canvas, which is used to pixel manipulation. So the first thingon making our animation is making an Image object with </p>
+<pre lang="javascript">
+photo=new Image();
+</pre>
+<p>Then we have to provide an event handler for its image load event, that is done with the code below.</p>
+<pre>
+photo.onload=imageLoaded;
+</pre>
+<p>If you remember we have already created the &#8220;imageLoaded&#8221; function, which looks as below.</p>
+<pre lang="javascript">
+imageLoaded=function(evt)
+	{
+		var originalPic=evt.target; //just for the shake of understanding
+		animate();
+	};
+</pre>
+<p>Here the first the &#8220;originalPic&#8221; variable is defined just to know that we can get the image from the event object as &#8220;event.target&#8221; . So all in all this &#8220;imageLoaded&#8221; function actually initialises our animation by calling &#8220;animate()&#8221;.</p>
+<pre lang="javascript">
+animate=function(){
+		timer=setInterval(onTimer,150);
+	};
+</pre>
+<p>And &#8220;animate()&#8221; function actually intialises the timer for animation and calls &#8220;onTimer&#8221; function repeatedly at each 150 milliseconds.</p>
+<pre lang="javascript">
+onTimer=function(){
+		resetContext(canvas_1,context_1);
+		//draw again
+		if(counter>=12)
+		{
+			counter=0;
+		}
+		context_1.drawImage(photo, 97*counter, 0, 97, 95, 230, 110, 97, 95);
+		counter++;
+		//clearInterval(timer);
+	};
+</pre>
+<p>This is the place, where all the action is happening. First we have to clear our canvas, that is being done on the first line of this function. Next we check, whether the &#8220;counter&#8221; is more than 12, if it is then reset it to 0. Thats for we have just 12 different images. Now the line which actually draws our animation is </p>
+<pre lang="javascript">
+context_1.drawImage(photo, 97*counter, 0, 97, 95, 230, 110, 97, 95);
+</pre>
+<p>This is actually drawing part of the sprite sheet to a particular are in the canvas. Its like copying a portion from the sprite sheet and pasting it in the Canvas. On the next timer event (ie; after another 150 milliseconds, it will copy another portion and paste it in the same location.) we take another portion from the sprite sheet and paste it in the same area of canvas. Since we are clearing the canvas and re-drawing it over a period of time, it seems as if the character is animating! The time of 150 milliseconds is just a guess, we can lower it to see the jerky animation or higher it to see the character move faster. The other values as 97,95 are the width and height of each image in pixels, so that would be different for different sprite sheets.<br />
+The last line increments the counter by one.<br />
+Now we have a nice looking animation in our HTML Canvas.</p>
+<blockquote><p>Things to not here is, I struggled for sometime to see this working, for I was providing wrong parameter values (97,95 seemed perfect). So if your animation is not visible, first see if the parameter values are correct. Even one pixel higher than the actual image height or width will make the whole thing invisible. Though lower values work fine.</p></blockquote>
+<p>Happy coding.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-821 -->
+
+				
+					
+	<article id="post-762" class="post-762 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-tutorial tag-css3 tag-html5 tag-javascript tag-tutorial tag-tutorials">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/762" title="Permalink to HTML5 : animating in Canvas" rel="bookmark">HTML5 : animating in Canvas</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/762" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-21T01:00:00+00:00">September 21, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>It may seem exciting to read the title as to get some animation right away in HTML5 Canvas. But the thing is, there is no direct API for animation. So the point is animation is done through the timer API of javascript. There are two different APIs for timing.</p>
+<pre lang="javascript">
+function onTimeout() { 
+alert("time is over");
+}; 
+var timeout = setTimeout(onTimeout, 3000);
+</pre>
+<p>The code above will call the &#8220;onTimeout&#8221; function after &#8220;3000&#8243; milliseconds. But the thing is this is only called once.<br />
+Now we have another API, which give us the ability to call a function at a regular interval and its called as below</p>
+<pre lang="javascript">
+onTimer=function(){
+  //code here will be called at a regular interval of 100 milliseconds
+};
+var timer=setInterval(onTimer,100);
+</pre>
+<p>Now, if you look at <a href="http://www.box.net/shared/h01gerocvmaog3q22aba" target="_blank">the source files and the resulting HTML file</a>, there is an animation of a bar going animating from left to right. This is done with the code below.</p>
+<pre lang="javascript">
+onTimer=function(){
+		context_one.beginPath();//creates a new drawing
+		context_one.moveTo(xpos, ypos);
+		context_one.lineTo(xpos+1, ypos);
+		//define the pen
+		context_one.strokeStyle = "#0F0";
+		context_one.lineWidth   = 50;
+		//make the lines visible
+		context_one.stroke();
+		xpos+=1;
+		//
+		if(xpos>=canvas_one.width)
+		{
+			clearInterval(timer);
+			alert ("Animation complete.");
+		}
+	};
+</pre>
+<p>And then calling the function as </p>
+<pre lang="javascript">
+var timer=setInterval(onTimer,100);
+</pre>
+<p>The function will be called on every 100 milliseconds. We can smaller the interval to smoothen the animation.</p>
+<p>Thats simple, is not it! Happy animating <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-762 -->
+
+				
+					
+	<article id="post-755" class="post-755 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource category-tutorial tag-css3 tag-html5 tag-javascript tag-tutorial tag-tutorials">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/755" title="Permalink to HTML5 : Drawing shapes in Canvas" rel="bookmark">HTML5 : Drawing shapes in Canvas</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/755" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-20T01:00:38+00:00">September 20, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I hope by now we have learned how to draw lines in HTML5 Canvas element. The very next thing is to draw some shapes.<br />
+To draw the rectangle the code looks like</p>
+<pre lang="javascript">
+context.strokeRect(leftTopX, leftTopY, rightButtomX, rightButtomY);
+</pre>
+<p>The above code will create a rectangle with only the outlines. If we want to fill the rectangle with color then the code will look as below.</p>
+<pre lang="javascript">
+context.fillRect(leftTopX, leftTopY, rightButtomX, rightButtomY);
+</pre>
+<p>In similar way to draw a circle we will use the command to draw an arc as below.</p>
+<pre lang="javascript">
+context.arc(x, y, radius, startAngle, endAngle, is_it_anticlockwise);
+//example
+context.arc(230, 90, 50, 0, Math.PI*2, false);
+</pre>
+<p>Now the concept is same as drawing a stroked circle or a filled as to call the stroke method or fill method.</p>
+<pre lang="javascript">
+context.beginPath(); // Start the path 
+context.arc(230, 90, 50, 0, Math.PI*2, false); // Draw a circle 
+context.closePath(); // Close the path 
+//define style
+context_one.fillStyle = "#F0F";
+context_one.strokeStyle = "#FF0";
+context_one.lineWidth   = 10;
+//fill and stroke
+context.fill(); // Fill the path
+context.stroke();//stroke the path
+</pre>
+<p>The <a href="http://www.box.net/shared/h01gerocvmaog3q22aba" target="_blank">source files for this example is here for you to download</a> and play with it.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-755 -->
+
+				
+					
+	<article id="post-691" class="post-691 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-tutorial tag-css tag-css3 tag-javascript tag-tutorial tag-tutorials">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/691" title="Permalink to CSS : getting into it" rel="bookmark">CSS : getting into it</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/691" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-13T01:00:34+00:00">September 13, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>While going ahead with javascript and all its goodness, we come across terms, which certainly make us curious like id and class. Apart from this we must know the things which we are going to use over and again as a web designer. When we already know about html,javascript and CSS makes up the whole web page, this is time to know some basics about CSS.<br />
+In CSS, we generally define some rules for our html content. Say, we have some structural data with a title and some content. Now this kind of data can be more than one in one page. So we will write some design rules, which our page content can refer to design itself. This kind of rules are called Class in CSS and generally defined with a . (dot) in the beginning.</p>
+<pre lang="css">
+.topic_title{}
+.topic_body{}
+</pre>
+<p>The important thing to remember here is these elements will come more than once in a page. Now, there are elements in a page, which occur only once. These kind of elements are referenced as id and defined with a #.</p>
+<pre lang="css">
+#page_title{}
+#page_navigation_menu{}
+</pre>
+<p>These are the basic types in CSS and we have already seen how these are referred in javascript too. To add the class styles and id styles in html document we write something as below.</p>
+<pre lang="html">
+<div id="topic_title"></div>
+<div class="topic_content"></div>
+</pre>
+<p>We can even join two different styles together as</p>
+<pre lang="html"> 
+<div id="topic_title" class="title_image"></div>
+</pre>
+<p>Now you can imagine how easy or complicated one can make a site design without even touching the content itself.<br />
+Well, there are some default elements in HTML as body, h1,p etc. These elements are directly designed with there name in CSS as </p>
+<pre lang="css">
+body{}
+h1{}
+p{}
+</pre>
+<p>How cool! Now for some global level elements or in general we have an option to define global style for all elements in a HTML page with a * as</p>
+<pre lang="css">
+*{}
+</pre>
+<p>That will assign, the designs described, to all the elements in the html page. This is, kind of, defining the base design of the page and its elements and then individual elements will override their design settings from there own id or class.</p>
+<blockquote><p>Point to keep in mind is, the design which is nearer to the element will override other design rules. That means, if there is a global style and an id or class style is defined for the element, the id or class style will override the design settings of the global style and the element will be visible as its defined in its id or class style.</p></blockquote>
+<p>Hope that helps someone.<br />
+If you want, <a href="http://www.saumyaray.com/research_examples/js/study_06_prototype/" target="_blank">take a reference of the design of our last all in one page here</a> and can download load the <a href="http://www.box.net/shared/rm2u8u56qigf8spjbot5" target="_blank">source files here</a> and see the basic CSS for the page.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-691 -->
+
+				
+					
+	<article id="post-295" class="post-295 post type-post status-publish format-standard hentry category-css3 category-html5 category-tutorial tag-css tag-html tag-javascript tag-tutorial tag-tutorials">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/295" title="Permalink to Referring to an element in HTML page" rel="bookmark">Referring to an element in HTML page</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/295" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-11T01:00:44+00:00">September 11, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>How to select an element in an HTML page? This is often get in my way, while beginning to learn Javascript, CSS and HTML. The simple answer is with javascript we have a method named &#8220;getElementById()&#8221; and always works as</p>
+<pre lang="javascript">
+document.getElementById('element ID');
+</pre>
+<p>Lets dive into code and see how things work. Lets say we have an HTML page as </p>
+<pre lang="html">
+<!DOCTYPE HTML>
+<html>
+	<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+		
+		<link type="text/css" rel="stylesheet" media="screen" href="general.css"/>
+		<script type="text/javascript" src="general.js"></script>
+	</head>
+	<body onload="onPageLoad()">
+		<div id="one" class="blockBase">
+			Hello World.
+		</div>
+		<div id="two" class="blockBase">
+			Hello you, this is JS.
+			<button id="btnOne" type="button">one</button>
+			<button id="btnTwo" type="button">two</button>
+		</div>
+	</body>
+</html>
+</pre>
+<p>There are two &#8220;div&#8221; tags in it and they are having id values as &#8220;one&#8221; and &#8220;two&#8221; respectively. Then we have two buttons inside the second &#8220;div&#8221;. These buttons are having id values as &#8220;btnOne&#8221; and &#8220;btnTwo&#8221;. Why we are adding id values?! Well, these are basics of how to access items from inside a page. Its kind of naming a new born in family <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  Lets move on and see how we are accessing these elements.<br />
+Our javascript file looks as below</p>
+<pre lang="javascript">
+var onPageLoad = function ()
+{
+	 alert("Page is loaded");
+	 var myBtnOne = document.getElementById('btnOne');
+	 var myBtnTwo = document.getElementById('btnTwo');
+	 //alert(myBtnOne+' : '+myBtnTwo);
+	 
+	 myBtnOne.onclick=function(){
+	 	alert ('one');
+	 };
+	 
+	 myBtnTwo.onclick=function(){
+	 	alert ('two');
+	 };
+	 
+};
+</pre>
+<p>Before going into the javascript, lets see our HTML code again. There is something, we did not look previously. Its</p>
+<pre lang="html">
+	<body onload="onPageLoad()">
+</pre>
+<p>What this does ?!! To be very basic, it actually calls a javascript function named &#8220;onPageLoad()&#8221; , when all the elements on the HTMl page is loaded. That means, we can add any interactivity after the page is loaded. For, if we try to add interactivity before all elements of the page is loaded, then there is a chance javascript engine will ignore those commands which will result in wrong behavior of the page. Therefore its recommended to add functionality to a page after confirming that everything in the page is loaded and this code is exactly doing the same.<br />
+Coming to out javascript file, we have to written everything in our &#8220;onPageLoad()&#8221; function. So the first thing is taken care of, now lets move on and see what else we are doing. Upon page loaded it will &#8220;alert&#8221; a message to the user saying we are ready to start adding interactivity. Now our main ambition here is to upon clicking those two buttons, we have to alert different messages to the user. We select those button elements with the code</p>
+<pre lang="javascript">
+document.getElementById('btnOne');
+</pre>
+<p>Next, we have to store these values so as to refer them in our code. We do this by assigning them to a variable as </p>
+<pre lang="javascript">
+var myBtnOne = document.getElementById('btnOne');
+</pre>
+<p>For the second button we have to do the same thing and the code looks </p>
+<pre>
+ var myBtnOne = document.getElementById('btnOne');
+ var myBtnTwo = document.getElementById('btnTwo');
+</pre>
+<p>Now we know how to access elements from an HTML page. The process is add an id value to the element in HTML page and access them with &#8220;document.getElementById(elementName)&#8221;. Thats all.<br />
+Next we are simply going to add the interactivity. Those are done with </p>
+<pre lang="javascript">
+ myBtnOne.onclick=function(){
+	 	alert ('one');
+	 };
+myBtnTwo.onclick=function(){
+	 	alert ('two');
+	 };
+</pre>
+<p>Thats simple, but then there are libraries which make our job even simpler. <a href="http://jquery.com/" target="_blank">JQuery</a> is such a library, but that is for a future post.<br />
+<a href="http://www.box.net/shared/oafbnm21czt9nedt3hxs" target="_blank">All the sourceCode can be downloaded from here</a> for your reference.</p>
+<p>Hope that helps some one. I would like to listen back from you about the post, leave a comment for suggestions, mistakes or simply thanks.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-295 -->
+
+				
+				
+			
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

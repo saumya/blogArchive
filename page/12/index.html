@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>saumya | Where there is a will, there is a way. | Page 12</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="home blog paged custom-background paged-12 two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+			
+						<nav id="nav-above">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/page/13" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/page/11" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+								
+					
+	<article id="post-538" class="post-538 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/538" title="Permalink to OpenPlug | Studio : things to consider" rel="bookmark">OpenPlug | Studio : things to consider</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/538" title="9:43 am" rel="bookmark"><time class="entry-date" datetime="2011-08-12T09:43:35+00:00">August 12, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Talking about one code base and multiple devices is a tricky affair. In that case there are various frameworks and platforms which strive to do that. One of the most beautiful platform I found is <a href="http://www.openplug.com/">OpenPlug|Studio</a>. Well, being an Actionscript developer and working on Flex SDK, one will certainly feel at home with OpenPlug|Studio. Being said that, there are some very subtle differences to consider while creating applications with this platform compared to Flex itself.<br />
+1. Its loosely based on Flex 3 SDK. That means there are things like &#8220;mx&#8221; components like &#8220;WindowedApplication&#8221; is present in it. The work flow is similar to any Flex 3 based project. But then it is recommended to use &#8220;mob&#8221; namespace based components for they are mobile optimized for almost all devices. Again this OpenPlug|Studio SDK, which is known as Elips SDK only supports a subset of Actionscript 3.<br />
+2. Almost all the &#8220;mob&#8221; components are final classes. The immediate effect is one can not extend native &#8220;mob&#8221; components to create a new component.<br />
+3. The display object containers do not include &#8220;MovieClip&#8221;.<br />
+4.  Using the available flex/actionscript frameworks is a strict no, as to one will end up writing the whole framework again for this OpenPlug|Studio (Elips SDK). For this ElipsSDK is a subset of Actionscript 3.<br />
+5.  I was trying to open an image in the device with the default photo viewer application on Android, but then at the end came to know that this is not possible. Though Elips SDK provides the component, which can display the photo. I think, that indicates we can use Elips SDK to view images, run videos/audios with SDK components but can not directly force the default players/viewers of the device to launch the files.<br />
+6. About the &#8220;List&#8221; component I have already shared my views in the blog post earlier. Just use a default &#8220;ItemRenderer&#8221; to use the &#8220;List&#8221; component for the time being, until the Elips SDK fixes the bug.<br />
+7. Accessing the file system is a little tricky! I was trying to access file system of an Android phone , both phone memory and SD card memory. While the document says, it could be accessed as </p>
+<pre>
+Path to access memory card is: app-storage:/ExternalStorage/ 
+Path to access internal memory is: app-storage:/InternalStorage/ 
+In AIR, it corresponds to subfolder in app-storage:/, to keep Flash compatibility for simulation.
+</pre>
+<p>But in reality I could never get into the file system with them. The in-phone memory access I still have to find a way, the SD card file system can be accessed as</p>
+<pre lang="actionscript">
+var extFolderPath:String = File.applicationStorageDirectory.nativePath+ "ExternalStorage";
+var externalFolder:File=new File(extFolderPath);
+</pre>
+<p>8. Javascript can be used inside the Application with &#8220;script&#8221; tag as </p>
+<pre lang="actionscript">
+mx:Script source="test.js"
+</pre>
+<p>This is interesting as from inside javascript file one can access the components with their &#8220;id&#8221; as one accesses them in Actionscript. But take care not to use any javascript libraries here as this is not DOM manipulation we are doing but using javascript syntax to do our Application. I have not tested the loose typing metaphor of javascript with a project, will update when I do that.<br />
+9. The OpenPlug|Studio is a free IDE and it works on both Mac and Windows. There is a plugin version, which could be installed over a FlashBuilder and a standalone version which could be installed separately without any dependencies. And the forum at the OpenPlug|Studio site is quite active, though it may not be instant but at least you will get your answers within a decent amount of time.</p>
+<p>I thought would put my experiences here, so as to it may help someone out there with similar kind of problem.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/uncategorized" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>			</span>
+															
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-538 -->
+
+				
+					
+	<article id="post-531" class="post-531 post type-post status-publish format-standard hentry category-mobile category-opensource category-saumya category-tutorial tag-android tag-openplug">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/531" title="Permalink to Using List component in OpenPlug" rel="bookmark">Using List component in OpenPlug</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/531" title="11:58 pm" rel="bookmark"><time class="entry-date" datetime="2011-08-07T23:58:10+00:00">August 7, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>OpenPlug|Studio ships with its own SDK and though it seem like FlexSDK dependent, there are native components to work with for mobile devices. The major or the most used native component is List and one can access it as </p>
+<pre lang="actionscript">
+mob:List id="allSDCardFiles" 
+	x="0" y="0"
+	height="100%" width="100%"
+	rowHeight="45"
+</pre>
+<p>While it is expected to work fine and it does work fine in the simulator, but when tested on device (I have used an Android phone to test), the application simply crashed. Well the problem here is a bug in the baseSDK of OpenPlug. So till the bug is fixed the simple solution is to use a default itemRenderer. The fixed code will look as</p>
+<pre lang="actionscript">
+mob:List id="allSDCardFiles" 
+	x="0" y="0"
+	height="100%" width="100%"
+	rowHeight="45"
+        itemRenderer="ListItemRenderer"
+	
+</pre>
+<p>That simply works every where from simulator to the device.<br />
+Hope that helps someone out there.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/android" rel="tag">android</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/openplug" rel="tag">openplug</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-531 -->
+
+				
+					
+	<article id="post-525" class="post-525 post type-post status-publish format-standard hentry category-mobile category-opensource category-saumya category-tutorial tag-android tag-application tag-mobile">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/525" title="Permalink to My first workable Android application, AFinder." rel="bookmark">My first workable Android application, AFinder.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/525" title="6:36 pm" rel="bookmark"><time class="entry-date" datetime="2011-08-06T18:36:48+00:00">August 6, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>On my quest with different tools/languages, I started on <a href="http://developer.openplug.com/index.php">OpenPlug|Studio</a> for developing in Android. Though this is a tool for developing for multiple devices, I specifically tried this for Android for the time being.<br />
+This IDE is based on Eclipse and there are two flavors of installations. One installs it directly as a standalone IDE and you have option to install it over FlashBuilder. The development is also based upon the same component style development as in Flex SDK. There is a different name-space for mobile specific UIs. they start with &#8220;mob&#8221; rather than &#8220;mx&#8221;. From compiling to publishing as an .apk file for android device installations are quite straight forward. The best part about the IDE is its completely free. Well then it has potential as to one codebase and publish to multiple platforms. The community at OpenPlug|Studio forum seems active too and one can feel there are a lot going behind as to fix up bugs and add new features to the tool set. Though there are bugs and features to be added, but as I said, <a href="http://developer.openplug.com/forum/">once you involve in forum</a>, you got to know they are already working on it and new releases are happening almost in 2-3 months.<br />
+<a href="http://www.box.net/shared/f53y6sycc9epcge86bkx">Here is my basic Android application to move around your file system on the device</a>. Would love to listen the feedback.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/android" rel="tag">android</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/application" rel="tag">application</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/mobile" rel="tag">mobile</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-525 -->
+
+				
+					
+	<article id="post-502" class="post-502 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-saumya category-tutorial tag-css tag-html tag-web tag-web-design">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/502" title="Permalink to Making menus with Html-CSS" rel="bookmark">Making menus with Html-CSS</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/502" title="3:14 am" rel="bookmark"><time class="entry-date" datetime="2011-08-04T03:14:34+00:00">August 4, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Continuing the basics of HTML and CSS, lets go further to see how CSS really changes the way of rendering the basic HTML structure. We will be creating some horizontal menus with CSS. The basic HTML structure needed is nothing but an un-ordered list.</p>
+<pre lang="html">
+<ul>
+   <li>Page One</li>
+   <li>Page Two</li>
+   <li>Page Three</li>
+</ul>
+</pre>
+<p>Well, since these items are going to link to some other pages or other places, we must add some links to them. After all, what is a menu item without a path or link to it! So the final structure will be as below. Note that we have put all the items inside a div with id as &#8220;nav-Menu&#8221;.</p>
+<pre lang="html">
+<div id="nav-Menu">
+        <ul>
+        	<li><a href="#">Page One</a></li>
+        	<li><a href="#">Page Two</a></li>
+        	<li><a href="#">Page Three</a></li>
+        </ul>
+</div>
+</pre>
+<p>In a real scenario the &#8220;href&#8221; value would be a real URL, either relative or absolute. But that is part of the content, let us concentrate on building the menus. So all in all the HTML part is over! Thats it! Yes, thats all to it. One simple un-ordered list with links in the list items.<br />
+Lets move on to design it with CSS, so that it looks as a horizontal menu items instead of vertical lists. First things first, lets get rid of the default styling of the list items, the CSS would be as below</p>
+<pre lang="css">
+#nav-Menu ul
+{
+	list-style: none;
+}
+</pre>
+<p>Next is to push the list items so as to they come on one line. The CSS for these would be as below</p>
+<pre lang="css">
+#nav-Menu li
+{
+	float: left;
+}
+#nav-Menu li a
+{
+	float:left;
+	display: block;
+	width: 9em;
+}
+#nav-Menu
+{
+	width: 30em;
+}
+</pre>
+<p>Thats all to it. One thing to remember here is everything now is a just fine for the menus. But there would be the contents after these menu items and they will be placed after the last menu rather than below the menu items. The fix is to add a style to the next elements with </p>
+<pre lang="css">
+#main-content
+{
+	clear: both;
+}
+</pre>
+<p>Now its the time to add some more visually appealing style to the menu items we just created. These styles are basically margins, borders and color, so the final CSS for the menus look as below.</p>
+<pre lang="css">
+#nav-Menu ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#nav-Menu li
+{
+	float: left;
+	margin: 0 0.15em;
+}
+
+#nav-Menu li a
+{
+	float:left;
+	display: block;
+	width: 9em;
+	height: 2em;
+	line-height: 2em;
+	border: 0.1em solid #DCDCE9;
+	
+	text-decoration: none;
+	text-align: center;
+	
+	color: #0D2474;
+}
+
+#nav-Menu
+{
+	width: 30em;
+}
+</pre>
+<p>Hurray, we have just created a horizontal menu bar with menu items from a simple HTML un-ordered list.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/web" rel="tag">web</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/web-design" rel="tag">web design</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-502 -->
+
+				
+					
+	<article id="post-236" class="post-236 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource category-saumya tag-css tag-css3 tag-developme tag-html tag-html5 tag-javascript tag-web-design">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/236" title="Permalink to Aptana Studio, free IDE for web design." rel="bookmark">Aptana Studio, free IDE for web design.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/236" title="11:58 am" rel="bookmark"><time class="entry-date" datetime="2011-08-03T11:58:11+00:00">August 3, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This may be apparent by now that web design is not graphics in a page or the colour of the background of the webpage. It has gone well beyond that and for the same reason web designers are attracted towards an IDE (Integrated development environment) that would be best suited for this need. Previously the WYSIWYG kind of IDEs were a thing to look for. But currently it is the web standards, clean code and ease of use is what everyone looks for. Fortunately we are not limited to Notepad in windows or TextEdit on MAC.<br />
+One such IDE is <a href="http://www.aptana.com">APTANA Studio</a>. This is based on the opensource <a href="http://www.eclipse.org/">Eclipse</a> IDE. Current version of the IDE is much better than its previous versions and now it comes with project templates for HTML5 applications. There are project templates which are already installed with the IDE itself. There is an option to choose the template to use in your project, and if you are connected to internet then there are options for a template to be downloaded from the source control systems like <a href="https://github.com/">github</a>. This makes a perfect case for people who are just beginning to use Git or not used to it. That means whenever you create a project with these kind of templates, you are bound to get the latest one form the repository. So you will get the benefit of the awesome developer and designer community, who is constantly contributing to the original source code. And one does not need to know the inside working of the system. Thats a huge plus point.<br />
+Well, by this time you must have sensed that Git support is inbuilt with the IDE. So one can always see if the changes are committed or not. That way it will make your code constantly tracked by version control systems. There is a built in terminal(command prompt) inside the IDE. So one dose not need to open it separately to work in a command prompt.<br />
+Next is its look and feel and working in different operating systems and this IDE simply the same IDE in Windows and Mac operating systems (I have not tried the Linux version yet).<br />
+This supports a lot of languages starting from HTML, Javascript, CSS, PHP, Ruby and Rails. While writing my own CSS and javascript the code hinting and responsiveness of the IDE just blown me away. Its just those simple features, which, if one gets used to, then there would be no coming back to a bare-bone IDE like Notepad or TextEdit. While editing CSS, and adding a colour value, there is a little display as to which colour this value is representing! Thats just too good. There is a web previewer inside the IDE itself, if one needs to test the design one need not leave the IDE too.<br />
+Overall in my opinion this is one of the IDEs to get used to if one is doing web design in current age.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/developme" rel="tag">developme</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/web-design" rel="tag">web design</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-236 -->
+
+				
+					
+	<article id="post-475" class="post-475 post type-post status-publish format-standard hentry category-life category-saumya tag-india tag-nature tag-travel">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/475" title="Permalink to Water rafting for the first time" rel="bookmark">Water rafting for the first time</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/475" title="9:57 pm" rel="bookmark"><time class="entry-date" datetime="2011-07-20T21:57:40+00:00">July 20, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><a href="http://www.flickr.com/photos/saumyaray/5958036941/" title="tree house! by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6009/5958036941_d28f9d237a.jpg" width="500" height="375" alt="tree house!"></a><br />
+Last weekend I am fortunate to visit Coorg, a hill station near Bangalore. I must say, it was a beautiful experience. A must visit for anyone who loves nature. There is a beautiful waterfall, a place you should not miss. Just sheer nature and its love, one can only feel.<br />
+<a href="http://www.flickr.com/photos/saumyaray/5958601958/" title="waterfall by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6140/5958601958_35bcb04f96.jpg" width="375" height="500" alt="waterfall"></a><br />
+<object width="560" height="349"><param name="movie" value="http://www.youtube-nocookie.com/v/jxbsElWGFUo?version=3&amp;hl=en_US&amp;rel=0&amp;hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/jxbsElWGFUo?version=3&amp;hl=en_US&amp;rel=0&amp;hd=1" type="application/x-shockwave-flash" width="560" height="349" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+There are natural cottages made for staying back. And the good thing is electric power is only available for 2 hours in night. Thats pretty awesome. As it was cold outside and almost all the time raining, one does not need electricity at all. There are these little candle lights and the night just seemed more enjoyable.<br />
+<object width="560" height="349"><param name="movie" value="http://www.youtube-nocookie.com/v/m1nHOvRozmk?version=3&amp;hl=en_US&amp;rel=0&amp;hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/m1nHOvRozmk?version=3&amp;hl=en_US&amp;rel=0&amp;hd=1" type="application/x-shockwave-flash" width="560" height="349" allowscriptaccess="always" allowfullscreen="true"></embed></object><br />
+Well, this place seemed part of a wildlife sanctuary, so on our way we happened to see some wild animals as bear and deer.<br />
+We did a small trekking around the hill and must say it was an exciting experience as there were leeches on the path, the whole path was filled with leeches. And one is bound to get the leeches, so the best part is how to deal with problem when we have to go with it. That was the learning of the life time. And you know what? Leeches are not dangerous at all, people in that area are habituated with it. So the advice we got is, take a lemon with you all the time. Once you get a leech on your body, put the lemon juice into it. Do not panic and scratch the leech, as one can not get that thing out with hand. Well the most interesting part is when leeches suck your blood, you do not feel any pain!! They will come to your body, suck your blood up and go away as soon as they are full, and sometimes they burst also after drinking too much of blood, LOL <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> .<br />
+<a href="http://www.flickr.com/photos/saumyaray/5958139749/" title="trekking with Leeches by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6006/5958139749_670c52ce4c.jpg" width="500" height="375" alt="trekking with Leeches"></a><br />
+The most important part is, one is bound to get the leeches on one&#8217;s body, so the choice is whether to go on the trek or not? That is the lesson to learn. Fun and excitement comes and brings some sort of frightening moment but if you do not panic, just enjoy the moment and go with the flow without trying to control it, you will feel the full potential of nature and as such life also <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  All of us got some leeches on our body too <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  I got frightened once I saw one leech was just getting into my shoes!! It felt very frightening to me for once, tried removing it from outside, but as I said you can not remove it with your hand. Do not panic, remove your shoes, put some lemon juice and there you go. And one more thing, if at all you find one leech on your body, the damage is already done to you, the amount of blood it needs is already sucked!! So no point panic. I was carrying 3 more leeches with me, until I reach the base camp, where I found they are still with me travelled all the distance from the mountain.<br />
+<a href="http://www.flickr.com/photos/saumyaray/5958591738/" title="water rafting by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6148/5958591738_341df257e8.jpg" width="500" height="375" alt="water rafting"></a><br />
+Then came the first time in my life, water rafting. It was just as awesome as the wind, rain and wild water in this high force mountain river.<br />
+<a href="http://www.flickr.com/photos/saumyaray/5958033323/" title="water rafting by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6021/5958033323_82b8f26f18.jpg" width="500" height="447" alt="water rafting"></a><br />
+Must say, I got a fantastic team with with. All of us were almost for the first time but almost all of us were ready to make it. The most interesting part is all most all of us are either do not know swimming or just do swimming pool swim. Looking at the river, the flowing water and its speed make us all nervous but then we had already decided to make it. Thanks to the wonderful guide in our boat, he was encouraging us all the time. Once we got stuck in the bushes somehow, it seemed a tough job to get back to the flowing water. For it was very tough to push the boat inside water, against water. We kept our cool and enjoyed the beauty of nature. That experience was just mind blowing. Two other guides came to rescue and we were back on the flowing water. Rest was just enjoying the flow and speed of water, the turbulence and water hitting all our faces, water coming inside boat and we kept moving with the constant instructions of the guide. Finally all of us reached safe and made an amazing experience.<br />
+<a href="http://www.flickr.com/photos/saumyaray/5958039365/" title="its me by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6025/5958039365_d1479e42d0.jpg" width="375" height="500" alt="its me"></a><br />
+I would say, must try, yaaaaaaaahhoooo. </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/india" rel="tag">india</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nature" rel="tag">nature</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/travel" rel="tag">travel</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-475 -->
+
+				
+					
+	<article id="post-471" class="post-471 post type-post status-publish format-standard hentry category-opensource category-saumya category-tutorial tag-git tag-gitignore tag-versioncontrol">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/471" title="Permalink to Removing the tracking of files, already tracked by Git" rel="bookmark">Removing the tracking of files, already tracked by Git</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/471" title="4:35 pm" rel="bookmark"><time class="entry-date" datetime="2011-07-19T16:35:43+00:00">July 19, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>If you work on Git then you must be knowing once we fork(or initialise a repository) a repository, all the files inside that folder get tracked automatically by Git. Well, thats not a problem if we really want all of them to be tracked all the time. But the problem starts when there are some files we need not track. And the worse happens when all of the files are being tracked and now we decide to remove some files from being tracked. The handy command is</p>
+<pre lang="git" lineno="0">
+$ git rm --cached readme.txt
+</pre>
+<p>And for folders</p>
+<pre lang="git" lineno="0">
+$ git rm --cached docs/
+</pre>
+<p>There is an option to set a rule for Git to ignore all the files, one need Git to ignore from tracking. This rule is set in a file named .gitignore. Remember there is a dot (.) before gitignore word name. All those files which need to be ignored must be mentioned in this .gitignore file. The tricky part is .gitignore will not remove files from tracking by Git if those files are already being tracked by Git. In those case the above &#8220;git rm &#8211;cached&#8221; trick will help.<br />
+The way I do it regularly is add the .gitignore file in the beginning inside the folder I am going to initialise Git repository. That only works if I know which files I need to ignore in the beginning only.<br />
+<a href="https://github.com/github/gitignore">There is a set of .gitignore templates for different languages at Github</a>, That is a great help in the beginning of configuring the .gitignore for different languages.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/git" rel="tag">git</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/gitignore" rel="tag">gitignore</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/versioncontrol" rel="tag">versioncontrol</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-471 -->
+
+				
+					
+	<article id="post-469" class="post-469 post type-post status-publish format-standard hentry category-ipad-development category-iphone-development category-mobile tag-cross-device-development">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/469" title="Permalink to OpenPlug released for FlashBuilder 4.5" rel="bookmark">OpenPlug released for FlashBuilder 4.5</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/469" title="12:15 am" rel="bookmark"><time class="entry-date" datetime="2011-07-09T00:15:23+00:00">July 9, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>If you are a flash developer, then the easiest way to create a cross device application is to use <a href="http://www.openplug.com/products/studio">OpenPlug Studio</a>. <a href="http://developer.openplug.com/en/learn-more/features">The feature list of the tool can be read here in detail</a>. While the standalone version of this free tool is in its alpha version, the FlashBuilder version was out for sometime.<br />
+<a href="http://developer.openplug.com/en/community/blog/319-new-openplug-studio-release-cr10">The best part of the new release is, it now supports FlashBuilder 4.5.</a></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-device-development" rel="tag">cross device development</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-469 -->
+
+				
+					
+	<article id="post-468" class="post-468 post type-post status-publish format-standard hentry category-inspiration category-life category-saumya">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/468" title="Permalink to Let go. It always works." rel="bookmark">Let go. It always works.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/468" title="1:58 pm" rel="bookmark"><time class="entry-date" datetime="2011-07-06T13:58:44+00:00">July 6, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I generally tend to hold it for a long long time. And finally when I let it go, the solution is right in front. Yes, I always got to the solution but not with holding things, but with let go!<br />
+It is generally said that, do not get too serious with life else you will not get out of it. It took a long time for me to realise that. First of all its people arround. Those who themselves are not happy, want you to stay worried and they will do all possible logic calculating how to make you that. So be aware not to fall in trap. It will not help. Believe in your own self and make a choice to be happy. Leave everything behind and just be happy now. Once you do that, things will unfold.<br />
+Once you let go, the situaion itself knows that you are not trying to fight it with logic but intuition and that&#8217;s powerful. Once you do that you will find solution in front , will come from somewhere you have never ever imagined. That works for me and may be you try that.<br />
+Belive in self and let go things will do wonders, while logic can solve mechanic problems, life is not mechanical at all. Happy living.</p>
+<p><span class="post_sig">Posted from WordPress for Android through my &#8220;HTC Wildfire&#8221;.</span></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-468 -->
+
+				
+					
+	<article id="post-459" class="post-459 post type-post status-publish format-standard hentry category-css3 category-html5 category-opensource category-saumya tag-wordpress">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/459" title="Permalink to WordPress 3.2 is released" rel="bookmark">WordPress 3.2 is released</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/459" title="12:55 am" rel="bookmark"><time class="entry-date" datetime="2011-07-06T00:55:08+00:00">July 6, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Finally with the release of <a href="http://wordpress.org/news/2011/07/gershwin/">wordpress engine 3.2</a>, the blog is updated to the latest version of the engine.</p>
+<p>A big thank you to the wordpress team as this version of the engine the fun to work with in the admin pannel too <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  A lot of subtle but note worthy improvements. Finally I think everyone is moving to User Experience rather than features.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/wordpress" rel="tag">wordpress</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-459 -->
+
+				
+						<nav id="nav-below">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/page/13" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/page/11" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+			
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

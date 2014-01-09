@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Modules in NodeJS | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='On my search for a JS variant, triggered by NodeJS study' href='http://saumya.github.io/blogArchive/archives/1103' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/1080' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=1080' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-1080 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/1068" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/1103" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-1080" class="post-1080 post type-post status-publish format-standard hentry category-javascript tag-javascript tag-nodejs">
+	<header class="entry-header">
+		<h1 class="entry-title">Modules in NodeJS</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1080" title="7:19 am" rel="bookmark"><time class="entry-date" datetime="2013-01-11T07:19:48+00:00">January 11, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/admin" title="View all posts by admin" rel="author">admin</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>There is this concept of Modules in NodeJS, which is kind of but not exactly the same as Class concept of programming languages like Java and ActionScript. To add a module the syntax is</p>
+<pre lang="javascript"> 
+require() // its like import in Java and Actionscript
+</pre>
+<p>A detailed implementation of “require()” statement is as below</p>
+<pre lang="javascript"> 
+var myModule = require('./myModule.js');
+</pre>
+<p>So that&#8217;s all to include a module, if the module JS file and your application JS file are in the same folder, for the time being lets do the understanding this way. <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /><br />
+Now lets see what kind of features or flexibility &#8220;modules&#8221; gives us as a nodeJS developer.<br />
+If we think of modules as the Classes then it will be easier for us to understand.<br />
+First of all, everything inside a module is private. Ohh yes, private things in javascript. Thats interesting, is not it!<br />
+Lets write a simple class kind of thing in a module, which has a private property and getter-setter method of the same.</p>
+<pre lang="javascript">
+stupidVar='Global Scope. Avoid this.';// Never put anything in Global Scope
+var nameOfModule='I am private';
+exports.getName=function(){
+	return nameOfModule;
+}
+exports.setName=function(newName){
+	nameOfModule=newName;
+}
+</pre>
+<p>Couple of things to note here. First of all every variable that is not declared with &#8220;var&#8221; is on the Global scope. I think thats true in general for javascript. Apart from this anything else in a module is private, that means the variable &#8220;nameOfModule&#8221; in our example is only accessible from inside that module itself. If we try to access it from out side the module NodeJS will throw an error. Now to expose methods and properties to outside world, we have to add the methods and properties to an object named &#8220;exports&#8221;.<br />
+Now to consume the module, lets write a &#8220;main&#8221; class which we can assume as the application entry.</p>
+<pre lang="javascript">
+console.log("Hello Modules.");
+var modOne=require ('./modOne.js');
+console.log(modOne.getName());
+modOne.setName("I am set by the setter. Setter is Public.");
+console.log(modOne.getName());
+//console.log(nameOfModule);// this will throw an ERROR as we are trying to access private var
+console.log(stupidVar);
+</pre>
+<p>Save both the files in the same directory. Open the commandline and navigate to the directory. To run our application we have to write</p>
+<pre lang="javascript">
+node main
+</pre>
+<p>Just a note that we do not have to specify &#8220;.js&#8221; after the &#8220;main&#8221;, while feeding the file to NodeJS.</p>
+<p><a href="https://www.box.com/s/21ens4ijxm5hwc74bfns">The source files for this are here to download</a>.<br />
+[reference : <a href="http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/">net.tutsplus.com</a> ]<br />
+Now there are publicly available packages, libraries and modules in our case. To install a module in a nodeJS application, one has to navigate to the folder containing the application through commandline and install the required module. An implementation detail is as below.</p>
+<pre lang="javascript">
+npm install module_name
+</pre>
+<p>I hope you remember &#8220;npm&#8221; from previous tutorial. For a quick reminder, &#8220;npm&#8221; and &#8220;node&#8221; both the tools are installed by default when we have installed nodeJS. The &#8220;npm&#8221; is the package manager for nodeJS.</p>
+<p>Happy Nodding <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nodejs" rel="tag">nodeJS</a> by <a href="http://saumya.github.io/blogArchive/archives/author/admin">admin</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/1080" title="Permalink to Modules in NodeJS" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-1080 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

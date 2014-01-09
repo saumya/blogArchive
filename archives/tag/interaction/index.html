@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>interaction | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="archive tag tag-interaction tag-52 custom-background two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">Tag Archives: <span>interaction</span></h1>
+
+									</header>
+
+				
+								
+					
+	<article id="post-842" class="post-842 post type-post status-publish format-standard hentry category-css3 category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-opensource category-tutorial tag-html5 tag-interaction tag-javascript tag-spritesheet">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/842" title="Permalink to HTML5 : Canvas with mouse interaction." rel="bookmark">HTML5 : Canvas with mouse interaction.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/842" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-30T01:00:34+00:00">September 30, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Here we are going to study about the creation of Canvas dynamically and the basic mouse interactivity with the Canvas elements.</p>
+<p><a href="http://www.box.net/shared/xg21ic16iml1dlv1u5hc" title="Dynamic Canvas and Mouse interaction" target="_blank">The source files for this example is here for you to download and play.</a></p>
+<p>We are going to use a separate sprite sheet and try to make the scene a little more interesting than the last one. I would say to download the source files and see the example for yourself to see what is it doing. Basically there is a scene on the background with 6 tables and a girl doing some experiment on third table. Towards the left top corner of the scene, there is another girl trying to do some magic with its magic wand. If you look at the code, the scene with the girl doing experiment is a straight forward drawing from the sprite sheet as we did that in last tutorial. The girl with the magic wand is drawn in a dynamically created Canvas. The code looks as below.</p>
+<pre lang='javascript'>
+//creating canvas dynamically
+canvasGirl=document.createElement('canvas'); 
+canvasGirl.width=100; 
+canvasGirl.height=100;
+//get the context
+contextGirl=canvasGirl.getContext('2d');
+//customise canvas
+canvasGirl.style.background='transparent';
+canvasGirl.style.zIndex=5;
+//add the canvas to the document
+document.body.appendChild(canvasGirl);
+</pre>
+<p>The first thing is to create a new canvas with &#8220;createElement(&#8216;canvas&#8217;)&#8221;. That will make a new canvas. Now we have to get the context to draw something on it. This is done with &#8220;getContext(&#8217;2d&#8217;)&#8221; as usual, nothing new here. And lastly, we have to add our newly created Canvas to the document and this is done with &#8220;document.body.appendChild(canvasGirl);&#8221; code. Thats beautiful. Everything else in the code is just configuring the canvas.<br />
+Once the canvas and context are available to us, we can do anything we are able to do to a Canvas. So the girl with the magic wand is drawn to the context of this Canvas element. The code looks as below.</p>
+<pre lang='javascript'>
+resetContext(canvasGirl,contextGirl);
+contextGirl.drawImage(photo, 108*counter+10, 900, 96, 64, 0, 0, 96, 64);
+</pre>
+<p>First we are resetting the Canvas, so as to draw new content on each timer. Since the girl with magic wand is actually an animation, we call the code above repeatedly on a timer event. And first we clear the context with our own function and then redraw an image from sprite sheet at the same place on the canvas, so as to make an animation. If you are following along with the previous tutorials then the reseting of context code should not be new to you, else the code looks as as below.</p>
+<pre lang='javascript'>
+resetContext=function(canvasRef,contextRef){
+	contextRef.clearRect(0,0,canvasRef.width,canvasRef.height);
+};
+</pre>
+<p>All we have, are two layers of drawing and animation drawn from the same sprite sheet.<br />
+Lets do some mouse interactivity with these elements. The code looks as below.</p>
+<pre lang='javascript'>
+//------------ adding mouse interaction --------------
+$('#board_one').mouseup(function() {
+  	alert('Canvas with Tables');
+});
+$(canvasGirl).mouseup(function() {
+  	alert('Canvas with Girl, doing magic.');
+});
+</pre>
+<p>The trick here is JQuery&#8217;s neat job. Just remember anything wrapped with $() will give a JQuery element of the same HTML element. So our dynamically created Canvas is made an JQuery element by </p>
+<pre lang='javascript'>
+$(canvasGirl)
+</pre>
+<p>Notice that there is no &#8216;#&#8217; before the name as it is before &#8216;board_one&#8217;, thats for the &#8216;board_one&#8217; we are referring the HTML element with id &#8216;board_one&#8217;, while the other one we are creating dynamically in javascript and converting it to a JQuery equivalent.<br />
+Thats nice and if you have not done yet, please go ahead and click on the board to get an alert showing different message and if you click on the girl with magic wand, that will alert a different message.<br />
+This is quite simple and straight forward interactivity, but I think you got the point.<br />
+Happy coding <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<blockquote><p>And yes, I made it to one month of continuous posting, highly influenced by <a href="http://www.bit-101.com/blog/" target="_blank">Keith Peters</a>. Though it was not all javascript and I missed some dates, but all in all, the number of posts in a month is achieved. I am quite happy about my effort and a big thanks to all of you, who read it.</p></blockquote>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/interaction" rel="tag">interaction</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/spritesheet" rel="tag">spritesheet</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-842 -->
+
+				
+				
+			
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

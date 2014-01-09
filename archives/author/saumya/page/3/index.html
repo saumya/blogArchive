@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>saumya | saumya | Page 3</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="archive paged author author-saumya author-2 custom-background paged-3 author-paged-3 two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				
+				<header class="page-header">
+					<h1 class="page-title author">Author Archives: <span class="vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="saumya" rel="me">saumya</a></span></h1>
+				</header>
+
+				
+						<nav id="nav-above">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/author/saumya/page/4" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/author/saumya/page/2" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+				
+								
+					
+	<article id="post-1186" class="post-1186 post type-post status-publish format-standard hentry category-ipad-development category-iphone-development category-javascript category-mobile category-opensource category-tutorial tag-cordova tag-ipad tag-iphone tag-phonegap">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1186" title="Permalink to Cordova (Phonegap) , alert message." rel="bookmark">Cordova (Phonegap) , alert message.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1186" title="8:05 am" rel="bookmark"><time class="entry-date" datetime="2013-04-23T08:05:56+00:00">April 23, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This might seem, very easy task. But then while making a customisable alert message, one need to think as to how to do it. While working on Cordova(phonegap), one can easily assume and which is true is the javascript alert script.</p>
+<pre lang='javascript'>
+alert("Hello!");
+</pre>
+<p>The javascript alert will work. Then we do not have a customisation option except for the message. The solution Cordova provides is a function with the name as alert. The syntax is as below.</p>
+<pre lang="javascript">
+navigator.notification.alert(message, alertCallback, [title], [buttonName]);
+</pre>
+<p>In the very basic form, where one need to have a specific title, message and button name, the code I use is</p>
+<pre lang="javascript">
+navigator.notification.alert("My message", undefined,"My Alert", "ok");
+</pre>
+<p>Thats the simplest kind and if one need more generic, wrap the whole thing inside one of your own custom function as example below.</p>
+<pre lang='javascript'>
+function showAlertWithTitle(title,message){
+	navigator.notification.alert(message, undefined,title, "ok");
+}
+</pre>
+<p>Hope coding.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cordova" rel="tag">cordova</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/ipad" rel="tag">ipad</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/iphone" rel="tag">iphone</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/phonegap" rel="tag">phonegap</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1186 -->
+
+				
+					
+	<article id="post-1184" class="post-1184 post type-post status-publish format-standard hentry category-ipad-development category-iphone-development category-mobile category-objectivec category-tutorial tag-ios tag-ipad tag-iphone tag-objectivec">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1184" title="Permalink to iOS notifications from developer&#039;s view" rel="bookmark">iOS notifications from developer&#039;s view</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1184" title="2:43 am" rel="bookmark"><time class="entry-date" datetime="2013-04-21T02:43:02+00:00">April 21, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Notifications in iOS devices such as iPhone and iPad are a way to tell the user about some important thing has happened. From a users perspective it is just a message reminding thing.<br />
+For a developer, one must note the difference between the type of notifications. Well, to be at its simplest form, there re two kinds of notifications. One is local notification and one is push notification (think this as server is telling the iOS device to show the notification).<br />
+Well, why should I bother about these two as a developer ?! That might be the question if you are doing the notification programming in iOS for the first time. The answer is, iOS gives very certain instructions as to what and how to do the notification implementation.<br />
+<a href="http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1">Here is the official link to the Apple documentation.</a></p>
+<p>There are only three types of UX for either of the notification (local or push). They are<br />
+1. Displaying an alert message<br />
+2. Badge the application icon<br />
+3. Play a sound</p>
+<p>The settings to control these notification types are located in the global settings menu of iOS. Remember it, the settings of all the applications, which use notifications are at one place in all iOS devices and that is the &#8220;settings&#8221; menu.<br />
+Well, another subtle but important option is &#8220;notification center&#8221;. Its the place, where all the notifications from all the applications reside. The settings, whether to keep the &#8220;notification&#8221; in &#8220;notification center&#8221; or not is also inside the global &#8220;settings&#8221; menu. Being a developer, the good thing about Apple and for that matter the iOS is, one does not code for adding settings item for notifications. It is done automatically for you by the OS (Operating System). All this magic happens, when you as a developer, makes a &#8220;certificate&#8221; for the application in Apple developer&#8217;s portal for the application saying &#8220;this application used notification&#8221;. Simple and elegant.</p>
+<p>The major difference  from developer&#8217;s point, between local notification and push notification is local notification is scheduled. That means, we can not show a notification if certain things happen in the application. Once application goes to background, we lost power as a developer to do anything at all with that application. So local notifications can only be scheduled for a normal application (for music streaming applications we do get a little more control). If at all we have to notify the user on certain data change, we have to fall back to push notifications. This one is pushed by Apple Push Notification server. Though, there are third party services which can push data, but all of the data push to an users device route through Apple Push Notification server.<br />
+The last thing to note is Push notifications are created on the server and pushed to the device, at max, upon tapping the notification, the underlying application can be brought to foreground and thats all one can do as a developer.</p>
+<p>Tips for phonegap developers :<br />
+1. There are two different official plugins (one for local and one push notification), but then these plugins are not always up to date or might not support your version of the phonegap(cordova), do some reading before you settle down with the plugins.<br />
+2. The third party service providers (for push notification) might have their own plugins (a lot of do have), its better to use their plugins if you are developing upon their infrastructure.</p>
+<p>Tip for push notification :<br />
+Make sure you are creating proper certificate with &#8220;push notification service&#8221; enabled at &#8220;Apple developer portal&#8221; and then using a profile on XCode which uses that certificate.</p>
+<p>Some push notification servers are<br />
+1. <a href="http://www.pushwoosh.com">http://www.pushwoosh.com</a><br />
+2. <a href="http://www.xtify.com">http://www.xtify.com</a><br />
+3. <a href="https://pushwizard.com">https://pushwizard.com</a></p>
+<p>Would like to know if anything I am missing here, I am putting things here as I am doing hands-on with this iOS &#8220;notifications&#8221; for the first time.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/ios" rel="tag">iOS</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/ipad" rel="tag">ipad</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/iphone" rel="tag">iphone</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/objectivec" rel="tag">objectiveC</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1184 -->
+
+				
+					
+	<article id="post-1168" class="post-1168 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-mobile category-opensource category-tutorial tag-css3 tag-html5 tag-javascript tag-mobile">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1168" title="Permalink to Things to consider for Cordova (phonegap) development" rel="bookmark">Things to consider for Cordova (phonegap) development</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1168" title="11:58 am" rel="bookmark"><time class="entry-date" datetime="2013-03-25T11:58:39+00:00">March 25, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This came to me as a learning from my first <a href="http://cordova.apache.org/">Cordova</a>(phonegap) application development.<br />
+The first thing one comes across while developing in Phonegap is &#8220;the need for a GUI lib&#8221; and the first thing to get in a search result is jQuery, its mobile version and the UI lib. There are many other good libs out there, but this one seems quite ok. While one may choose to use a UI lib or build own lib its up to the developer. In my experience its easy to get started with jQueryMobile and its UI, which uses &#8220;Theme roller&#8221; to theme the UI.<br />
+If one is using jQueryMobile then the trick is to try and solve all the UI problems with this lib itself (not hacking the CSS and JS all over the place in the project). That way the performance will be more and pain to solve all the UI problems is less.</p>
+<p>One can just start to make one Cordova application without any libraries, but to be productive soon, the minimum required libraries are<br />
+1. <a href="http://jquery.com/">jQuery</a><br />
+2. <a href="http://jquerymobile.com/">jQueryMobile</a><br />
+3. <a href="http://cordova.apache.org/">cordova</a></p>
+<p>Now the most important library which might not be required for the project as a project dependency but is a real time saver is<br />
+1. <a href="http://underscorejs.org/">UnderscoreJS</a><br />
+After some playing around with the library and from the suggestion from the community I found <a href="http://lodash.com/">Lo-Dash</a> library, which is a drop-in replacement for UnderscoreJS with performance enhancements. So I would recommend using<br />
+1. <a href="http://lodash.com/">Lo-Dash</a></p>
+<p><strong>Now to coding tips</strong>, if one knows the &#8220;scope&#8221; and &#8220;this&#8221; in javascript, then writing javascript applications are just fun. So prepare yourself with javascript and how it works, so as to make your life easier developing the application.</p>
+<p><strong>Target platform and the library support :</strong><br />
+The current Cordova lib might not support your required target platform !! Yeah, that is another thing which might take up sometime to know in the beginning. With each release these libraries kind of deprecate support for old platforms, so check that out in the beginning itself.<br />
+The same goes for jQuery and jQueryMbile. Check out whether the latest version of the library supports your target platform.</p>
+<p><strong>Native Notifications in Cordova is not supported :</strong><br />
+Cordova (phonegap) does not support native notifications. It only supports &#8220;alerts&#8221;,&#8221;confirm&#8221; (kind of alert only),&#8221;beep&#8221;(sound) and &#8220;vibrate&#8221; (device vibration). But then if you expect to do &#8220;alert&#8221; notification as iOS and Android devices do (like showing the alerts to user when the application is running in background), then Cordova (phonegap) does not help. One has to write native libraries in native languages and call them from javascript through Cordova.</p>
+<p><strong>jQuery tips :</strong><br />
+<strong>Adding an element to a page and displaying it :</strong><br />
+jQuery &#8220;<a href="http://api.jquery.com/append/">append()</a>&#8221; and &#8220;<a href="http://api.jquery.com/prepend/">prepend()</a>&#8221; does not update the UI (or DOM), so the added elements are not visible by default. we can hack it by dispatching a jQuery event called &#8220;create&#8221;, the code will look as below</p>
+<pre lang='javascript'>
+$("#p_4_content").prepend("hello World").trigger( "create" );
+</pre>
+<p>That will tell jQuery to render the UI again, resulting in displaying the added item.</p>
+<p><strong>Defining EventHandler Scope :</strong><br />
+Another nice thing is calling the event handler in required &#8220;scope&#8221;. The jQuery library provides a handy method for adding event event handlers as</p>
+<pre lang='javascript'>
+$('#id_btn').on( 'tap', onBtnTapped );
+</pre>
+<p>But then it will be scoped to the same scope as where its being written. If you are writing things in an Object, you might want to  get the &#8220;scope&#8221; in the handler(which is &#8220;this&#8221;), in order to do that, jQuery provides a &#8220;third&#8221; parameter option, and one can pass the scope in there. The optional parameter is at the middle instead of at the end (as comparing to other object oriented programming convention)!! But then its the way to go. So the modified code will look as below</p>
+<pre lang='javascript'>
+$('#id_btn').on( 'tap', this, onBtnTapped ); //Look at the middle parameter
+//and the handler code looks as below
+onBtnTapped :function(event){
+    	//just saving the scope, may be we need it in future here
+    	var that = event.data; //here event.data=this (which we passed as second param)
+    }
+</pre>
+<p>That way inside the handler  we can get the &#8220;scope&#8221; as below</p>
+<pre lang='javscript'>
+var that = event.data;
+</pre>
+<p>The second parameter sent while binding the handler to the event, can be got inside the event handler as &#8220;event.data&#8221;. Since we are just passing &#8220;this&#8221;, we can get that in the handler as the example shown above.</p>
+<p><strong>Writing the EventHandler :</strong><br />
+Well, now the trick writing an eventhandler without making the application behave unreasonably is a challenge. It might sound silly but it is not. If you write an event handler as</p>
+<pre lang='javascript'>
+onBtnTapped: function(event){
+    	//Do something
+    }
+</pre>
+<p>Then its bound to get in your way of the behavior of your application. The jQuery fix is to do a &#8220;return false&#8221; in all the handlers. But then that might not be the case of your handler as that might return in between the code itself. So the fix is make a call to &#8220;preventDefault&#8221; as soon as you are inside the handler method. the modified code will look as below</p>
+<pre lang='javascript'>
+onBtnTapped: function(event){
+        event.preventDefault();
+    	//Do something
+    }
+</pre>
+<p>That is the start, I will post more tips as I fight through the scenarios.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/mobile" rel="tag">mobile</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1168 -->
+
+				
+					
+	<article id="post-1163" class="post-1163 post type-post status-publish format-standard hentry category-inspiration category-life category-saumya tag-inspiration tag-life">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1163" title="Permalink to Lets Code." rel="bookmark">Lets Code.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1163" title="10:57 pm" rel="bookmark"><time class="entry-date" datetime="2013-02-26T22:57:49+00:00">February 26, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><iframe width="560" height="315" src="http://www.youtube.com/embed/dU1xS07N-FA?rel=0" frameborder="0" allowfullscreen></iframe></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/inspiration" rel="tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/life" rel="tag">life</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1163 -->
+
+				
+					
+	<article id="post-1160" class="post-1160 post type-post status-publish format-standard hentry category-javascript category-opensource tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1160" title="Permalink to BackboneJS : the basics" rel="bookmark">BackboneJS : the basics</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1160" title="1:06 am" rel="bookmark"><time class="entry-date" datetime="2013-02-12T01:06:14+00:00">February 12, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This is my first javascript framework for application development and this post is supposed to be for anyone who is just beginning with this framework. While I am still learning this framework, the points here should make one comfortable at least to get started in learning the framework itself.<br />
+First things first, <a href="http://www.saumyaray.com/research_examples/js/01_backboneJS-basics/" target="_blank">here is a slide show of a talk I had given to a group regarding BackboneJS</a>. <a href="https://github.com/saumya/backboneJS-basics-xmlLoading" target="_blank">The source code for the same slideshow (which is made with backboneJS itself) is available here</a>.<br />
+Well, to start with BackboneJS in itself provides a structure to the web application development. It is heavily dependent on UnderscoreJS and RequireJS. RequireJS allows us to use javascript modules and load script files at one point in a .js file rather than the script tags in an html document. UnderscoreJS provides very nifty utility to ease our javascript development.<br />
+BackboneJS is supposed to be a model-view-controller framework and while we can call it like that but the real &#8220;C&#8221; here stands for &#8220;Collection&#8221;.<br />
+The view class here in BackboneJS is kind of controller. Once got the data, it can make other views or can decide which view to render at what position on the html page. There is a concept called &#8220;template&#8221; and Underscore gives that facility to us as we are developing in BackboneJS. These templates are kind of placeholders for content and once we got data, we can render html with the help of these templates.<br />
+Collection class actually is a glue between frontend and backend as its responsible to get data from server and set data in server.<br />
+I would say it a quite straight forward framework, though it takes some time to get used to the behavior of the framework. Who come to javascript frameworks for the first time will take sometime to get used to it. Though the documentation is quite good in the official website, there are things which are not documented, so it will take some time to search and undertand the concept. Overall I would say an elegant framework.<br />
+Happy coding</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1160 -->
+
+				
+					
+	<article id="post-1151" class="post-1151 post type-post status-publish format-standard hentry category-html5 category-javascript category-mobile category-tutorial tag-coffeescript tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1151" title="Permalink to CoffeeScript, the first taste" rel="bookmark">CoffeeScript, the first taste</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1151" title="12:08 am" rel="bookmark"><time class="entry-date" datetime="2013-02-01T00:08:01+00:00">February 1, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>On my path inside javascript land, I came across <a href="http://coffeescript.org/" target="_blank">CoffeeScript</a> which compiles to JavaScript. One week of handson to the language and I tried to write a simple phonegap application with CoffeeScript taking jQueryMobile into action. The whole project is on github, the whole of the CoffeeScript is here for your reference.<br />
+<script src="https://gist.github.com/4685061.js"></script><br />
+First thing I liked about the language is, it compiles to a very decent, rather I would say the best handwritten JavaScript. That itself is a huge advantage if one wants to learn JavaScript.<br />
+The code is modular and compiler is straight forward so its an immediate likable thing if one wants to code ahead in JavaScript. The community is vibrant and the official documentation itself is quite nice.<br />
+It is a must try for any javascript developer.</p>
+<p>Things to keep in mind, and must be kept in mind while coding in CoffeeScript, are<br />
+<strong>1. The indentation should be exactly same<br />
+2. Each function returns the lastline of code in the function </strong>(I faked it in above code by writing &#8220;null&#8221; at the end of each function)</p>
+<p>Happy Coffee</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/coffeescript" rel="tag">coffeeScript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1151 -->
+
+				
+					
+	<article id="post-1226" class="post-1226 post type-post status-publish format-standard hentry category-javascript category-mobile category-opensource category-tutorial tag-dartlang tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1226" title="Permalink to Some interesting Dartlang packages" rel="bookmark">Some interesting Dartlang packages</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1226" title="5:10 pm" rel="bookmark"><time class="entry-date" datetime="2013-01-16T17:10:26+00:00">January 16, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>There are various packages with different intentions are available to <a href="http://www.dartlang.org" target="_blank">Dartlang</a> in a global space known as &#8220;<a href="http://pub.dartlang.org" target="_blank">pub</a>&#8220;. At present there are two of these packages which seems interesting to me.</p>
+<ol>
+<li><a href="http://pub.dartlang.org/packages/dartflash" target="_blank">Dartflash</a></li>
+<li><a href="http://pub.dartlang.org/packages/rikulo" target="_blank">Rikulo</a></li>
+</ol>
+<p>As you might be already guessing that &#8220;<a href="http://www.dartflash.com/" target="_blank">Dartflash</a>&#8221; is a port of Flash API to Dartlang. That makes any flash developer instantly play with &#8220;canvas&#8221; element of HTML5. So yes, its not working on the DOM of the page rather works on the &#8220;canvas&#8221; element of the DOM.<br />
+The second one, that is &#8220;Rikulo&#8221; seems to promise a lot. It says, it can create &#8220;cross-platform web and native mobile applications using HTML5&#8243;, while its true to create web applications, but the native mobile application is done through, you guessed it right, phonegap(now known as <a href="http://cordova.apache.org/" target="_blank">CORDOVA</a>). And now there is another dart package,which is the port of CORDOVA in Dartlang. Its known as</p>
+<li><a href="https://github.com/rikulo/gap" target="_blank">Rikulo Gap</a></li>
+<p>That means, one has to have the &#8220;Phone Gap&#8221; development environment ready to start doing mobile development.<br />
+Rikulo works in DOM manipulation and gives a displaylist hierarchy (if one compare it with flashplayer displaylist, its similar in concept and how it works).</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/dartlang" rel="tag">dartlang</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1226 -->
+
+				
+					
+	<article id="post-1048" class="post-1048 post type-post status-publish format-standard hentry category-opensource category-saumya tag-haxe tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1048" title="Permalink to RayTrace v4.0.0 is released" rel="bookmark">RayTrace v4.0.0 is released</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1048" title="6:17 am" rel="bookmark"><time class="entry-date" datetime="2012-04-16T06:17:32+00:00">April 16, 2012</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Well, this release is mostly an UI update. There is a major functionality update of this new release is the &#8220;Advanced&#8221; settings. If you are using the default mode, it will work as it was working previously.<br />
+With advanced mode, one need to change two things. One is the &#8220;raytrace.as&#8221; which comes budled with this application. Inside this file one has to put the connection name. This name could be any string, it could be your project name, version name or your name, but then remember this name so as to put the same name in advanced setting text input (thats the second setting). After that its as usual process.<br />
+<a href="http://www.box.com/s/e46818183eb422c876f1">The release version can be found here for direct download and use</a>. The source code is up in github.</p>
+<p>Happy Haxe -ing</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1048 -->
+
+				
+					
+	<article id="post-1042" class="post-1042 post type-post status-publish format-standard hentry category-opensource category-saumya tag-haxe tag-nme tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1042" title="Permalink to An IDE for HAXE and NME for every OS" rel="bookmark">An IDE for HAXE and NME for every OS</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1042" title="12:03 am" rel="bookmark"><time class="entry-date" datetime="2012-04-09T00:03:21+00:00">April 9, 2012</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>The long wait is over! The search for a perfect IDE for <a href="http://haxe.org/">Haxe</a> and <a href="http://www.haxenme.org/">NME</a> is finally over. Thanks to the hard work of <a href="http://www.joshuagranick.com/blog/">Joshua Granick</a>. He is <a href="http://www.joshuagranick.com/blog/2012/04/06/flashdevelop-for-maclinux-part-1/">still in development of this feature</a>, but for me I found it perfectly alright to use it in my Mac OSX.<br />
+So the IDE is <a href="http://monodevelop.com/">Mono Develop</a> and making it a Haxe and NME IDE is just enabling the addin for it. Presently its a manual process but thats ok I think. <a href="https://github.com/jgranick/md-haxebinding">The Addin is on the github</a>.<br />
+Everything is just straight forward. Just a little thing on command line is to create a .hxml file in OSX. I am not sure if thats the case in other OSs. Navigate to your newly created project folder from Terminal and fire up the command below (where {projectName} should be replaced with your own project name)</p>
+<pre lang=''>
+haxelib run nme display {projectName}.nmml mac>{projectName}.hxml
+</pre>
+<p>Thats all to it. Just open up MonoDevelop and enjoy code hilight, code hinting and compilation from inside the IDE.</p>
+<p>Happy haXe -ing</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nme" rel="tag">NME</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1042 -->
+
+				
+					
+	<article id="post-1039" class="post-1039 post type-post status-publish format-standard hentry category-opensource category-saumya tag-haxe tag-nme tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1039" title="Permalink to RayTrace v3.0.0" rel="bookmark">RayTrace v3.0.0</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1039" title="11:51 pm" rel="bookmark"><time class="entry-date" datetime="2012-03-22T23:51:34+00:00">March 22, 2012</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>A new release of RayTrace, the simplest flash logger. Its made with haXe and compiled with NME for SWF output. </p>
+<p>The feature list is as below<br />
+1. Stop and start button (To start the logger and stop the logger)<br />
+2. A sightly improved GUI (some colors at last)</p>
+<p>With that here is the link to the <a href="http://www.box.com/s/ae0207de17191b5862bf">compiled code (SWF and the lib for directly use in your project)</a> and here is the github <a href="https://github.com/saumya/rayTrace">source code</a>.</p>
+<p>Happy haXe -ing</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nme" rel="tag">NME</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1039 -->
+
+				
+						<nav id="nav-below">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/author/saumya/page/4" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/author/saumya/page/2" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+			
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

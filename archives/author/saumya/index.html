@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>saumya | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="archive author author-saumya author-2 custom-background two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				
+				<header class="page-header">
+					<h1 class="page-title author">Author Archives: <span class="vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="saumya" rel="me">saumya</a></span></h1>
+				</header>
+
+				
+						<nav id="nav-above">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/author/saumya/page/2" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"></div>
+		</nav><!-- #nav-above -->
+	
+				
+								
+					
+	<article id="post-1283" class="post-1283 post type-post status-publish format-standard hentry category-haxe category-tutorial tag-game-development tag-haxe">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1283" title="Permalink to Getting started with HaxeFlixel" rel="bookmark">Getting started with HaxeFlixel</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1283" title="2:56 am" rel="bookmark"><time class="entry-date" datetime="2014-01-04T02:56:06+00:00">January 4, 2014</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This is just another haxelib if we consider the installation process. Quite straightforward in that regard.</p>
+<pre lang="haxe">
+haxelib install flixel
+</pre>
+<p>Well, that does not end there. With it comes some supporting libraries and they are mandatory to install. These are as below,</p>
+<pre lang="haxe">
+flixel-tools
+flixel-templates
+flixel-demos
+flixel-addons
+</pre>
+<p>With those installed, one is good to go with haxeFlixel.<br />
+The first thing to do is setup the environment. For that simply run the command as</p>
+<pre lang="haxe">
+haxelib run flixel-tools setup
+</pre>
+<p>Now, if you just run</p>
+<pre lang="haxe">
+haxelib run flixel-tools
+</pre>
+<p>that will display the options available for this command.<br />
+Once setup is done, the command &#8220;flixel&#8221; can directly be invoked, though the full command is also available as &#8220;haxelib run flixel-tools&#8221; . While its suggested that one use the shortest command, I personally feel to use the long one.</p>
+<p>Now if at all one needs help, just type help before the command as below</p>
+<pre lang="haxe">
+haxelib run flixel-tools help template
+</pre>
+<p>Well, next is to create some sample projects. Those would be done with the command</p>
+<pre lang="haxe">
+haxelib run flixel-tools create
+</pre>
+<p>Once run, the command prompt will ask you which demo to create, just put in the number, which ever you want and that will be created.</p>
+<p>Finally to create a new project, the command is</p>
+<pre lang="haxe">
+haxelib run flixel-tools template -n "HelloProject"
+</pre>
+<p>That will create a new HaxeFlixel project.</p>
+<p>Happy Coding.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/haxe" title="View all posts in haxe" rel="category tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/game-development" rel="tag">game development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1283 -->
+
+				
+					
+	<article id="post-1280" class="post-1280 post type-post status-publish format-standard hentry category-android category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-opensource tag-development tag-phonegap">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1280" title="Permalink to Phonegap is not ready yet." rel="bookmark">Phonegap is not ready yet.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1280" title="4:49 pm" rel="bookmark"><time class="entry-date" datetime="2014-01-03T16:49:51+00:00">January 3, 2014</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This may sound like  not true, but actually Phonegap(Cordova) is not ready yet for the prime-time. The point is something or the other will always get in your way if you try to do a little more than basic UI.<br />
+It&#8217;s a pity to see that Phonegap has reached a version number of 3.3, still feels uncomfortable to work with.<br />
+While for a basic static page navigation it may be a solution to go for, for mobile, but think twice if the UI is becoming even a little more than basic.</p>
+<p>A simple childbrowser (inAppBrowser) is failing in the current version and I found people are finding workarounds or solutions to fix this. So the point is not that its fixable but its not dependable.<br />
+Again, from version 3.0.0 on-wards, one need to have an internet connection to start building! Well, its NPM and NodeJS, I know, but its not comfortable at all rather confusing.</p>
+<p>The best Phonegap version as I know is 2.8.0. Its the stable of all.<br />
+If at all you are trying to develop on Phonegap, stick to this version(2.8.0) until they release a stable version again.</p>
+<p>Happy coding.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/android" title="View all posts in android" rel="category tag">android</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/development" rel="tag">development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/phonegap" rel="tag">phonegap</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1280 -->
+
+				
+					
+	<article id="post-1275" class="post-1275 post type-post status-publish format-standard hentry category-life category-misc category-opensource tag-opensource tag-technology">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1275" title="Permalink to Internet will change again" rel="bookmark">Internet will change again</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1275" title="2:05 am" rel="bookmark"><time class="entry-date" datetime="2014-01-02T02:05:09+00:00">January 2, 2014</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>If you remember those days, when one has to wait for an email to open, then for sure you know that its changed now. Not only fast internet, but the central delivery system, has changed from one server to cloud servers. And that is perfect for the problem in hand. Now all the data is residing in someone&#8217;s server(ok, cloud server). In the beginning, it felt perfect as it syncs to all the devices and one seamless experience for the user. With this, comes the security breach and that has already showed its effect in last year.<br />
+Fortunately, world is a better place. Individuals and startups have already acted upon this. There are so many cool products and services being tried last year that we may start to see the fruits starting from this year.<br />
+The philosophy has changed from &#8220;mobile first app&#8221; to &#8220;offline first app&#8221;, from &#8220;connected app&#8221; to &#8220;noBackend app&#8221;, its a revolution again.<br />
+The very chances are the experience may remain the same for the user, but the underlaying data and functionality of the applications are going to change again as it changed first from single server to cloud servers, now it would be single again, but only for your own data (So, it would be Re-Decentralizing).</p>
+<p>redecentralize : <a href="http://redecentralize.org/about/">taking back the net</a></p>
+<p>Well, exciting beginning for the year. Below is the list of, some of the many initiatives, which will change the internet again.</p>
+<p><a href="https://arkos.io/">arkos.io : Your data, your rules.</a><br />
+<a href="https://github.com/al3x/sovereign">sovereign : build and maintain your own personal cloud</a><br />
+<a href="http://www.ansibleworks.com/">Ansible : Ansible is the simplest way to automate IT.</a><br />
+<a href="https://www.mailpile.is/">mailpile : A modern, fast web-mail client</a><br />
+<a href="http://meetlima.com/launch/">Lima : Lima unifies the memory of your devices so they can act as one. Just for you.</a><br />
+<a href="http://owncloud.org/">owncloud : self-controlled free and open source cloud.</a><br />
+<a href="https://www.cozycloud.cc/">cozycloud : your personal cloud</a><br />
+<a href="http://cozy.io/">Cozy: A personal Cloud you can host, hack and delete</a></p>
+<p><a href="http://redecentralize.org/">Redecentralize · taking back the net</a></p>
+<p><a href="http://offlinefirst.org/">offlinefirst</a><br />
+<a href="http://nobackend.org">nobackend</a></p>
+<p><a href="http://backendless.com/">Backendless</a><br />
+<a href="http://deployd.com/">deployd, THE SIMPLEST WAY TO BUILD AN API.</a><br />
+<a href="https://www.firebase.com/">Firebase</a><br />
+<a href="http://hood.ie/">Hoodie, VERY FAST WEB APP DEVELOPMENT</a><br />
+<a href="http://www.kinvey.com/">Kinvey</a><br />
+<a href="https://parse.com/">Parse</a><br />
+<a href="http://remotestorage.io/">remotestorage, An open protocol for per-user storage</a><br />
+<a href="http://sockethub.org/">sockethub</a><br />
+<a href="https://unhosted.org/">unhosted : freedom from web 2.0&#8242;s monopoly platforms</a></p>
+<p>This <a href="http://redecentralize.org/interviews/2013/11/03/08-bjarni-mailpile.html">interview with Mailpile founder</a> seems a nice start if you are wondering whats coming in near future.</p>
+<p>Happy new year,<br />
+Cheers</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/misc" title="View all posts in misc" rel="category tag">misc</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/technology" rel="tag">technology</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1275 -->
+
+				
+					
+	<article id="post-1270" class="post-1270 post type-post status-publish format-standard hentry category-life category-saumya tag-life tag-saumya">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1270" title="Permalink to Hello 2014" rel="bookmark">Hello 2014</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1270" title="5:23 pm" rel="bookmark"><time class="entry-date" datetime="2014-01-01T17:23:32+00:00">January 1, 2014</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Happy new year 2014.</p>
+<p>Wishing all you a very happy, healthy and prosperous new year.</p>
+<p>Its one of those times, when one looks back before moving towards future.<br />
+Well 2013,the year that was.</p>
+<p>It started with shifting gears officially for me. Working partly with Javascript for a long time now, but this time its official and officially I started working on Javascript projects in my current organisation. So a full year of Javascript and everything Javascript. Yeah, a lot ground covered. So the Javascript based, Phonegap (cordova) was for me in the beginning, officially for a project for iOS and finally got approved and available in AppStore. There was a time when Phonegap based plugin for Push Notification did not work on iOS, so updated the Phonegap Push Notification Plugin for iOS and push it to Github. And to my surprise, people actually forked it and made it better ! Awesome experience to give back, learn and grow.<br />
+On my personal work, added my phonegap based Mobile projects in GooglePlay store for Android.</p>
+<p>Apart from mobile and Phonegap, for browser based application, I used NodeJS, MongoDB and BackboneJS. Learnt how to host in Heroku and Github for NodeJS based applications. Well, on serverside frameworks, I picked up Express for NodeJS and an application is pushed to Heroku.</p>
+<p>At one point, I was evaluating Dart-lang, CoffeeScript and TypeScript for projects. So a lot of learning there and made simple projects with Dart-lang. Its a sweet language, I must say.</p>
+<p>On BDD, I used Jasmine for my application. For build process, I started using GruntJS. The complete Javascript based environments kept me busy learning and at the same time gave me a lot of happiness and excitement in doing so.</p>
+<p>On later part of the year 2013, I was mentoring a fellow developer in iOS for a native ObjectiveC based iOS project. I am so happy to see his progress and that made me confident that I can do more than just doing ObjectiveC projects.</p>
+<p>Personally, I was working on HAXE and LIME (OpenFL) all through out the year. That made me push my app to Tizen AppStore appart from iOS AppStore and Google PlayStore. It is such a nice experience to make cross-platform development fun.</p>
+<p><a href="http://saumya.github.io/">I put together all my project links at one page to refer.</a></p>
+<p>2013 was another eventful year for me, I got the sweet gift of my life. Me and wife are blessed with a baby boy &#8220;Dibyamshu&#8221;.</p>
+<p>So this year, 2014 starts with a bang. While all these technologies maturing and me having real experience on these, it feels a lot is possible. On the other side, I really hope that 2014 would be the beginning of the playful years to come, making me busy with Dibyamshu.</p>
+<p>Cheers.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/life" rel="tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/saumya" rel="tag">saumya</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1270 -->
+
+				
+					
+	<article id="post-1265" class="post-1265 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-opensource category-saumya tag-game tag-haxe tag-ios tag-openfl">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1265" title="Permalink to My first Tizen store approved game" rel="bookmark">My first Tizen store approved game</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1265" title="9:14 pm" rel="bookmark"><time class="entry-date" datetime="2013-12-09T21:14:49+00:00">December 9, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Its a pleasing experience to get something on the stores, which are more stricter or unknown. Being said that, it is exciting when something is out of the doors from those stores. It was the same feeling for me when my first Apple store approval has happened.<br />
+So the game which was written for iOS devices is modified to fit in all the platforms and released. The original &#8220;catch them all&#8221; game is ported to all the platforms with the help of OpenFL and HAXE. The name has been changed to &#8220;Catch Them All E&#8221;, &#8220;E&#8221; is for everywhere.<br />
+First, it was for the <a href="http://www.tizen.org/">Tizen App Store</a> and the wait. Its not much but have to wait for 3 days and finally its approved and available in the Store. Thats such a nice experience and could not have been possible without <a href="http://www.joshuagranick.com/">Joshua</a>.</p>
+<p>Well, then I did some modifications and ported it to HTML5. Though, OpenFL directly provides conversion, there are still things to consider while developing for different platforms. <a href="http://saumya.github.io/">This version is available here</a>.</p>
+<p>Not too far behind, I ported it to iOS and submitted Apple store. Well it took 7 days and its on the <a href="https://itunes.apple.com/us/app/catch-them-all-e/id771815668?mt=8#!">Apple App store</a> too.</p>
+<p>I must say, without <a href="http://www.openfl.org/">OpenFL</a> and <a href="http://haxe.org/">HAXE</a> I could not have achieved all this.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/game" rel="tag">game</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/ios" rel="tag">iOS</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/openfl" rel="tag">openfl</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1265 -->
+
+				
+					
+	<article id="post-1262" class="post-1262 post type-post status-publish format-standard hentry category-life category-saumya tag-life">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1262" title="Permalink to Be Happy : Stop, Look, Go." rel="bookmark">Be Happy : Stop, Look, Go.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1262" title="10:32 am" rel="bookmark"><time class="entry-date" datetime="2013-11-29T10:32:07+00:00">November 29, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/UtBsl3j0YRQ?rel=0" frameborder="0" allowfullscreen></iframe></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/life" rel="tag">life</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1262 -->
+
+				
+					
+	<article id="post-1256" class="post-1256 post type-post status-publish format-standard hentry category-opensource category-saumya category-tutorial tag-git tag-opensource tag-tutorial">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1256" title="Permalink to Getting git gui back on OSX Mavericks" rel="bookmark">Getting git gui back on OSX Mavericks</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1256" title="2:42 am" rel="bookmark"><time class="entry-date" datetime="2013-11-15T02:42:31+00:00">November 15, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I have been using git and its default gui with</p>
+<pre lang="git">
+git gui
+</pre>
+<p>for almost from the beginning of my git usage. While everything was smooth for a long long time, recent update to OSX Mavericks, broke that experience. Well, for a new OS, its good that they have already installed a version of git with the OS itself, so new comers do not have to worry but just use git. But this git is from Apple and does not have the default &#8220;git gui&#8221;.<br />
+Now following the old method, I tried to install git again by downloading it from<br />
+<a href="http://git-scm.com/downloads">git-scm</a> site. While everything went well and the install was smooth, I still does not get &#8220;git gui&#8221; from the command-line.<br />
+The default Apple-git was firing up always instead of the &#8220;git-scm&#8221; version. The trick here is to add the &#8220;git-scm&#8221; version to the system path. Now that can be done in many ways for a MAC, I did it, by modifying the file &#8220;.bash_profile&#8221; (dot bash_profile) the name begins with a DOT and its a system file present at the &#8220;~/&#8221; location.</p>
+<p>The paths in OSX may be surprising at first if you are coming from windows environment, but just remember<br />
+/ -is the root folder of the OSX<br />
+~/ -is the root folder of the logged-in user</p>
+<p>The line to add in the end of the file, is as below</p>
+<pre lang="git">
+export PATH="/usr/local/git/bin:$PATH"
+</pre>
+<p>Thats all, I closed the Terminal window and re-opened it to get my favorite &#8220;git gui&#8221;.<br />
+Happy Coding.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/git" rel="tag">git</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1256 -->
+
+				
+					
+	<article id="post-1253" class="post-1253 post type-post status-publish format-standard hentry category-inspiration category-life tag-inspiration">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1253" title="Permalink to Another inspiring talk by Joshua" rel="bookmark">Another inspiring talk by Joshua</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1253" title="3:27 am" rel="bookmark"><time class="entry-date" datetime="2013-10-28T03:27:31+00:00">October 28, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><iframe src="//player.vimeo.com/video/77785831" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/inspiration" rel="tag">inspiration</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1253 -->
+
+				
+					
+	<article id="post-1249" class="post-1249 post type-post status-publish format-standard hentry category-ipad-development category-iphone-development category-javascript category-mobile category-objectivec category-opensource tag-cordova tag-ios tag-ipad tag-iphone tag-phonegap">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1249" title="Permalink to Social plugin for Phonegap 2.6 and up" rel="bookmark">Social plugin for Phonegap 2.6 and up</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1249" title="4:40 pm" rel="bookmark"><time class="entry-date" datetime="2013-08-09T16:40:19+00:00">August 9, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>In my search to have the iOS 6 default social sharing plugin, I <a href="https://github.com/bfcam/phonegap-ios-social-plugin">landed up at this page</a>. While everything seems right for this plugin, I somehow faced some problems in the UX. Thought would look a little deeper into it and found that this plugin relies upon the old plugin architecture of Phonegap. It still works, but then if it does not, you know know why.<br />
+Now to implement social sharing in my project, I have done a quick round of update to the plugin. Its working in my phonegap version 2.6. And that should work on Phonegap 3 as well, as the new plugin implementation has not changed after version 2.0.<br />
+<a href="https://github.com/saumya/phonegap-ios-social-plugin">Here is the github link for the new plugin.</a><br />
+While currently this plugin only shares the link and the message, you have to send a third parameter as an empty string for the image parameter. I will do the code cleanup and fix as I get some time to look into it. For the time being, its ready to use in new Phonegap versions.</p>
+<p>Happy coding <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cordova" rel="tag">cordova</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/ios" rel="tag">iOS</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/ipad" rel="tag">ipad</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/iphone" rel="tag">iphone</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/phonegap" rel="tag">phonegap</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1249 -->
+
+				
+					
+	<article id="post-1245" class="post-1245 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource category-tutorial tag-css tag-css3 tag-javascript tag-js">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1245" title="Permalink to GruntJS for CSS minification" rel="bookmark">GruntJS for CSS minification</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1245" title="3:39 pm" rel="bookmark"><time class="entry-date" datetime="2013-08-05T15:39:46+00:00">August 5, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>With GruntJS, as we saw in the last post, we can minify javascript files, the next in line is the CSS files.<br />
+<a href="https://github.com/saumya/gruntJSBasic">I have updated the Github repo for using CSS along with Javascript files.</a><br />
+The basic setup is not different from javascript setup. Here we have to use</p>
+<pre lang="">
+grunt-contrib-cssmin
+</pre>
+<p>The confusing part is, for minification we have a lot of options in NPM, and one of them is</p>
+<pre lang="">
+grunt-contrib-mincss
+</pre>
+<p>So at first I was confused and it did not work for me. Seems like &#8220;mincss&#8221; is old and have not been updated for a long time. So I am with &#8220;cssmin&#8221; and that just works.<br />
+As usual, install cssmin locally, with</p>
+<pre lang="">
+npm install grunt-contrib-cssmin
+</pre>
+<p>A note is, if you have &#8220;package.json&#8221; and &#8220;Gruntfile.js&#8221; file in the same location, take those files somewhere else while installing new packages from NPM, else it throws some errors. Once installation is complete, bring those files back and that should work as it was before.</p>
+<p>Happy grunting.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/js" rel="tag">js</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1245 -->
+
+				
+						<nav id="nav-below">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/author/saumya/page/2" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"></div>
+		</nav><!-- #nav-above -->
+	
+			
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

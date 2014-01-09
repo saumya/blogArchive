@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>css | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="archive tag tag-css tag-31 custom-background two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">Tag Archives: <span>css</span></h1>
+
+									</header>
+
+						<nav id="nav-above">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/tag/css/page/2" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"></div>
+		</nav><!-- #nav-above -->
+	
+								
+					
+	<article id="post-1245" class="post-1245 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource category-tutorial tag-css tag-css3 tag-javascript tag-js">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1245" title="Permalink to GruntJS for CSS minification" rel="bookmark">GruntJS for CSS minification</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1245" title="3:39 pm" rel="bookmark"><time class="entry-date" datetime="2013-08-05T15:39:46+00:00">August 5, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>With GruntJS, as we saw in the last post, we can minify javascript files, the next in line is the CSS files.<br />
+<a href="https://github.com/saumya/gruntJSBasic">I have updated the Github repo for using CSS along with Javascript files.</a><br />
+The basic setup is not different from javascript setup. Here we have to use</p>
+<pre lang="">
+grunt-contrib-cssmin
+</pre>
+<p>The confusing part is, for minification we have a lot of options in NPM, and one of them is</p>
+<pre lang="">
+grunt-contrib-mincss
+</pre>
+<p>So at first I was confused and it did not work for me. Seems like &#8220;mincss&#8221; is old and have not been updated for a long time. So I am with &#8220;cssmin&#8221; and that just works.<br />
+As usual, install cssmin locally, with</p>
+<pre lang="">
+npm install grunt-contrib-cssmin
+</pre>
+<p>A note is, if you have &#8220;package.json&#8221; and &#8220;Gruntfile.js&#8221; file in the same location, take those files somewhere else while installing new packages from NPM, else it throws some errors. Once installation is complete, bring those files back and that should work as it was before.</p>
+<p>Happy grunting.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/js" rel="tag">js</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1245 -->
+
+				
+					
+	<article id="post-1194" class="post-1194 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource category-tutorial tag-book tag-css tag-css3 tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1194" title="Permalink to First book review : Aptana Studio Beginner&#039;s guide" rel="bookmark">First book review : Aptana Studio Beginner&#039;s guide</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1194" title="11:14 am" rel="bookmark"><time class="entry-date" datetime="2013-04-27T11:14:49+00:00">April 27, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This came to me as a surprise that I have been asked to review a book and write something about it. I started of with excitement as to finish the book as soon as possible and write something about it. So here it goes.<br />
+The book : <a href="http://www.packtpub.com/aptana-studio-3-integrated-development-environment-beginners-guide/book" target="_blank">Aptana Studio Beginner&#8217;s Guide</a><br />
+A nice book, as it states from its title. Which is unlikely, is its not only for &#8220;beginners only&#8221;. This is all you need to get started with Aptana studio but in general Eclipse IDE of any kind.<br />
+<a href="http://www.aptana.com/products/studio3" target="_blank">Aptana Studio </a>itself provides a very solid IDE which is both free and opensource. I love this IDE as I do HTML and JS projects with this IDE. The most appealing thing about this IDE is its cross-platform, so one IDE, one experience everywhere. I must say its a must have for anyone who is serious about Javascript development in general.<br />
+Now to get the most out of this nice IDE, this companion book is a must have I would say to get you started and to know what can you do with the IDE.<br />
+This book starts with very basic things as to menus and workspace and then move on to deeper topics as to configure it to suite your working style. After working with this IDE for such a long time, I found this book reveals a lot more which came as surprise to me. Things like saving your own customised look and preferences, making shortcuts, the command-line interface inside the IDE and lot more are covered in detail, from a beginner&#8217;s perspective.</p>
+<p>All in all a nice book to have if you want to get used to Aptana IDE in particular or Eclipse IDE in general.</p>
+<p>Thanks a lot to Kenny Dias from Packt Publishing, who gave me this opportunity to review this book.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/book" rel="tag">book</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1194 -->
+
+				
+					
+	<article id="post-741" class="post-741 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-mobile category-opensource category-tutorial tag-css tag-css3 tag-html tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/741" title="Permalink to HTML5 : Some more details about Canvas" rel="bookmark">HTML5 : Some more details about Canvas</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/741" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-18T01:00:05+00:00">September 18, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I think by now we are moving good on Canvas element and now its time to know some more basics about the canvas element which will get us up and running on the canvas.</p>
+<p>Firstly the co-ordinate system. Well, the origin of the canvas element is at the top-left corner. The x-axis increases its value form left to right from the origin. The y-axis increases its value from top to bottom form the origin. </p>
+<p>Now there is an important concept about Canvas element which can get in our way. That is the resetting of the Canvas element altogether. Resetting means, Canvas comes back to its initial stage, the default settings with which it has been created. And this happens when we set either width or height of the Canvas through our code. Well, we can use that to our advantage also. Suppose we have already drawn a lot of drawing on the Canvas and now we want to clear everything. Then we can just set the width and height of the canvas to its original width and height. Though that does not change the size of the Canvas itself, but it will reset the Canvas to its default state removing all the drawings. Lets say that again, even if we set the width and height of the Canvas element to its own width and height, it will reset the Canvas to its default. This can be an advantageous to us if we use it and at the same time it can be a disadvantageous to us if we overlook the effect.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-741 -->
+
+				
+					
+	<article id="post-738" class="post-738 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-saumya category-tutorial tag-css tag-css3 tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/738" title="Permalink to Javascript : some things to keep an eye on Canvas" rel="bookmark">Javascript : some things to keep an eye on Canvas</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/738" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-17T01:00:37+00:00">September 17, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This came to me as a surprise, when we were doing the last tutorial. If you see the code in detail, we have the code below.</p>
+<pre lang="html">
+<script type="text/javascript" src="js/general.js"></script>
+</pre>
+<p>The above code is not on the head section of the HTML document! Rather it came after everything in the HTML document. I hope its for the Canvas does not get initialised before the code is executed. But moving the script to the last section of HTML document, it worked just fine.<br />
+I hope someone have got better explanation about the effect, but thought its better to share as this very thing took me a while to get it working. After all I am also learning now and sharing my experience at the same time.<br />
+The next thing to keep an eye is the code below on javascript</p>
+<pre lang='javascript'>
+var canvas_one=document.getElementById('board_one');
+</pre>
+<p>The above code is pure javascript without utilising jQuery library. But the same thing can be achieved by the code below</p>
+<pre lang='javascript'>
+var canvas_one=$('#board_one')[0];
+</pre>
+<p>The thing which went wrong for me in the beginning is that I was doing</p>
+<pre lang='javascript'>
+var canvas_one=$('#board_one');
+</pre>
+<p>First I was hoping this should work, but it did not unless I access the zeroth element. Hopefully this also can be explained by some experienced developer, but then as we are going ahead in our learning its better to know how to get the element using jQuery library and its by accessing the zeroth element as below.</p>
+<pre lang='javascript'>
+var canvas_one=$('#board_one')[0];
+</pre>
+<p>Hope that helps someone.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-738 -->
+
+				
+					
+	<article id="post-732" class="post-732 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-mobile category-opensource category-tutorial tag-css tag-css3 tag-html tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/732" title="Permalink to HTML5 : Canvas, an introduction." rel="bookmark">HTML5 : Canvas, an introduction.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/732" title="1:12 pm" rel="bookmark"><time class="entry-date" datetime="2011-09-16T13:12:00+00:00">September 16, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Getting started with the canvas on HTML5 is kind of diving right into the HTML5 world and forgetting anything of past of a web browser. I am not going to talk more about it here, rather I think by this time you already have known this. Instead we will jump into the canvas example right away.<br />
+<a href="http://www.box.net/shared/0fcnu5g8lil39auymp40" target="_blank">Here is the source code of the files for you to download and run.</a><br />
+The HTML code looks as</p>
+<pre lang="html">
+<!DOCTYPE HTML>
+<html>
+	<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+		
+		<link type="text/css" rel="stylesheet" media="screen" href="style/general.css"/>
+		<script type="text/javascript" src="js/jquery-1.6.2.js"></script>
+	</head>
+	<body>
+		<div id="one" class="blockBase">
+			Hello World.
+		</div>
+		<canvas id="board_one" class="blackBoard" width="600" height="200"></canvas>
+		<canvas id="board_two" class="blackBoard" width="600" height="200"></canvas>
+		
+		<script type="text/javascript" src="js/general.js"></script>
+	</body>
+</html>
+</pre>
+<p>We have added two canvas tags in our HTML document. These canvas tags are kind of actual Canvas of or a drawing board. Yes, now we have a proper drawing board in HTML. I have added two canvas tags so as to know that there is no restriction on the number of Canvas tags. Now lets look at the javascript code. It looks like</p>
+<pre lang="javascript">
+$.ready()
+{
+	//first canvas
+	//var canvas_one=$('#board_one')[0];
+	var canvas_one=document.getElementById('board_one');
+	var context_one=canvas_one.getContext("2d");
+	context_one.fillStyle = "#f00";
+	context_one.fillRect(50, 25, 150, 100);
+	//second canvas
+	var canvas_two=$('#board_two')[0];
+	var context_two=canvas_two.getContext("2d");
+	context_two.fillStyle = "#0f0";
+	context_two.fillRect(10, 10, 200, 50);
+	//
+	context_two.beginPath();
+	context_two.arc(300,100,50,0,rads(360),false);
+	context_two.closePath();
+	//
+	// Define some graphics attributes and draw the curves
+	context_two.fillStyle = "#aaa";  // Gray fills
+	context_two.strokeStyle = "blue"; // Stroke lines in blue
+	context_two.lineWidth = 5;       // 5-pixel black (by default) lines
+	context_two.fill();              // Fill the curves
+	context_two.stroke();            // Stroke their outlines
+	
+	//experiement with first canvas
+	context_one.strokeStyle = "blue"; // Stroke lines in blue
+	context_one.fillStyle = "#aaa";
+	context_one.fillRect(300, 50, 50, 100);
+	//
+	// A utility function to convert from degrees to radians
+	function rads(x) { return Math.PI*x/180; }  
+};
+</pre>
+<p>Just open up the HTML file in any web browser to see the drawings in action. And thats simple, is not it! Now we have two rectangles in first canvas and two shapes(one rectangle and a circle) in second canvas.<br />
+The important part here is to understand the drawing board or the Canvas in HTML. Well, the thing is first we get the canvas element in our javascript code.</p>
+<pre lang="javascript">
+var canvas_one=document.getElementById('board_one');
+</pre>
+<p>Now this is not the plane or not the slate where we are going to draw. To get the surface to draw, we have to get that with the code below</p>
+<pre lang="javascript">
+var context_one=canvas_one.getContext("2d");
+</pre>
+<p>This is known as context and can be a 3d context to draw 3d or 2d context to draw 2d. We are getting the 2d context object here known as CanvasRenderingContext2D object. The 3d context object is referred as &#8220;webgl&#8221; instead of &#8220;2d&#8221; in the &#8220;getContext()&#8221; method. WebGL is an API which is a javascript implementation of OpenGL. Yet, WebGL is a large and complicated API and it is suggested to use a third party library for the same. But all in all we got the idea.</p>
+<p>To summarize it all,</p>
+<ol>
+<li>Add a canvas tag specifying width and height</li>
+<li>Get the canvas element in javascript</li>
+<li>Get the context forma the canvas</li>
+<li>Start drawing</li>
+<li>Enjoy <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </li>
+</ol>
+<p>Hope that helps someone one out there.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-732 -->
+
+				
+					
+	<article id="post-703" class="post-703 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-tutorial tag-css tag-css3 tag-html tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/703" title="Permalink to Some open web libraries" rel="bookmark">Some open web libraries</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/703" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-15T01:00:57+00:00">September 15, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><a href="http://code.google.com/chrome/chromeframe/" target="_blank">Google Chrome Frame</a>, Enable open web technologies in Internet Explorer.</p>
+<p>General Purpose<br />
+<a href="http://jquery.com/" target="_blank">jquery</a><br />
+<a href="http://mootools.net/" target="_blank">mootools</a><br />
+<a href="http://www.modernizr.com/" target="_blank">Modernizr</a><br />
+<a href="http://www.prototypejs.org/" target="_blank">prototypejs</a></p>
+<p>HTML Canvas<br />
+<a href="http://processingjs.org/" target="_blank">processingjs</a><br />
+<a href="http://easeljs.com/">easeljs</a><br />
+<a href="http://guryjs.org/">gury</a><br />
+<a href="http://forvar.de/js/mcl/" target="_blank">MooTools Canvas Library</a><br />
+<a href="http://www.pixastic.com/" target="_blank">pixastic</a></p>
+<p>3D<br />
+<a href="https://github.com/mrdoob/three.js/">three.js</a><br />
+<a href="http://www.c3dl.org/" target="_blank">C3DL</a><br />
+<a href="http://www.ambiera.com/copperlicht/" target="_blank">copperlicht</a><br />
+<a href="http://www.everyday3d.com/j3d/" target="_blank">j3d</a></p>
+<p>Animation on Canvas<br />
+<a href="http://code.google.com/p/cakejs/" target="_blank">cakejs</a></p>
+<p>Vector drawing on Canvas<br />
+<a href="http://paperjs.org/" target="_blank">Paper.js</a><br />
+<a href="http://raphaeljs.com/" target="_blank">Raphaël</a></p>
+<p>Charts<br />
+<a href="http://www.rgraph.net/" target="_blank">rgraph</a></p>
+<p>Javascript Graphics library<br />
+<a href="http://www.jsgl.org/doku.php" target="_blank">JSGL</a><br />
+<a href="https://github.com/michael/unveil" target="_blank">unveil : Data driven application framework</a></p>
+<p>Media<br />
+<a href="http://popcornjs.org/" target="_blank">popcornjs</a><a href="http://www.egonelbre.com/blog/2011/02/19/jsfx/" target="_blank"><br />
+jsfx</a></p>
+<p>Game<br />
+<a href="http://craftyjs.com/" target="_blank">craftyjs</a><br />
+<a href="http://gamequery.onaluf.org/" target="_blank">gameQuery</a><br />
+<a href="http://www.getxc.org/" target="_blank">xc.js</a><br />
+<a href="http://mibbu.eu/" target="_blank">mibbu</a><br />
+<a href="http://www.limejs.com/" target="_blank">LimeJS</a><br />
+<a href="http://cocos2d-javascript.org/">Cocos2D</a><br />
+<a href="http://www.kesiev.com/akihabara/" target="_blank">akihabara</a><br />
+<a href="https://github.com/BillyWM/FlixelJS" target="_blank">FlixelJS</a><br />
+<a href="http://gamejs.org/" target="_blank">GameJs</a><br />
+<a href="http://gammajs.org/" target="_blank">Gamma</a></p>
+<p>Mathematics<br />
+<a href="http://sylvester.jcoglan.com/" target="_blank">Sylvester</a></p>
+<p>Tutorials, examples and references :<br />
+<a href="http://creativejs.com/" target="_blank">creativejs</a><br />
+<a href="http://diveintohtml5.org" target="_blank">diveintohtml5</a><br />
+<a href="http://www.chromeexperiments.com/" target="_blank">Chrome Experiments</a><br />
+<a href="http://html5games.com/" target="_blank">html5games</a><br />
+<a href="https://github.com/bebraw/jswiki/wiki/Game-Engines" target="_blank">HTML5 based Game Engines</a><br />
+<a href="https://gist.github.com/768272" target="_blank">Js Game Engines</a></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-703 -->
+
+				
+					
+	<article id="post-702" class="post-702 post type-post status-publish format-standard hentry category-css3 category-html5 category-tutorial tag-css tag-html tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/702" title="Permalink to Html, javascript, Css. Where to start?!" rel="bookmark">Html, javascript, Css. Where to start?!</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/702" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-14T01:00:00+00:00">September 14, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This came to me, in the beginning. The confusion is to which one to pick first. It&#8217;s kind of chicken-egg problem.<br />
+Actually all these are interrelated and very dependent on each other, at least in the beginning.<br />
+If you are beginning, learn one of these three and keep moving and concentrating on only one for sometime. After a time, come back and start another. Now, that way worked for me and hope that works. <br />
+If you are reffering code, then also try and concentrate on one. Once you are fine with one, move to another one and concentrate on that one for the time you get comfortable on that one, then come back to code and refer the same codebase for the one you are concentrating now.<br />
+Hope that works and helps you get started with these technology.</p>
+<p><span class="post_sig">Posted from WordPress for Android through my &#8220;HTC Wildfire&#8221;.</span></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-702 -->
+
+				
+					
+	<article id="post-691" class="post-691 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-tutorial tag-css tag-css3 tag-javascript tag-tutorial tag-tutorials">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/691" title="Permalink to CSS : getting into it" rel="bookmark">CSS : getting into it</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/691" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-13T01:00:34+00:00">September 13, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>While going ahead with javascript and all its goodness, we come across terms, which certainly make us curious like id and class. Apart from this we must know the things which we are going to use over and again as a web designer. When we already know about html,javascript and CSS makes up the whole web page, this is time to know some basics about CSS.<br />
+In CSS, we generally define some rules for our html content. Say, we have some structural data with a title and some content. Now this kind of data can be more than one in one page. So we will write some design rules, which our page content can refer to design itself. This kind of rules are called Class in CSS and generally defined with a . (dot) in the beginning.</p>
+<pre lang="css">
+.topic_title{}
+.topic_body{}
+</pre>
+<p>The important thing to remember here is these elements will come more than once in a page. Now, there are elements in a page, which occur only once. These kind of elements are referenced as id and defined with a #.</p>
+<pre lang="css">
+#page_title{}
+#page_navigation_menu{}
+</pre>
+<p>These are the basic types in CSS and we have already seen how these are referred in javascript too. To add the class styles and id styles in html document we write something as below.</p>
+<pre lang="html">
+<div id="topic_title"></div>
+<div class="topic_content"></div>
+</pre>
+<p>We can even join two different styles together as</p>
+<pre lang="html"> 
+<div id="topic_title" class="title_image"></div>
+</pre>
+<p>Now you can imagine how easy or complicated one can make a site design without even touching the content itself.<br />
+Well, there are some default elements in HTML as body, h1,p etc. These elements are directly designed with there name in CSS as </p>
+<pre lang="css">
+body{}
+h1{}
+p{}
+</pre>
+<p>How cool! Now for some global level elements or in general we have an option to define global style for all elements in a HTML page with a * as</p>
+<pre lang="css">
+*{}
+</pre>
+<p>That will assign, the designs described, to all the elements in the html page. This is, kind of, defining the base design of the page and its elements and then individual elements will override their design settings from there own id or class.</p>
+<blockquote><p>Point to keep in mind is, the design which is nearer to the element will override other design rules. That means, if there is a global style and an id or class style is defined for the element, the id or class style will override the design settings of the global style and the element will be visible as its defined in its id or class style.</p></blockquote>
+<p>Hope that helps someone.<br />
+If you want, <a href="http://www.saumyaray.com/research_examples/js/study_06_prototype/" target="_blank">take a reference of the design of our last all in one page here</a> and can download load the <a href="http://www.box.net/shared/rm2u8u56qigf8spjbot5" target="_blank">source files here</a> and see the basic CSS for the page.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-691 -->
+
+				
+					
+	<article id="post-295" class="post-295 post type-post status-publish format-standard hentry category-css3 category-html5 category-tutorial tag-css tag-html tag-javascript tag-tutorial tag-tutorials">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/295" title="Permalink to Referring to an element in HTML page" rel="bookmark">Referring to an element in HTML page</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/295" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-11T01:00:44+00:00">September 11, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>How to select an element in an HTML page? This is often get in my way, while beginning to learn Javascript, CSS and HTML. The simple answer is with javascript we have a method named &#8220;getElementById()&#8221; and always works as</p>
+<pre lang="javascript">
+document.getElementById('element ID');
+</pre>
+<p>Lets dive into code and see how things work. Lets say we have an HTML page as </p>
+<pre lang="html">
+<!DOCTYPE HTML>
+<html>
+	<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+		
+		<link type="text/css" rel="stylesheet" media="screen" href="general.css"/>
+		<script type="text/javascript" src="general.js"></script>
+	</head>
+	<body onload="onPageLoad()">
+		<div id="one" class="blockBase">
+			Hello World.
+		</div>
+		<div id="two" class="blockBase">
+			Hello you, this is JS.
+			<button id="btnOne" type="button">one</button>
+			<button id="btnTwo" type="button">two</button>
+		</div>
+	</body>
+</html>
+</pre>
+<p>There are two &#8220;div&#8221; tags in it and they are having id values as &#8220;one&#8221; and &#8220;two&#8221; respectively. Then we have two buttons inside the second &#8220;div&#8221;. These buttons are having id values as &#8220;btnOne&#8221; and &#8220;btnTwo&#8221;. Why we are adding id values?! Well, these are basics of how to access items from inside a page. Its kind of naming a new born in family <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  Lets move on and see how we are accessing these elements.<br />
+Our javascript file looks as below</p>
+<pre lang="javascript">
+var onPageLoad = function ()
+{
+	 alert("Page is loaded");
+	 var myBtnOne = document.getElementById('btnOne');
+	 var myBtnTwo = document.getElementById('btnTwo');
+	 //alert(myBtnOne+' : '+myBtnTwo);
+	 
+	 myBtnOne.onclick=function(){
+	 	alert ('one');
+	 };
+	 
+	 myBtnTwo.onclick=function(){
+	 	alert ('two');
+	 };
+	 
+};
+</pre>
+<p>Before going into the javascript, lets see our HTML code again. There is something, we did not look previously. Its</p>
+<pre lang="html">
+	<body onload="onPageLoad()">
+</pre>
+<p>What this does ?!! To be very basic, it actually calls a javascript function named &#8220;onPageLoad()&#8221; , when all the elements on the HTMl page is loaded. That means, we can add any interactivity after the page is loaded. For, if we try to add interactivity before all elements of the page is loaded, then there is a chance javascript engine will ignore those commands which will result in wrong behavior of the page. Therefore its recommended to add functionality to a page after confirming that everything in the page is loaded and this code is exactly doing the same.<br />
+Coming to out javascript file, we have to written everything in our &#8220;onPageLoad()&#8221; function. So the first thing is taken care of, now lets move on and see what else we are doing. Upon page loaded it will &#8220;alert&#8221; a message to the user saying we are ready to start adding interactivity. Now our main ambition here is to upon clicking those two buttons, we have to alert different messages to the user. We select those button elements with the code</p>
+<pre lang="javascript">
+document.getElementById('btnOne');
+</pre>
+<p>Next, we have to store these values so as to refer them in our code. We do this by assigning them to a variable as </p>
+<pre lang="javascript">
+var myBtnOne = document.getElementById('btnOne');
+</pre>
+<p>For the second button we have to do the same thing and the code looks </p>
+<pre>
+ var myBtnOne = document.getElementById('btnOne');
+ var myBtnTwo = document.getElementById('btnTwo');
+</pre>
+<p>Now we know how to access elements from an HTML page. The process is add an id value to the element in HTML page and access them with &#8220;document.getElementById(elementName)&#8221;. Thats all.<br />
+Next we are simply going to add the interactivity. Those are done with </p>
+<pre lang="javascript">
+ myBtnOne.onclick=function(){
+	 	alert ('one');
+	 };
+myBtnTwo.onclick=function(){
+	 	alert ('two');
+	 };
+</pre>
+<p>Thats simple, but then there are libraries which make our job even simpler. <a href="http://jquery.com/" target="_blank">JQuery</a> is such a library, but that is for a future post.<br />
+<a href="http://www.box.net/shared/oafbnm21czt9nedt3hxs" target="_blank">All the sourceCode can be downloaded from here</a> for your reference.</p>
+<p>Hope that helps some one. I would like to listen back from you about the post, leave a comment for suggestions, mistakes or simply thanks.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-295 -->
+
+				
+					
+	<article id="post-632" class="post-632 post type-post status-publish format-standard hentry category-css3 category-html5 category-ipad-development category-iphone-development category-javascript category-opensource category-saumya category-tutorial tag-css tag-html tag-javascript tag-tutorial">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/632" title="Permalink to javascript : Inheritence by prototype" rel="bookmark">javascript : Inheritence by prototype</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/632" title="1:39 am" rel="bookmark"><time class="entry-date" datetime="2011-09-09T01:39:41+00:00">September 9, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Once we got the basic information and know how, of the &#8220;prototype&#8221; property of a constructor object, we need some code to test it. So here is <a href="http://www.saumyaray.com/research_examples/js/study_06_prototype/" target="_blank">another all in one page test for the &#8220;prototype&#8221; property</a>.<br />
+We have 3 constructors and then the prototype property of the constructors are defined as another object. Basically, if 3 constructors namely A,B,C are present, prototype of A is defined as an object created by &#8220;new B()&#8221;, prototype of B is defined as an object created by &#8220;new C()&#8221;. There are 4 different properties in all the objects. But the relationship is now as below</p>
+<pre lang="javascript">
+A.prototype is new B(); 
+B.prototype is new C()
+//so the relation is as below
+A -> B -> C
+</pre>
+<p>That means, &#8220;prototype&#8221; allows us to make a relation between the objects. We will see that in a moment. Now all the properties of all the objects can be accessed through the object created by &#8220;new A()&#8221;.<br />
+If you have not yet opened the all in one page test for this example, open it now. And click the buttons to see the properties accessed from one Object.</p>
+<pre lang="javascript">
+var ClassA=(function(){
+	//------define-------
+	var a,b,c,d,getA,getB,getC,getD,numberToBeAdded;
+	//------configure------
+	a='Property a';
+	b=500;
+	c='Property c';
+	d='Property d';
+	//numberToBeAdded=100;//prototype object can not access this property, instead the local property will be used
+	this.numberToBeAdded=100;//With the use of "this" now its exposed to be accesed from its prototype object
+	//------expose-------
+	this.getA=function(){
+		return a;
+	}
+	this.getB=function(){
+		return b;
+	}
+	this.getC=function(){
+		return c;
+	}
+	this.getD=function(){
+		return d;
+	}
+	//
+	/*
+	this.getSum=function(userNumber){
+		return userNumber+numberToBeAdded;
+	}
+	*/
+});
+//
+var ClassB=(function(){
+	//------define-------
+	var e,f,g,h,getE,getF,getG,getH;
+	//------configure------
+	e='Property e';
+	f=9;
+	g='Property g';
+	h='Property h';
+	//numberToBeAdded=200;
+	//------expose-------
+	this.getE=function(){
+		return e;
+	}
+	this.getF=function(){
+		return f;
+	}
+	this.getG=function(){
+		return g;
+	}
+	this.getH=function(){
+		return h;
+	}
+	//
+	/*
+	this.getSum=function(userNumber){
+		return userNumber+numberToBeAdded;
+	}
+	*/
+});
+//
+var ClassC=(function(){
+	//------define-------
+	var i,j,k,l,getI,getJ,getK,getL,getSum,numberToBeAdded;
+	//------configure------
+	i='Property i';
+	j=300;
+	k='Property k';
+	l='Property l';
+	numberToBeAdded=300;//"this" exposes this number to be overriden by the object which will prototype ClassC(or this class)
+	//------expose-------
+	this.getI=function(){
+		return i;
+	}
+	this.getJ=function(){
+		return j;
+	}
+	this.getK=function(){
+		return k;
+	}
+	this.getL=function(){
+		return l;
+	}
+	//
+	this.getSum=function(userNumber){
+		//return userNumber+numberToBeAdded;
+		return userNumber+this.numberToBeAdded;//using "this" will override the local property and use the property of the object which would be using this object as a prototype
+	}
+});
+</pre>
+<p>The code to use the prototype is defined as</p>
+<pre lang="javascript">
+//makes the object
+var objC=new ClassC();
+//makes the prototype magic
+ClassB.prototype=objC;
+ClassB.constructor=ClassB;
+//makes the object
+var objB=new ClassB();
+//objB.constructor.prototype=objC;
+//makes the prototype magic
+ClassA.prototype=objB;
+ClassA.constructor=ClassA;
+var objA=new ClassA();
+</pre>
+<p>So how it works?!! This magic is simply possible by &#8220;prototype&#8221;. For example, if we are trying to access one property in an object created by &#8220;new A()&#8221; and the property is not present in the Object, then javascript engine will look for the property in the &#8220;prototype&#8221; object of &#8220;new A()&#8221; and that in our case is an object created by &#8220;new B()&#8221; and if the property is not found in it, it will search in the prototype property object defined for this object, that is in our case is an object created by &#8220;new C()&#8221;.</p>
+<p>The code below shows, how we are accessing properties from the prototype object through the single object.</p>
+<pre lang="javascript">
+//calling own method
+objA.getA();
+//calling B's method
+objA.getE();
+//calling C's method
+objA.getJ();
+</pre>
+<p>If you go through the code here, you must see that there is the use of the key word &#8220;this&#8221;. This is simply kind of saying that this property is accessible from outside. In Java or Actionscript kind of languages, its known as &#8220;public&#8221; variables. Remember that, whatever variables need to be exposed to outside, must be defined with the keyword &#8220;this&#8221;. Going through the code again will show you that, some properties are just defined with &#8220;var&#8221;, while some other are defined with &#8220;this&#8221;. Remember, &#8220;this&#8221; always points to the current object.</p>
+<p>Now with these knowledge, we can very well override or reassign values to our objects, which are defined in the prototype object. That means, if some properties are defined in our &#8220;prototype&#8221; object and they are exposed or public variables, then we can again define the same variables in our Object and our object variables will be used for calculations. This is very interesting and sometimes get some time to understand too. Again, coming back to code, we have a function in our &#8220;prototype&#8221; object which adds some numeric value to another given number. Both the actual object and &#8220;prototype&#8221; object have got the value, which needs to be added. But if the prototype value is exposed with &#8220;this&#8221; then only the value inside function, which calls this variable with &#8220;this&#8221; will take actual value from the object not the value from the prototype! Thats because, &#8220;this&#8221; always refers to the current object.</p>
+<p><a href="http://www.box.net/shared/rm2u8u56qigf8spjbot5" target="_blank">Here is the source code for this example.</a></p>
+<p>Hope that helps someone. Would love to listen comments, suggestions and insights, as I am still learning it.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-632 -->
+
+				
+						<nav id="nav-below">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/tag/css/page/2" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"></div>
+		</nav><!-- #nav-above -->
+	
+			
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

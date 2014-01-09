@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>haXe : Compiling to javascript | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='A visit to the startup, geekmentors studios.' href='http://saumya.github.io/blogArchive/archives/868' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/851' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=851' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-851 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/842" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/868" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-851" class="post-851 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-iphone-development category-javascript category-opensource category-tutorial tag-haxe tag-html5 tag-javascript">
+	<header class="entry-header">
+		<h1 class="entry-title">haXe : Compiling to javascript</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/851" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-10-01T01:00:07+00:00">October 1, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>After all these tutorials in pure javascript, lets see is there is any other help from any where for our javascript programming. The best thing to happen is <a href="http://haxe.org" target="_blank">haXe</a>. If you have not heard about it yet, <a href="http://haxe.org/doc" target="_blank">haXe is a language</a> on its own! But why I need to learn another language?! Well, there is not much difference in javascript and haXe. As you have already seen, inside javascript also we have different libraries and we need to learn them to use them, lets look at haXe, for now, as another library (which is obviously not). Now, you will be amazed to know that after you know haXe and start writing on haXe, your code can be compiled to whole lot of different languages including <a href="http://haxe.org/doc/compiler" target="_blank">C++,PHP and javascript</a>.<br />
+First of all one need to <a href="http://haxe.org/download" target="_blank">download and install haXe</a>. The installation is quite straight forward and <a href="http://haxe.org/doc" target="_blank">the help at its own website is quite nice</a>. I do not think you will get stuck there, but if it is, please drop me a line here or best is ask in their forum.<br />
+The hello world application for javascript I am writing here is straight out of <a href="http://haxe.org/doc/targets/js" target="_blank">haXe documentation</a>. I am just putting it here for I got stuck at the compiling time and want you to get going in haXe without ever stopping anywhere.<br />
+I hope by this time, you have installed haXe on your machine. Lets write our first haxe class.</p>
+<pre lang='haxe'>
+package ;
+class Main 
+{
+	public static function main() 
+	{
+		trace('Hello');
+	}
+}
+</pre>
+<p>The purpose is to show a message we passed in &#8220;trace&#8221; function. We will write an HTML file to use the javascript file compiled from the above haXe code. Now save the above in a file with a name say &#8220;Main.hx&#8221;. Yep, &#8220;.hx&#8221; is the native HAXE extension. Suppose we are going to save the generated javascript file inside the &#8220;js&#8221; folder and with name &#8220;my.js&#8221;. Lets say that our HTML file is named as &#8220;HelloWorld.html&#8221;. So the folder structure looks as below.</p>
+<pre lang='html'>
+src
+   Main.hx
+bin
+HelloWorld.js
+   js
+     my.js
+</pre>
+<p>So our &#8220;Main.hx&#8221; is on &#8220;src&#8221; folder and all our generated code is inside &#8220;bin&#8221; folder. The generated javascript is inside &#8220;js&#8221; folder, which is inside &#8220;bin&#8221; folder. You may be asking, where are the javascript and html files?! Well, we have decide the structure of our application first and now we will move on and create those files in necessary folder. First lets see the HTML file code, which is as below.</p>
+<pre>
+	&lt;div id="haxe:trace"&gt;&lt;/div&gt;
+	&lt;script src="js/my.js"&gt;&lt;/script&gt;
+</pre>
+<p>Basically we need a div element with id &#8220;haxe:trace&#8221;, so that all our &#8220;trace()&#8221; function calls in our &#8220;.hx&#8221; file will be written inside this div . We are ready for action now. All we need is to compile our haXe code to javascript.</p>
+<p>Open command prompt (terminal in Mac) and move to the src folder, where we have stored our &#8220;.hx&#8221; file. Now write the code below in the terminal and press enter.</p>
+<pre lang=''>
+haxe -main Main.hx -js ../bin/js/my.js
+</pre>
+<p>Now go inside &#8220;bin/js/&#8221; folder and you will be amazed to see our &#8220;my.js&#8221; file is created there. Open the html file in a browser to see the result of it. The &#8220;Hello&#8221; we typed in trace is now written to the HTML page div tag. Sweet, is not it!<br />
+Suppose we want an real alert, a javascript alert, then modify the haxe code as below.</p>
+<pre lang='haxe'>
+package ;
+class Main 
+{
+	public static function main() 
+	{
+		js.Lib.alert('Hello World');
+	}
+}
+</pre>
+<p>Next process, I hope you know already <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> . Compile it in HAXE compiler as below to generate the JS file with the modified code. This means fire up the command prompt and put the same command as we did before, which is as below.</p>
+<pre lang=''>
+  haxe -main Main.hx -js ../bin/js/my.js
+</pre>
+<p>Now open the same html file in the browser again to see the alert message.<br />
+Yeehaa <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  we got a nice javascript code generated from haXe.</p>
+<p><a href="http://www.box.net/shared/f5drzsvod61ts1fmvr7b" target="_blank">Here is the source files with comments in it for you to play with.</a></p>
+<p>Happy haXeing <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/851" title="Permalink to haXe : Compiling to javascript" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-851 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

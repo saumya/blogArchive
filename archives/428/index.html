@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>iOS5 with ARC ( Automatic Reference Counting ) | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='WordPress engine 3.2 RC1 is released.' href='http://saumya.github.io/blogArchive/archives/433' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/428' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=428' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-428 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/421" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/433" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-428" class="post-428 post type-post status-publish format-standard hentry category-inspiration category-ipad-development category-iphone-development category-mobile category-objectivec tag-apple tag-ios tag-ipad tag-iphone">
+	<header class="entry-header">
+		<h1 class="entry-title">iOS5 with ARC ( Automatic Reference Counting )</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/428" title="12:07 am" rel="bookmark"><time class="entry-date" datetime="2011-06-11T00:07:46+00:00">June 11, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>With iOS5 comes the most important feature for me as a developer, Automatic Reference Counting.<br />
+This is may not feel a large announcement from an user&#8217;s perspective but as a developer, this is the feature. Well, what does that mean and how it affects me as an iOS application developer? This means no retain and release, yeeeaaaahhooooo. If you are developing for iOS devices till now, the pain of maintaining the reference count of an object is always there till it goes to the appstore. With the ARC, one can now forget those. In other words we can say finally garbage collection is here with iOS5, though its not that from a technical perspective, but from a developers perspective its kind of that.<br />
+<a href="http://developer.apple.com/technologies/ios5/">Here is the official description about all the features of iOS5.</a><br />
+Whatever the announcement is for others, but for a developer it is the most significant release of the iOS till now.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/apple" rel="tag">apple</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/ios" rel="tag">iOS</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/ipad" rel="tag">ipad</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/iphone" rel="tag">iphone</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/428" title="Permalink to iOS5 with ARC ( Automatic Reference Counting )" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-428 -->
+
+						<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			12 thoughts on &ldquo;<span>iOS5 with ARC ( Automatic Reference Counting )</span>&rdquo;		</h2>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-40">
+		<article id="comment-40" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://1.gravatar.com/avatar/bf9ce7bc7f585edf0d0f2780270db80c?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn"><a href='http://www.revolver.be' rel='external nofollow' class='url'>Bart Claessens</a></span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-40"><time datetime="2011-06-11T15:46:23+00:00">June 11, 2011 at 3:46 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Too bad that a lot of 3rd party libraries and frameworks still use the old reference counting. So we&#8217;re kinda forced to stick with the old ref counting till those 3rd party stuff is updated. <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> </p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-saumya bypostauthor odd alt depth-2" id="li-comment-41">
+		<article id="comment-41" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/8870fd415be0cd76928f6128760eafa6?s=39&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D39&amp;r=G' class='avatar avatar-39 photo' height='39' width='39' /><span class="fn"><a href='http://www.saumyaray.wordpress.com' rel='external nofollow' class='url'>saumya</a></span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-41"><time datetime="2011-06-11T16:19:38+00:00">June 11, 2011 at 4:19 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thats true Bart Claessens that third party libraries do use the old reference counting methods, but as far as I understand, the new OS and compiler will take care of them also. I mean, there is no harm at all using old libs with new OS, if they are already caring enough to manually reference count, thats good thing, but incase they miss somewhere, the ARC is in place.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+</ul>
+</li>
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-42">
+		<article id="comment-42" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://1.gravatar.com/avatar/f74d3ded540f801ea6de80b69e8eccff?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn">ColdLogic</span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-42"><time datetime="2011-06-14T04:36:25+00:00">June 14, 2011 at 4:36 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Happenend upon your post when searching for info on ARC</p>
+<p>From the documentation, apparently we still need to use allocs, correct?</p>
+<p>I&#8217;ve also read that any iOS previous to iOS5 does not support ARC. So any app created using ARC will be restricted to iOS5? </p>
+<p>If the above is true, then personally this sounds terrible to me. I can&#8217;t restrict my users to iOS5. My mom has a 3G, she would kill me if she couldn&#8217;t get my apps. Beyond that, memory management is ridiculously easy with autorelease, but it feels difficult when you don&#8217;t understand how it works. I know for my first year and a half or so of iPhone development, retains and releases were extremely difficult to understand. If ARC code doesn&#8217;t work on previous iOSs, then its a no go for me and I&#8217;ll stick to my autoreleases.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-saumya bypostauthor odd alt depth-2" id="li-comment-43">
+		<article id="comment-43" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/8870fd415be0cd76928f6128760eafa6?s=39&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D39&amp;r=G' class='avatar avatar-39 photo' height='39' width='39' /><span class="fn"><a href='http://www.saumyaray.wordpress.com' rel='external nofollow' class='url'>saumya</a></span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-43"><time datetime="2011-06-14T09:21:21+00:00">June 14, 2011 at 9:21 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>hi ColdLogic,<br />
+thanks for dropping the lines.<br />
+Thats nice and valid point. I think that itself makes the external library makers to use the alloc, retain, release methodology. Autorelease is nice but as you said, it takes time to get used to the inner working of the SDK.<br />
+This came to an eye opener for me as what Apple is upto now! Are they going to stop support for all iOS pervious to iOS5 !! Or iOS5 is going to so compatible with all the iDevices (which does not seems to happen though)!</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+	<li class="comment even depth-2" id="li-comment-46">
+		<article id="comment-46" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://1.gravatar.com/avatar/964b4223cb6845fa3c8e22faad5e66bd?s=39&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D39&amp;r=G' class='avatar avatar-39 photo' height='39' width='39' /><span class="fn">Ewald Dieser</span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-46"><time datetime="2011-06-24T03:36:45+00:00">June 24, 2011 at 3:36 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>As I understood it ARC ist just some compile time magic. So you still will be able to run your apps on older versions of iOS.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-saumya bypostauthor odd alt depth-3" id="li-comment-47">
+		<article id="comment-47" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/8870fd415be0cd76928f6128760eafa6?s=39&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D39&amp;r=G' class='avatar avatar-39 photo' height='39' width='39' /><span class="fn"><a href='http://www.saumyaray.wordpress.com' rel='external nofollow' class='url'>saumya</a></span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-47"><time datetime="2011-06-25T00:46:36+00:00">June 25, 2011 at 12:46 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>hi Ewald Dieser,<br />
+thanks for dropping the lines.<br />
+It seems like that only. Need to test it in an old device to know its actually doing the same.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li class="comment even thread-even depth-1" id="li-comment-44">
+		<article id="comment-44" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/e463842c2ac6199ff4e61b18070aebe0?s=68&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn">Thomas</span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-44"><time datetime="2011-06-15T02:54:18+00:00">June 15, 2011 at 2:54 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>ARC is supported in Xcode 4.2 for Mac OS X v10.6 and v10.7 (64-bit applications) and for iOS 4 and iOS 5.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-saumya bypostauthor odd alt depth-2" id="li-comment-45">
+		<article id="comment-45" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/8870fd415be0cd76928f6128760eafa6?s=39&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D39&amp;r=G' class='avatar avatar-39 photo' height='39' width='39' /><span class="fn"><a href='http://www.saumyaray.wordpress.com' rel='external nofollow' class='url'>saumya</a></span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-45"><time datetime="2011-06-15T08:54:42+00:00">June 15, 2011 at 8:54 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thanks Thomas for dropping by and sharing informations.<br />
+ohh, really!! Good to know that. Can you share some links to the ARC support in iOS4.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+</ul>
+</li>
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48">
+		<article id="comment-48" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/c145a12cd17d3b3ffff033681a694abe?s=68&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn">Forrest</span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-48"><time datetime="2011-07-07T12:48:53+00:00">July 7, 2011 at 12:48 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Any performance lost ?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-saumya bypostauthor odd alt depth-2" id="li-comment-49">
+		<article id="comment-49" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://0.gravatar.com/avatar/8870fd415be0cd76928f6128760eafa6?s=39&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D39&amp;r=G' class='avatar avatar-39 photo' height='39' width='39' /><span class="fn"><a href='http://www.saumyaray.wordpress.com' rel='external nofollow' class='url'>saumya</a></span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-49"><time datetime="2011-07-08T00:14:10+00:00">July 8, 2011 at 12:14 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>No idea actually! But I do not think there would be any as it seems to be a compiler feature.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+</ul>
+</li>
+	<li class="comment even thread-even depth-1" id="li-comment-50">
+		<article id="comment-50" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://1.gravatar.com/avatar/1d2022bca691031d362e254235c0643d?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn">jossif</span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-50"><time datetime="2011-10-27T14:31:27+00:00">October 27, 2011 at 2:31 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>just throw a glance at this article: <a href="http://belkadan.com/blog/2011/06/Automatic-Reference-Counting/" rel="nofollow">http://belkadan.com/blog/2011/06/Automatic-Reference-Counting/</a></p>
+<p>the 3rd and 4th paragraphs are scratching the surface of this performance topic.</p>
+<p>cheers <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-51">
+		<article id="comment-51" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://1.gravatar.com/avatar/b5bce42f1928a4d67cb5984ceab3bf1d?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn">Mohamed rafi</span> on <a href="http://saumya.github.io/blogArchive/archives/428#comment-51"><time datetime="2011-12-29T11:51:51+00:00">December 29, 2011 at 11:51 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>have a look at this site.<br />
+<a href="http://arstechnica.com/apple/reviews/2011/07/mac-os-x-10-7.ars/10" rel="nofollow">http://arstechnica.com/apple/reviews/2011/07/mac-os-x-10-7.ars/10</a></p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+		</ol>
+
+		
+				<p class="nocomments">Comments are closed.</p>
+		
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

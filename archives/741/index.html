@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>HTML5 : Some more details about Canvas  | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='HTML5 : Drawing lines on Canvas' href='http://saumya.github.io/blogArchive/archives/747' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/741' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=741' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-741 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/738" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/747" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-741" class="post-741 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-mobile category-opensource category-tutorial tag-css tag-css3 tag-html tag-html5 tag-javascript">
+	<header class="entry-header">
+		<h1 class="entry-title">HTML5 : Some more details about Canvas</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/741" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-18T01:00:05+00:00">September 18, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>I think by now we are moving good on Canvas element and now its time to know some more basics about the canvas element which will get us up and running on the canvas.</p>
+<p>Firstly the co-ordinate system. Well, the origin of the canvas element is at the top-left corner. The x-axis increases its value form left to right from the origin. The y-axis increases its value from top to bottom form the origin. </p>
+<p>Now there is an important concept about Canvas element which can get in our way. That is the resetting of the Canvas element altogether. Resetting means, Canvas comes back to its initial stage, the default settings with which it has been created. And this happens when we set either width or height of the Canvas through our code. Well, we can use that to our advantage also. Suppose we have already drawn a lot of drawing on the Canvas and now we want to clear everything. Then we can just set the width and height of the canvas to its original width and height. Though that does not change the size of the Canvas itself, but it will reset the Canvas to its default state removing all the drawings. Lets say that again, even if we set the width and height of the Canvas element to its own width and height, it will reset the Canvas to its default. This can be an advantageous to us if we use it and at the same time it can be a disadvantageous to us if we overlook the effect.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/741" title="Permalink to HTML5 : Some more details about Canvas" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-741 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

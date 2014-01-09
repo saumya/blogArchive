@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>saumya | Where there is a will, there is a way. | Page 11</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="home blog paged custom-background paged-11 two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+			
+						<nav id="nav-above">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/page/12" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/page/10" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+								
+					
+	<article id="post-578" class="post-578 post type-post status-publish format-standard hentry category-javascript category-opensource category-tutorial tag-html tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/578" title="Permalink to javascript : Constructor" rel="bookmark">javascript : Constructor</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/578" title="1:02 am" rel="bookmark"><time class="entry-date" datetime="2011-09-06T01:02:16+00:00">September 6, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>The confusion between a &#8220;function&#8221; and a &#8220;constructor&#8221; is always there. They may seem very similar from outside, but its the implementation that defines the difference. Actually its not even the function definition which is confusing, but its the concept and dynamism of the language itself.<br />
+First important thing to remember is everything in Javascript is an Object.<br />
+So anything that is Object can be functional. Now there are two ways we can create objects in javascript.<br />
+The basic and most used is the object literal with curly braces as</p>
+<pre lang='javascript'>
+var myObj={
+a:12,
+b:"another string",
+c:function(){}
+};
+</pre>
+<p>Now if we want to access any thing of this object, the calls will go as below</p>
+<pre lang='javascript'>
+myObj.a;
+myObj.c();
+</pre>
+<p>That was quite straight forward for we are accessing an &#8220;object itself&#8221;.<br />
+Now lets see how we can create objects in another way.</p>
+<pre lang="javascript">
+var AnObject=function(){
+this.a='A String value';
+this.b=12345;
+this.c=function(){};
+this.d='Another String';
+};
+</pre>
+<p>The above code is kind of a Class, that means it is not a class by any formal definition, but it is kind of a thing which makes objects. If one tries to access anything from it directly as</p>
+<pre lang='javascript'>
+AnObject.a;
+AnObject.c();
+</pre>
+<p>It will simply not work!! Why?! For its not an Object yet. To make an object out of it, we have to use &#8220;new&#8221; and then call it with a &#8220;()&#8221; like </p>
+<pre lang='javascript'>
+var anO=new AnObject();
+//now call the properties and methods as below
+anO.a;
+anO.c();
+</pre>
+<p>Thats simply because when we call this kind of object, or create objects in this kind with a &#8220;new&#8221; and a &#8220;()&#8221;, its called constructor.</p>
+<pre language='javascript'>
+varv anO=new AnObject();
+</pre>
+<p>Now this function call with a &#8220;new&#8221; is known as a constructor.<br />
+Apart from this difference there is a huge difference in terms of using &#8220;prototype&#8221; object of the constructor. The &#8220;prototype&#8221; itself is a huge topic, so its not explained here. The important thing here is to remember that any object which is created with a constructor has a &#8220;prototype&#8221; property but the objects, which are created with any other methods do not possess the &#8220;prototype&#8221; object.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-578 -->
+
+				
+					
+	<article id="post-573" class="post-573 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource tag-css tag-css3 tag-html tag-html5 tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/573" title="Permalink to javascript : An all in one test page :)" rel="bookmark">javascript : An all in one test page :)</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/573" title="3:01 am" rel="bookmark"><time class="entry-date" datetime="2011-09-05T03:01:52+00:00">September 5, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This took me some time to put a decent page online, where one can refer to some very basic concepts of Javascript. Now <a href="http://saumyaray.com/research_examples/js/study_04/" target="_blank">the page can be accessed here</a> and the <a href="http://www.box.net/shared/xxce05dq6rg1kf69u5ex" target="_blank">source code can be downloaded from this link</a>. </p>
+<p>I will go on putting the details of my learning in the coming posts, but for the time being if one needs to play around the codes, please download and start researching.</p>
+<p>Keep in mind that every language has its own way of doing things and the more ignorant you become (at least pretend to become) about other languages while picking up one, the faster you will master the one you are studying.</p>
+<p>The example and source files convey, how to make and use your own javascript library, how to make a reusable Object in javascript (i am not saying to make a Class here, but a reusable Object, there is a very big difference in those two), how to make a basic CSS3 usage of rounded corners, multiple shadows, custom fonts and text shadows.</p>
+<p>Happy learning.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-573 -->
+
+				
+					
+	<article id="post-559" class="post-559 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-saumya category-tutorial tag-css tag-html tag-javascript">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/559" title="Permalink to javascript : Making a Library" rel="bookmark">javascript : Making a Library</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/559" title="10:19 pm" rel="bookmark"><time class="entry-date" datetime="2011-09-02T22:19:59+00:00">September 2, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This is kind of looking at javascript from a fresh perspective. It does not assume you to know anything about it. Knowing another scripting language is always an advantage to know things better but sometimes it may come to a negative effect. If you know anything before, its better to assume you do not know that <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  so that we can get up to speed in javascript as quickly as possible.<br />
+I hope you have a basic understanding of how to include external javascript and css files inside an HTML document. If not, then please go ahead and follow the posts mentioned below for a quick understanding.<br />
+<a href="http://www.saumyaray.com/saumya/archives/77">Introduction to HTML</a><br />
+<a href="http://www.saumyaray.com/saumya/archives/91">Getting used to the terms</a><br />
+<a href="http://www.saumyaray.com/saumya/archives/199">Getting into web design action</a></p>
+<p>Lets setup our experiment with the files listed below</p>
+<pre lang="html">
+index.html
+general.css
+saumyaJS.js
+general.js
+</pre>
+<p>Now, the code inside index file is as below</p>
+<pre lang="html">
+<!DOCTYPE HTML>
+<html>
+	<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+		
+		<link type="text/css" rel="stylesheet" media="screen" href="general.css"/>
+		<script type="text/javascript" src="js/jquery-1.6.2.js"></script>
+		<script type="text/javascript" src="saumyaJS.js"></script>
+		<script type="text/javascript" src="general.js"></script>
+	</head>
+	<body>
+		<div id="greet">
+			Hello World.
+		</div>
+		<div id="greetPerson">
+			Hello you, this is JS.
+			<button id="showBtn" type="button">show</button>
+			<button id="resetBtn" type="button">reset</button>
+		</div>
+		<canvas id="graphics" width="600" height="400"></canvas>
+		
+	</body>
+</html>
+</pre>
+<p>Here we are clearly adding all the CSS and JS files into it. The &#8220;general.js&#8221; file is where we are going to write the experiment codes. The &#8220;saumyaJS.js&#8221; is kind of a library we are going to write so as to know the javascript basics and help the experiment. The first line of javascript library includes the <a href="http://jquery.com/">JQuery library</a>, if you are not sure about it now, do not worry, just remember that I have used it to select HTML elements from my index.html file. And the JQuery library itself is a huge project,so we will get to that in a future post may be.</p>
+<p>I am suggesting to go ahead and read Keith&#8217;s blog for getting the hang of javascript environment from a learner&#8217;s perspective. He has done a splendid job of putting his 31 days continuous blogpost about javascript.<br />
+<a href="http://creativejs.com/2011/08/31-days-of-canvas-tutorials/">31 days of Canvas tutorials</a><br />
+<a href="http://www.bit-101.com/blog/?p=3030">March is JavaScript Month. And… Introducing WireLibJS</a></p>
+<p>First and the most important thing is variables in javascript. They are by default &#8220;Global&#8221;, that means if we define a variable as</p>
+<pre lang="javascript">
+a="name";
+b=2;
+c="message";
+</pre>
+<p>Then all these variables are global variables by default. That will allow anyone to access these variables from anywhere. Well, to make local variables we have to define them with &#8220;var&#8221; keyword. So the definition will go as </p>
+<pre lang="javascript">
+var a="name";
+var b=2;
+var c="message";
+</pre>
+<p>Well as you can already guess that there is no restriction in datatype for a variable. And the scope of these local variables are inside a function. In short <a href="http://jamescryer.wordpress.com/2011/07/10/javascript-scope-closure/">javascript variables have function level scope</a>. Now lets define a function and add some local variables into it,</p>
+<pre lang="javascript">
+myFunction=function(){
+	var d=0;
+	var firstName='saumya';
+	counter = 1;
+	
+	alert('reset');
+};
+</pre>
+<p>That means anywhere we need to call this function, we have to call it as below</p>
+<pre lang="javascript">
+myFunction();
+</pre>
+<p>Thats simple as we define a function with name &#8220;myFunction&#8221; and invoked it with &#8220;myFunction()&#8221;. Thats how a function is called.<br />
+Now one thing to understand and know is, its better to add as little as possible in global scope. Its a best practice and saves a ton of headache later in the development process. Now in our previous example, we are adding the variable &#8220;myFunction&#8221; in the global scope. But the variables &#8220;d&#8221; and &#8220;firstName&#8221; are in local scope. But then the variable &#8220;counter&#8221; is in global scope!! Thats the scary part of it. Yeah, anything without a &#8220;var&#8221; keyword is exposed to Global scope.<br />
+The previous example showed how to make a function with a name. It is possible to make a function without a name also, those are called anonymous functions. And since we know, to call a function we have to use &#8220;()&#8221; at the end of a function, the code below describes how to define an anonymous function and call it.</p>
+<pre lang="javascript">
+//makes anonymous function
+function()
+{
+	//Code for function
+};
+//make the anonymous function and call it at the same time
+function()
+{
+	//Code for function
+}();//look at the "()" at the end of the function definition
+</pre>
+<p>The problem here is, once the function is called and executed, everything inside the function along with the function itself is not accessible any more. In order to get a reference to the function itself, we need to store it with some name. Thats where the named function comes into picture, that we have seen already as to how to define a named function.<br />
+Next we want to make an anonymous function, call it and then save the returned value of the function. A function can return value by using a &#8220;return&#8221; keyword. Example of a function which returns a value is as below</p>
+<pre lang="javascript">
+var myFunction=function(){
+return 5;
+}();
+</pre>
+<p>Now we have a variable named &#8220;myFunction&#8221; with a value of 5. This is simple but as you can imagine this return type can be anything. The code below shows how to return an &#8220;Object&#8221;.</p>
+<pre lang="javascript">
+var myFunction=function(){
+return {one:'fistName',two:'lastName'};
+}();
+</pre>
+<p>Now &#8220;myFunction&#8221; simply contains an object with properties &#8220;one&#8221; and &#8220;two&#8221;. If we want to access these properties, the call would be as below</p>
+<pre lang="javascript">
+myFunction.one;
+myFunction.two;
+</pre>
+<p>With these knowledge we can write something like below,</p>
+<pre lang="javascript">
+var saumyaJS=(function(){
+	// --------------- Define -----------------------
+	var a,b,c,d,e;//define properties and methods
+	// --------------- Configure --------------------
+	a='saumya';
+	b='ray';
+	c=function(msg){
+		d++;
+		alert(d+':'+msg);
+	};
+	d=0;
+	e=function(){
+		d=0;
+		alert('reset');
+	};
+	// --------------- Expose -------------------------
+	return {
+		firstName:a,
+		lastName:b,
+		show:c,
+		reset:e
+		};//expose the properties and methods to outer world
+}());
+</pre>
+<p>Here simply some local variables are defined, then configured them with values and finally whatever needs to be exposed to outside world, is retuned.<br />
+Whoaa!!! We have simply written a simple Javascript library.<br />
+If you look into the code a little bit, then its visible that the variable and functions inside the main function is accessible only by the names they are given at the time of returning. If one needs to access the value of &#8220;a&#8221; from outside then the call would be</p>
+<pre lang="javascript">
+saumyaJS.firstName;
+</pre>
+<p>But if one tries to access the value as</p>
+<pre lang="javascript">
+saumyaJS.a;
+</pre>
+<p>then one will get &#8220;undefined&#8221;!! This is how encapsulation works or simply, how one can hide values of an object in javascript.</p>
+<p>This is a very basic concept of javascript, but I think this is the most important concept of javascript too. </p>
+<p>Now we can see that whatever we want to access, we have to access through the &#8220;saumyaJS&#8221;, everything inside that function is not exposed outside or there is no more than one variable exposed to the outside world.</p>
+<p><a href="http://www.box.net/shared/h0bto2go5rlime2ua4r2" target="_blank">The source files are here to download and see for yourself</a>. Hope that helps someone.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-559 -->
+
+				
+					
+	<article id="post-554" class="post-554 post type-post status-publish format-standard hentry category-inspiration category-javascript category-life category-misc category-mobile category-saumya tag-development tag-game tag-inspiration tag-startup">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/554" title="Permalink to StartUp : Geek Mentors" rel="bookmark">StartUp : Geek Mentors</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/554" title="1:26 am" rel="bookmark"><time class="entry-date" datetime="2011-09-01T01:26:08+00:00">September 1, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>It&#8217;s very exciting to see these people at <a href="http://www.geekmentors.com/">geek mentors</a> doing a nice job porting angrybirds to a local version.<br />
+Flash is not always about flashplayer, its much more than that if we really follow the philosophy of Flash community. These guys at this startup began their career in Flash, but as of any cool dude in Flash, they always tried to push the technology and dove into new platforms for the learning and broadening the horizon. They are hungry for technology and fun, both at once.<br />
+The momentum is always there for fun and learn new things all the time. The work never seem to be complete but then they never seem to rest <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' />  that does not mean they are working under pressure, that means simply they keep on working for what they love. Apart from developing games for Apple appstore, there is a quality mentoring option for people who want to learn things the fun way by doing it. The best part is there is no project manager to manage you, come to work and do it by how you want to do.<br />
+There is a heavy investment on new technology learnings. When the world was fighting for whether to Html5 or Flash, this new startup solely concentrate on <a href="http://gamesalad.com/">GameSalad</a>. A solid platform for publishing your games to IPhone, iPad and even HTML5. The point is if there is a tool which can produce quality applications, why fight over how many lines of code one need to write in a particular platform!<br />
+<a href="http://gamesalad.com/p/geekmentors">GameSalad link for Angry Anna</a> : <a href="http://www.angryanna.com/">http://www.angryanna.com/</a><br />
+The content below is kind of an interview with the company</p>
+<blockquote><p>Introduction of the team :<br />
+Mohd Shah Nawaz : Co-Founder,<br />
+Mohd Faisal: Co-Founder,<br />
+Himanshu Himthani: Art Director,<br />
+Abhishek Chawla: Production Lead.<br />
+Ajay Joshi: Educational Advisor<br />
+Experience till now : Don&#8217;t know what to write&#8230;..<br />
+Vision : At Geek Mentors Studios, our vision is to be the best company in the world&#8211;in the eyes of our customers, shareholders, communities, Employees and people.</p></blockquote>
+<p>Wishing the team all the best.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/misc" title="View all posts in misc" rel="category tag">misc</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/development" rel="tag">development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/game" rel="tag">game</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/inspiration" rel="tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/startup" rel="tag">startup</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-554 -->
+
+				
+					
+	<article id="post-551" class="post-551 post type-post status-publish format-standard hentry category-saumya category-tutorial tag-automation tag-backup tag-plugin tag-wordpress">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/551" title="Permalink to WordPress : backing up to Dropbox" rel="bookmark">WordPress : backing up to Dropbox</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/551" title="2:27 am" rel="bookmark"><time class="entry-date" datetime="2011-08-25T02:27:40+00:00">August 25, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I learned it the hard way that once you have a site up and running its better to keep a backup of the same locally in your machine. There are chances that the whole of the content might get erased!! You call it a server failure, no backup plan or anything, but the end result would be loosing all your content along with the conversations. In my quest to get a simpler and straight forward backup plan, I found this nice plugin for WordPress, called &#8220;<a href="http://wordpress.org/extend/plugins/wordpress-backup-to-dropbox/">WordPress Backup to Dropbox</a>&#8220;. This plugin allows a direct, scheduled backup of the site to <a href="https://www.dropbox.com">Dropbox</a>. All one has to do is, schedule the time and frequency of backup and thats all, everything else is simply automated.<br />
+Hope that helps someone out there.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/automation" rel="tag">automation</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/backup" rel="tag">backup</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/plugin" rel="tag">plugin</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/wordpress" rel="tag">wordpress</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-551 -->
+
+				
+					
+	<article id="post-549" class="post-549 post type-post status-publish format-standard hentry category-mobile category-opensource category-tutorial tag-android tag-github tag-open-source tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/549" title="Permalink to OpenPlug : ASlate, drawing application." rel="bookmark">OpenPlug : ASlate, drawing application.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/549" title="7:34 am" rel="bookmark"><time class="entry-date" datetime="2011-08-24T07:34:06+00:00">August 24, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>While learning <a href="http://www.openplug.com/">OpenPlug|Studio</a> and diving into the code, my third Android application is here. Its a simple drawing board, kind of slate. As an user one has option to select different color and pen thickness for drawing on it. Again a simple but usable application, which can be downloaded from <a href="http://www.box.net/shared/4863qeu6vud3ly2l7muc">this link</a>.<br />
+The source code is availbale at Github too.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/android" rel="tag">android</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/github" rel="tag">github</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/open-source" rel="tag">open source</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-549 -->
+
+				
+					
+	<article id="post-543" class="post-543 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/543" title="Permalink to OpenPlug: Tic-Tac-Toe game" rel="bookmark">OpenPlug: Tic-Tac-Toe game</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/543" title="11:26 am" rel="bookmark"><time class="entry-date" datetime="2011-08-21T11:26:29+00:00">August 21, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>After my first application for Android with <a href="http://www.openplug.com/">OpenPlug|Studio</a>, I tried my hands on game development with it. So <a href="http://www.box.net/shared/rqekh6i4i4511g1bgz5d">here is the basic Tic-Tac-Toe game</a> done with it. <a href="https://github.com/saumya/openplug_TicTacToe">The source code is available at GitHub</a>.<br />
+Well, I must say if you are developing for Android, then it cannot be one size fit all. Every device is of different configuration in terms of screen size, resolution and capabilities. </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/uncategorized" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>			</span>
+															
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-543 -->
+
+				
+					
+	<article id="post-1224" class="post-1224 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1224" title="Permalink to First visit to &quot;God&#039;s own country&quot;" rel="bookmark">First visit to &quot;God&#039;s own country&quot;</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1224" title="10:10 am" rel="bookmark"><time class="entry-date" datetime="2011-08-17T10:10:53+00:00">August 17, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This is again a wild trip, a sudden decision and a fast move <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  I must say if you want to feel real India, go with a friend, to his/her own place. Nothing like getting the raw experience. And if you do that, I am sure you will be amazed by the Indian tradition, hospitality and the thousand year old culture we still preserve on our country.<br />
+<a href="http://www.keralatourism.org/">Kerala, often know as &#8220;The God&#8217;s own country&#8221; is truly stand up to its name.</a> If you are by any chance in Bangalore, then there are buses and trains to reach the place. And my destination was Kannur.<br />
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;q=kannur&amp;ie=UTF8&amp;hq=&amp;hnear=Kannur,+Kannur+District,+Kerala,+India&amp;sqi=2&amp;ll=11.868889,75.355556&amp;spn=5.794109,9.052734&amp;z=7&amp;vpsrc=6&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?hl=en&amp;q=kannur&amp;ie=UTF8&amp;hq=&amp;hnear=Kannur,+Kannur+District,+Kerala,+India&amp;sqi=2&amp;ll=11.868889,75.355556&amp;spn=5.794109,9.052734&amp;z=7&amp;vpsrc=6&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small><br />
+And I was travelling from Bangalore, so it was 9 hours journey in a bus on an average, though it took us 12 hours to reach as of traffic.<br />
+I was all tired and restless, but once we reach the place and spend some minutes there, then suddenly I regained the energy!! Well, its all nature every where <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  and I mean every where. We went through trees all the time with narrow road and this is just beautiful experience. At night we visited local club and I am glad, people have just accepted me apart from the language barrier. I could not speak / understand Malayalam so my friend became the translator. Thanks a lot to him.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052138665/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6068/6052138665_2b6538b7a4.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+Next day was the visit to the sea, beaches and the town. We travelled with a motorbike and the pictures tell a thousand words!<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052145859/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6064/6052145859_c5d51749c3.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+ First time ever I was in a beach where one can drive bikes,scooters or four wheelers.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052695420/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6188/6052695420_315390df52.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+<a href="http://www.flickr.com/photos/saumyaray/6052693678/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6207/6052693678_9757b9de07.jpg" width="500" height="110" alt="Kannur Trip"></a><br />
+Amazed to see the beauty.<br />
+The same river, which I rafted earlier in my first water rafting experience, is grown in width and I saw it here too. The small river, flowing through the hills with its massive potential of forces, is grown to a huge river, some what calm and widespread.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052147353/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6207/6052147353_c29d5a0ca1.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+Then the spring and the diving experience in it, is just one has to experience.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052151691/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6071/6052151691_fdd021c99b.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+The atmosphere was cold, i was expecting chilling cold water in the fountain, but it was kind of warm water!!<br />
+<iframe width="560" height="349" src="http://www.youtube-nocookie.com/embed/aP457dsjFeI?hd=1" frameborder="0" allowfullscreen></iframe></p>
+<p> Nature surely knows how to manage things and what best fits everyone.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/uncategorized" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>			</span>
+															
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1224 -->
+
+				
+					
+	<article id="post-541" class="post-541 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/541" title="Permalink to First visit to &#8220;God&#8217;s own country&#8221;" rel="bookmark">First visit to &#8220;God&#8217;s own country&#8221;</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/541" title="10:10 am" rel="bookmark"><time class="entry-date" datetime="2011-08-17T10:10:53+00:00">August 17, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This is again a wild trip, a sudden decision and a fast move <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  I must say if you want to feel real India, go with a friend, to his/her own place. Nothing like getting the raw experience. And if you do that, I am sure you will be amazed by the Indian tradition, hospitality and the thousand year old culture we still preserve on our country.<br />
+<a href="http://www.keralatourism.org/">Kerala, often know as &#8220;The God&#8217;s own country&#8221; is truly stand up to its name.</a> If you are by any chance in Bangalore, then there are buses and trains to reach the place. And my destination was Kannur.<br />
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;q=kannur&amp;ie=UTF8&amp;hq=&amp;hnear=Kannur,+Kannur+District,+Kerala,+India&amp;sqi=2&amp;ll=11.868889,75.355556&amp;spn=5.794109,9.052734&amp;z=7&amp;vpsrc=6&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?hl=en&amp;q=kannur&amp;ie=UTF8&amp;hq=&amp;hnear=Kannur,+Kannur+District,+Kerala,+India&amp;sqi=2&amp;ll=11.868889,75.355556&amp;spn=5.794109,9.052734&amp;z=7&amp;vpsrc=6&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small><br />
+And I was travelling from Bangalore, so it was 9 hours journey in a bus on an average, though it took us 12 hours to reach as of traffic.<br />
+I was all tired and restless, but once we reach the place and spend some minutes there, then suddenly I regained the energy!! Well, its all nature every where <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  and I mean every where. We went through trees all the time with narrow road and this is just beautiful experience. At night we visited local club and I am glad, people have just accepted me apart from the language barrier. I could not speak / understand Malayalam so my friend became the translator. Thanks a lot to him.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052138665/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6068/6052138665_2b6538b7a4.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+Next day was the visit to the sea, beaches and the town. We travelled with a motorbike and the pictures tell a thousand words!<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052145859/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6064/6052145859_c5d51749c3.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+ First time ever I was in a beach where one can drive bikes,scooters or four wheelers.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052695420/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6188/6052695420_315390df52.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+<a href="http://www.flickr.com/photos/saumyaray/6052693678/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6207/6052693678_9757b9de07.jpg" width="500" height="110" alt="Kannur Trip"></a><br />
+Amazed to see the beauty.<br />
+The same river, which I rafted earlier in my first water rafting experience, is grown in width and I saw it here too. The small river, flowing through the hills with its massive potential of forces, is grown to a huge river, some what calm and widespread.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052147353/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6207/6052147353_c29d5a0ca1.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+Then the spring and the diving experience in it, is just one has to experience.<br />
+<a href="http://www.flickr.com/photos/saumyaray/6052151691/" title="Kannur Trip by saumyaray, on Flickr"><img src="http://farm7.static.flickr.com/6071/6052151691_fdd021c99b.jpg" width="500" height="375" alt="Kannur Trip"></a><br />
+The atmosphere was cold, i was expecting chilling cold water in the fountain, but it was kind of warm water!!<br />
+<iframe width="560" height="349" src="http://www.youtube-nocookie.com/embed/aP457dsjFeI?hd=1" frameborder="0" allowfullscreen></iframe></p>
+<p> Nature surely knows how to manage things and what best fits everyone.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/uncategorized" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>			</span>
+															
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-541 -->
+
+				
+					
+	<article id="post-1223" class="post-1223 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/1223" title="Permalink to OpenPlug &#124; Studio : things to consider" rel="bookmark">OpenPlug &#124; Studio : things to consider</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1223" title="9:43 am" rel="bookmark"><time class="entry-date" datetime="2011-08-12T09:43:35+00:00">August 12, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Talking about one code base and multiple devices is a tricky affair. In that case there are various frameworks and platforms which strive to do that. One of the most beautiful platform I found is <a href="http://www.openplug.com/">OpenPlug|Studio</a>. Well, being an Actionscript developer and working on Flex SDK, one will certainly feel at home with OpenPlug|Studio. Being said that, there are some very subtle differences to consider while creating applications with this platform compared to Flex itself.<br />
+1. Its loosely based on Flex 3 SDK. That means there are things like &#8220;mx&#8221; components like &#8220;WindowedApplication&#8221; is present in it. The work flow is similar to any Flex 3 based project. But then it is recommended to use &#8220;mob&#8221; namespace based components for they are mobile optimized for almost all devices. Again this OpenPlug|Studio SDK, which is known as Elips SDK only supports a subset of Actionscript 3.<br />
+2. Almost all the &#8220;mob&#8221; components are final classes. The immediate effect is one can not extend native &#8220;mob&#8221; components to create a new component.<br />
+3. The display object containers do not include &#8220;MovieClip&#8221;.<br />
+4.  Using the available flex/actionscript frameworks is a strict no, as to one will end up writing the whole framework again for this OpenPlug|Studio (Elips SDK). For this ElipsSDK is a subset of Actionscript 3.<br />
+5.  I was trying to open an image in the device with the default photo viewer application on Android, but then at the end came to know that this is not possible. Though Elips SDK provides the component, which can display the photo. I think, that indicates we can use Elips SDK to view images, run videos/audios with SDK components but can not directly force the default players/viewers of the device to launch the files.<br />
+6. About the &#8220;List&#8221; component I have already shared my views in the blog post earlier. Just use a default &#8220;ItemRenderer&#8221; to use the &#8220;List&#8221; component for the time being, until the Elips SDK fixes the bug.<br />
+7. Accessing the file system is a little tricky! I was trying to access file system of an Android phone , both phone memory and SD card memory. While the document says, it could be accessed as</p>
+<pre>
+Path to access memory card is: app-storage:/ExternalStorage/
+Path to access internal memory is: app-storage:/InternalStorage/
+In AIR, it corresponds to subfolder in app-storage:/, to keep Flash compatibility for simulation.
+</pre>
+<p>But in reality I could never get into the file system with them. The in-phone memory access I still have to find a way, the SD card file system can be accessed as</p>
+<pre lang="actionscript">
+var extFolderPath:String = File.applicationStorageDirectory.nativePath+ "ExternalStorage";
+var externalFolder:File=new File(extFolderPath);
+</pre>
+<p>8. Javascript can be used inside the Application with &#8220;script&#8221; tag as</p>
+<pre lang="actionscript">
+mx:Script source="test.js"
+</pre>
+<p>This is interesting as from inside javascript file one can access the components with their &#8220;id&#8221; as one accesses them in Actionscript. But take care not to use any javascript libraries here as this is not DOM manipulation we are doing but using javascript syntax to do our Application. I have not tested the loose typing metaphor of javascript with a project, will update when I do that.<br />
+9. The OpenPlug|Studio is a free IDE and it works on both Mac and Windows. There is a plugin version, which could be installed over a FlashBuilder and a standalone version which could be installed separately without any dependencies. And the forum at the OpenPlug|Studio site is quite active, though it may not be instant but at least you will get your answers within a decent amount of time.</p>
+<p>I thought would put my experiences here, so as to it may help someone out there with similar kind of problem.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/uncategorized" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>			</span>
+															
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-1223 -->
+
+				
+						<nav id="nav-below">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/page/12" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/page/10" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+			
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

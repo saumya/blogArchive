@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>HTML5 : Canvas with mouse interaction. | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='haXe : Compiling to javascript' href='http://saumya.github.io/blogArchive/archives/851' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/842' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=842' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-842 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/834" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/851" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-842" class="post-842 post type-post status-publish format-standard hentry category-css3 category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-opensource category-tutorial tag-html5 tag-interaction tag-javascript tag-spritesheet">
+	<header class="entry-header">
+		<h1 class="entry-title">HTML5 : Canvas with mouse interaction.</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/842" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-30T01:00:34+00:00">September 30, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Here we are going to study about the creation of Canvas dynamically and the basic mouse interactivity with the Canvas elements.</p>
+<p><a href="http://www.box.net/shared/xg21ic16iml1dlv1u5hc" title="Dynamic Canvas and Mouse interaction" target="_blank">The source files for this example is here for you to download and play.</a></p>
+<p>We are going to use a separate sprite sheet and try to make the scene a little more interesting than the last one. I would say to download the source files and see the example for yourself to see what is it doing. Basically there is a scene on the background with 6 tables and a girl doing some experiment on third table. Towards the left top corner of the scene, there is another girl trying to do some magic with its magic wand. If you look at the code, the scene with the girl doing experiment is a straight forward drawing from the sprite sheet as we did that in last tutorial. The girl with the magic wand is drawn in a dynamically created Canvas. The code looks as below.</p>
+<pre lang='javascript'>
+//creating canvas dynamically
+canvasGirl=document.createElement('canvas'); 
+canvasGirl.width=100; 
+canvasGirl.height=100;
+//get the context
+contextGirl=canvasGirl.getContext('2d');
+//customise canvas
+canvasGirl.style.background='transparent';
+canvasGirl.style.zIndex=5;
+//add the canvas to the document
+document.body.appendChild(canvasGirl);
+</pre>
+<p>The first thing is to create a new canvas with &#8220;createElement(&#8216;canvas&#8217;)&#8221;. That will make a new canvas. Now we have to get the context to draw something on it. This is done with &#8220;getContext(&#8217;2d&#8217;)&#8221; as usual, nothing new here. And lastly, we have to add our newly created Canvas to the document and this is done with &#8220;document.body.appendChild(canvasGirl);&#8221; code. Thats beautiful. Everything else in the code is just configuring the canvas.<br />
+Once the canvas and context are available to us, we can do anything we are able to do to a Canvas. So the girl with the magic wand is drawn to the context of this Canvas element. The code looks as below.</p>
+<pre lang='javascript'>
+resetContext(canvasGirl,contextGirl);
+contextGirl.drawImage(photo, 108*counter+10, 900, 96, 64, 0, 0, 96, 64);
+</pre>
+<p>First we are resetting the Canvas, so as to draw new content on each timer. Since the girl with magic wand is actually an animation, we call the code above repeatedly on a timer event. And first we clear the context with our own function and then redraw an image from sprite sheet at the same place on the canvas, so as to make an animation. If you are following along with the previous tutorials then the reseting of context code should not be new to you, else the code looks as as below.</p>
+<pre lang='javascript'>
+resetContext=function(canvasRef,contextRef){
+	contextRef.clearRect(0,0,canvasRef.width,canvasRef.height);
+};
+</pre>
+<p>All we have, are two layers of drawing and animation drawn from the same sprite sheet.<br />
+Lets do some mouse interactivity with these elements. The code looks as below.</p>
+<pre lang='javascript'>
+//------------ adding mouse interaction --------------
+$('#board_one').mouseup(function() {
+  	alert('Canvas with Tables');
+});
+$(canvasGirl).mouseup(function() {
+  	alert('Canvas with Girl, doing magic.');
+});
+</pre>
+<p>The trick here is JQuery&#8217;s neat job. Just remember anything wrapped with $() will give a JQuery element of the same HTML element. So our dynamically created Canvas is made an JQuery element by </p>
+<pre lang='javascript'>
+$(canvasGirl)
+</pre>
+<p>Notice that there is no &#8216;#&#8217; before the name as it is before &#8216;board_one&#8217;, thats for the &#8216;board_one&#8217; we are referring the HTML element with id &#8216;board_one&#8217;, while the other one we are creating dynamically in javascript and converting it to a JQuery equivalent.<br />
+Thats nice and if you have not done yet, please go ahead and click on the board to get an alert showing different message and if you click on the girl with magic wand, that will alert a different message.<br />
+This is quite simple and straight forward interactivity, but I think you got the point.<br />
+Happy coding <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<blockquote><p>And yes, I made it to one month of continuous posting, highly influenced by <a href="http://www.bit-101.com/blog/" target="_blank">Keith Peters</a>. Though it was not all javascript and I missed some dates, but all in all, the number of posts in a month is achieved. I am quite happy about my effort and a big thanks to all of you, who read it.</p></blockquote>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/interaction" rel="tag">interaction</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/spritesheet" rel="tag">spritesheet</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/842" title="Permalink to HTML5 : Canvas with mouse interaction." rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-842 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

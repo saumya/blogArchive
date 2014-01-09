@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>HTML5 : animating on a Canvas with sprite sheet | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='A look inside game development and publishing world.' href='http://saumya.github.io/blogArchive/archives/834' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/821' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=821' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-821 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/814" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/834" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-821" class="post-821 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-tutorial tag-html5 tag-javascript tag-tutorial tag-tutorials">
+	<header class="entry-header">
+		<h1 class="entry-title">HTML5 : animating on a Canvas with sprite sheet</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/821" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-29T01:00:16+00:00">September 29, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>We have already seen how to animate on Canvas in one of our last tutorials. That was quite straight forward as we were using Canvas drawing straight out of the box. Here we will use our newly learnt tools(loading and drawing bitmap image in canvas) to make an animation.<br />
+<a href="http://www.box.net/shared/e8xxhdcsx83a2a15apgm" target="_blank">The source files are here for you to download and play.</a><br />
+The concept is the same though as in re-drawing in the canvas at a regular interval, but instead of drawing with drawing API, we will be drawing image.<br />
+First of all lets understand what a sprite sheet is? The sprite sheet is an image! Just an image? Yes, its just an image file. In that image file, we should have almost all the images needed for our purpose. That means, one image file consisting of all the images required in a project. Why its necessary? Good question. The reason being we have just one call to the server and all our image data is loaded. The next reason is to update the image data. Suppose we want to update the graphics all at once, we just have to update one image file.<br />
+If you are going through the image file in our source, the image file has 12 different images of a character. All we are going to do is, cycle over each character over a time. That we can do with a &#8220;setInterval()&#8221; javascript function.<br />
+Lets see the javascript code first and then we will go learn it.</p>
+<pre lang="javascript">
+$.ready()
+{
+	//------------- 1. defining the variables and functions----------------
+	var resetCanvas,resetContext,
+		canvas_1,context_1,
+		image_data,photo,loadPhoto,imageLoaded,timer,onTimer,counter,animate;
+	//------------- 2. configuring ---------------------------------------
+	//get the canvas and context
+	canvas_1=$('#board_one').get(0);
+	context_1=canvas_1.getContext('2d');
+	counter=1;
+	//---------------functions----------------------------------
+	//resetting the width and height, it automatically resets the canvas
+	//clear the board, quick and dirty, its a HACK!!
+	resetCanvas = function (canvasRef){
+		canvasRef.width=canvasRef.width;
+		canvasRef.height=canvasRef.height;
+	};
+	//clear the board
+	resetContext=function(canvasRef,contextRef){
+		contextRef.clearRect(0,0,canvasRef.width,canvasRef.height);
+	};
+	
+	imageLoaded=function(evt)
+	{
+		var originalPic=evt.target; 
+		animate();
+	};
+	
+	loadPhoto=function(path)
+	{
+		photo.src=path;
+	};
+	
+	animate=function(){
+		timer=setInterval(onTimer,150);
+	};
+	
+	onTimer=function(){
+		resetContext(canvas_1,context_1);
+		
+		//draw again
+		if(counter>=12)
+		{
+			counter=0;
+		}
+		context_1.drawImage(photo, 97*counter, 0, 97, 95, 230, 110, 97, 95);
+		counter++;
+		//clearInterval(timer);//incase we need to stop the animation
+	};
+	
+	//----------------3. using-----------------------------
+	image_data=context_1.createImageData(canvas_1.width,canvas_1.height);
+	photo=new Image();
+	photo.onload=imageLoaded;
+	loadPhoto('images/walkSheet.png');
+};
+</pre>
+<p>In the beginning we have just defined the variables, then populating them with the required values and scripts. Lastly we are calling our methods and using these variables.<br />
+In the beginning we get our canvas and its context. Intitialised the &#8220;counter&#8221; to 1 as we have 12 different positions of the image, we will be needing a counter to move to next position. So once these properties are populated, we have created some functions, which we use. Then moving on to the actions, firstly there is an &#8220;image_data&#8221; object, I have created, but not used. That is just to show we can create an image data object from the canvas, which is used to pixel manipulation. So the first thingon making our animation is making an Image object with </p>
+<pre lang="javascript">
+photo=new Image();
+</pre>
+<p>Then we have to provide an event handler for its image load event, that is done with the code below.</p>
+<pre>
+photo.onload=imageLoaded;
+</pre>
+<p>If you remember we have already created the &#8220;imageLoaded&#8221; function, which looks as below.</p>
+<pre lang="javascript">
+imageLoaded=function(evt)
+	{
+		var originalPic=evt.target; //just for the shake of understanding
+		animate();
+	};
+</pre>
+<p>Here the first the &#8220;originalPic&#8221; variable is defined just to know that we can get the image from the event object as &#8220;event.target&#8221; . So all in all this &#8220;imageLoaded&#8221; function actually initialises our animation by calling &#8220;animate()&#8221;.</p>
+<pre lang="javascript">
+animate=function(){
+		timer=setInterval(onTimer,150);
+	};
+</pre>
+<p>And &#8220;animate()&#8221; function actually intialises the timer for animation and calls &#8220;onTimer&#8221; function repeatedly at each 150 milliseconds.</p>
+<pre lang="javascript">
+onTimer=function(){
+		resetContext(canvas_1,context_1);
+		//draw again
+		if(counter>=12)
+		{
+			counter=0;
+		}
+		context_1.drawImage(photo, 97*counter, 0, 97, 95, 230, 110, 97, 95);
+		counter++;
+		//clearInterval(timer);
+	};
+</pre>
+<p>This is the place, where all the action is happening. First we have to clear our canvas, that is being done on the first line of this function. Next we check, whether the &#8220;counter&#8221; is more than 12, if it is then reset it to 0. Thats for we have just 12 different images. Now the line which actually draws our animation is </p>
+<pre lang="javascript">
+context_1.drawImage(photo, 97*counter, 0, 97, 95, 230, 110, 97, 95);
+</pre>
+<p>This is actually drawing part of the sprite sheet to a particular are in the canvas. Its like copying a portion from the sprite sheet and pasting it in the Canvas. On the next timer event (ie; after another 150 milliseconds, it will copy another portion and paste it in the same location.) we take another portion from the sprite sheet and paste it in the same area of canvas. Since we are clearing the canvas and re-drawing it over a period of time, it seems as if the character is animating! The time of 150 milliseconds is just a guess, we can lower it to see the jerky animation or higher it to see the character move faster. The other values as 97,95 are the width and height of each image in pixels, so that would be different for different sprite sheets.<br />
+The last line increments the counter by one.<br />
+Now we have a nice looking animation in our HTML Canvas.</p>
+<blockquote><p>Things to not here is, I struggled for sometime to see this working, for I was providing wrong parameter values (97,95 seemed perfect). So if your animation is not visible, first see if the parameter values are correct. Even one pixel higher than the actual image height or width will make the whole thing invisible. Though lower values work fine.</p></blockquote>
+<p>Happy coding.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/821" title="Permalink to HTML5 : animating on a Canvas with sprite sheet" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-821 -->
+
+						<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			One thought on &ldquo;<span>HTML5 : animating on a Canvas with sprite sheet</span>&rdquo;		</h2>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-72">
+		<article id="comment-72" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://1.gravatar.com/avatar/f761f66d9fb0f66619188fd9230d4c73?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn"><a href='http://www.juegosdeaprender.com' rel='external nofollow' class='url'>html5juegos</a></span> on <a href="http://saumya.github.io/blogArchive/archives/821#comment-72"><time datetime="2012-10-17T22:34:38+00:00">October 17, 2012 at 10:34 pm</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>Thank you very, this is just what I was looking for. a way to handle a sprite sheet, thanks!</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+		</ol>
+
+		
+				<p class="nocomments">Comments are closed.</p>
+		
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

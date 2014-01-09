@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>saumya | Where there is a will, there is a way. | Page 7</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+ 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="home blog paged custom-background paged-7 two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+			
+						<nav id="nav-above">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/page/8" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/page/6" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+								
+					
+	<article id="post-927" class="post-927 post type-post status-publish format-standard hentry category-html5 category-javascript category-opensource tag-haxe tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/927" title="Permalink to haXe entry point" rel="bookmark">haXe entry point</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/927" title="1:30 am" rel="bookmark"><time class="entry-date" datetime="2011-12-06T01:30:23+00:00">December 6, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Lets get down to coding. The first class of ours in haXe is the main class or the program entry point class. The name of the class may be anything but the point to remember here is the entry point is a static function named main. So the first class of a haXe application looks as below.</p>
+<pre lang='haXe'>
+package;
+class Main {	
+	public function new(){
+	}
+	
+	public static function main() {
+		trace("Hello haXe !");
+		new Main();
+	}
+}
+</pre>
+<p>If you keep a closer look, the main class is not a display object, unlike the typical Flash application. Rather we have a general class here which is saved as &#8220;Main.hx&#8221; and this class has a method called &#8220;main()&#8221;. This is typical haXe and thats all we need to compile our program to a SWF.<br />
+We can save our compiler parameters in a file named &#8220;compile.hxml&#8221; or something similar as long as we can refer to it as a build file and having a &#8220;.hxml&#8221; extension. This file is run by the haxe compiler. In our particular case this file looks as </p>
+<pre lang='haXe'>
+-swf9 bin/swf/Main.swf
+-main Main
+-cp src
+</pre>
+<p>Here we are defining the target type to be produced from the haXe compiler. Then the program entry class and next is class path.<br />
+Running this will produce a SWF named &#8220;Main.swf&#8221; in the folder &#8220;bin/swf/Main.swf&#8221;.<br />
+Quite straight forward and simplicity at its best.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-927 -->
+
+				
+					
+	<article id="post-925" class="post-925 post type-post status-publish format-standard hentry category-html5 category-inspiration category-ipad-development category-iphone-development category-javascript category-mobile category-objectivec category-opensource tag-haxe tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/925" title="Permalink to some cool haXe IDE" rel="bookmark">some cool haXe IDE</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/925" title="11:32 pm" rel="bookmark"><time class="entry-date" datetime="2011-12-05T23:32:18+00:00">December 5, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Well developing in a language without a specific IDE for itself might be too much for a beginner. Fortunately we have some very cool and nice IDEs available for us.<br />
+1. <a href="http://www.flashdevelop.org/wikidocs/index.php?title=Main_Page">FlashDevelop</a> (Based on <a href="http://www.scintilla.org/SciTE.html">SciTE</a>)<br />
+2. <a href="http://fdt.powerflasher.com/buy-download/">FDT5</a> (Based on <a href="http://www.eclipse.org/">Eclipse</a>)</p>
+<p>While both these IDEs are free, FlashDevelop is windows only. But I am surely in love with FlashDevelop. FDT is good but being on Eclipse, it takes up a lot of memory, on the other hand FDT runs on all platforms. So choose your weapons and get ready to haXe it all.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-925 -->
+
+				
+					
+	<article id="post-918" class="post-918 post type-post status-publish format-standard hentry category-css3 category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-objectivec category-opensource tag-haxe tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/918" title="Permalink to haXe basics" rel="bookmark">haXe basics</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/918" title="8:00 am" rel="bookmark"><time class="entry-date" datetime="2011-12-04T08:00:27+00:00">December 4, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>The bare bone basic of haXe language is one must need an Entry point to the Application. This could be any class, but then one must specify the entry point function, which is &#8220;main()&#8221; , the signature of function looks like</p>
+<pre lang='haxe'>
+public static function main() {}
+</pre>
+<p>Constructors in HAXE are written as &#8220;new()&#8221; as below</p>
+<pre lang='haxe'>
+class GameStage
+{
+ public function new(){}
+}
+</pre>
+<p>the package declaration ends with a semicolon (unlike any other major laguages, it does not contain curly braces)</p>
+<pre lang='haxe'>
+package com.saumya.haxe.helloWorld;
+class GameStage
+{
+	public function new() {}
+}
+</pre>
+<p>If you are extending an display object, then &#8220;super&#8221; must be called from the constructor. It snot optional, its mandatory.<br />
+Every line of code must end with &#8220;;&#8221; semicolon, again this is mandatory not optional.<br />
+Every class file is saved with &#8220;.hx&#8221; extension.<br />
+The haxe compiler file is saved with &#8220;.hxml&#8221; extension.<br />
+The NME compiler file is saved as &#8220;.nmml&#8221; extension.<br />
+A typical &#8220;.hxml: file looks as </p>
+<pre>
+-swf bin/swf/inTheBigBrain_as3_FP10.swf
+-main Main
+-swf-header 800:600:30:000000
+-cp src
+</pre>
+<p>Similarly to compile from NME, you have to create a &#8220;.nmml&#8221; file.<br />
+<a href="http://www.haxenme.org/developers/documentation/nmml-project-files/" target="_blank">A typical &#8220;.nmml&#8221; file description is here.</a></p>
+<p>for compiling a .hxml file, you fire up the following command,</p>
+<pre>
+haxe test.hxml
+</pre>
+<p><a href="http://haxe.org/doc/compiler">Have a look at the detailed options.</a></p>
+<p>To compile a nmml file, you have to fire up one of these commands. But the very basic is </p>
+<pre>
+haxelib run nme test my.nmml flash
+</pre>
+<p><a href="http://www.haxenme.org/developers/documentation/command-line/">The detailed options are here.</a></p>
+<p>Hope that gives you the very basics of the language.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-918 -->
+
+				
+					
+	<article id="post-905" class="post-905 post type-post status-publish format-standard hentry category-css3 category-html5 category-ipad-development category-iphone-development category-javascript category-mobile category-objectivec category-opensource tag-cross-device-development tag-cross-compile tag-crossplatfrom tag-haxe tag-opensource">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/905" title="Permalink to haXe : some talks" rel="bookmark">haXe : some talks</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/905" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-12-03T01:00:16+00:00">December 3, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><iframe width="480" height="360" src="http://www.youtube.com/embed/02K-DabkoHs?rel=0" frameborder="0" allowfullscreen></iframe><br />
+<iframe width="640" height="360" src="http://www.youtube.com/embed/t9FcKqvaEb8?rel=0" frameborder="0" allowfullscreen></iframe></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-device-development" rel="tag">cross device development</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/cross-compile" rel="tag">cross-compile</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatfrom" rel="tag">crossplatfrom</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-905 -->
+
+				
+					
+	<article id="post-903" class="post-903 post type-post status-publish format-standard hentry category-html5 category-ipad-development category-javascript category-mobile category-objectivec category-opensource category-tutorial tag-cross-compile tag-crossplatfrom tag-haxe tag-multiplatform tag-opensource tag-tutorial">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/903" title="Permalink to haXe" rel="bookmark">haXe</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/903" title="2:15 am" rel="bookmark"><time class="entry-date" datetime="2011-12-02T02:15:10+00:00">December 2, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>What is it all about ? Well its all about another language. Not really, if you know ECMA script like javascript or actionscript, haXe is just another home. It does not hurt to learn the simplicity of the language. That does not mean, its not capable! The capability of this language is, it compiles to a lot of platforms! Are you serious?! Yeah, you heard it right. It compiles to almost all the platforms we have now. Starting from AVM1 and AVM2 swfs to native windows, mac, linux applications.<br />
+The simplicity of a scripting language and the robustness of C, the best of both worlds! Awesome.<a href="http://haxe.org/doc/intro"> For a quick overview of all the platforms, head over to the official page here</a>.<br />
+Now haXe comes with a lot of libraries on top of the basic language, which makes it even interesting. And <a href="http://www.haxenme.org/">one of the such libraries is NME</a>. After working in NME for a week, I am not kind of addicted to it. It simply allows the code to be compiled to HTML5 and iDevices like iPhone/iPad. <a href="http://www.haxenme.org/about-nme/supported-devices/">The complete list of supported devices are listed here in the official page</a>.<br />
+Hope that should already have been making you interested in haXe. </p>
+<p>If you still need to see some hands on coding and examples, join me this sunday, where I am doing a workshop on haXe and NME for flash developers.<br />
+Happy haXe -ing.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/mobile" title="View all posts in mobile" rel="category tag">mobile</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-compile" rel="tag">cross-compile</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/crossplatfrom" rel="tag">crossplatfrom</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/multiplatform" rel="tag">multiplatform</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/opensource" rel="tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-903 -->
+
+				
+					
+	<article id="post-898" class="post-898 post type-post status-publish format-standard hentry category-css3 category-html5 category-ipad-development category-iphone-development category-javascript category-objectivec category-opensource category-tutorial tag-cross-compile tag-haxe tag-multiplatform tag-tutorial">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/898" title="Permalink to December with a new beginning !" rel="bookmark">December with a new beginning !</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/898" title="1:47 am" rel="bookmark"><time class="entry-date" datetime="2011-12-01T01:47:59+00:00">December 1, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Well, after a continuous month of learning and posting about javascript and canvas, I am up for a new learning. And this time its <a href="http://haxe.org/">haXe</a> with <a href="http://www.haxenme.org/">NME</a>. Yeah, the excitement is tremendous and I can not explain in words about what I got in last few days. HAXE is truly a life saver in many occasion.<br />
+As I will go on on my study of the language and the compiling options I am planning to post it here.<br />
+So let the party begin.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/cross-compile" rel="tag">cross-compile</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/haxe" rel="tag">haxe</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/multiplatform" rel="tag">multiplatform</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-898 -->
+
+				
+					
+	<article id="post-887" class="post-887 post type-post status-publish format-standard hentry category-life category-saumya tag-food-for-thought tag-life tag-philosophy">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/887" title="Permalink to Back to the Future !" rel="bookmark">Back to the Future !</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/887" title="11:05 am" rel="bookmark"><time class="entry-date" datetime="2011-11-06T11:05:24+00:00">November 6, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/childhood-guest" title="View all posts by guest" rel="author">guest</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><em>(language: Odiya) Khanda pralaya ru khanda pralaya parjyanta : (language : Hindi)Quayamat se Quayamat tak&#8230;.</em></p>
+<p>Long long ago, there were 5 lions staying in a jungle with their families. A 5000 strong grazing animal population was part of the food chain and there was no problem for sustainability. Lions were on hunting spree when they were hungry; else they were uncles to everybody. Climate was good, no dearth of grass, enough water in the river, many fruits in the trees with lot of monkeys of course!! One day a little bird said to one uncle Lion that two strange animals are coming towards their jungle. They walk on their rear limbs, have no tails, eat anything eatable, stay inside a self-made nest, and use tools to do simple things to very complicated things. They have killed many animals on their way including an elephant by using their strange tools. They use some vocals to communicate. They preserve food for bad weather and use a rolling cart for transportations. I think they are dangerous. They are coming to stay here….for ever. The lion said, “I am the king of this jungle. Don’t you know which protein I eat? Elephant is a weak grass eating animal. Let them come I`ll pounce those walky talkies. I am very cruel when I am hungry. Everybody knows. They are not coming to my jungle but to my empty stomach”.</p>
+<p>The lion waited and waited, they didn`t turn up. After few days he became very hungry. He thought those guys ran away to some other place. He saw a big fat immobilized spotted deer and thought for a great dinner instead. It was a trap. The two walky talkies killed him. Similarly they killed all the lions and started living there. With time their population grew. There were no lions, so they were on the top of the food chain. They developed medicines from herbs, used fire for cooking and many new things which surprized other animals. They overwhelmingly killed the grazing animals, even if they were not hungry! After few hundred years, grazing animals reduced to double digits. So they cleaned up jungle for agriculture, domesticated the leftover animals. After few hundred years they required more land for agriculture. A fraction of them migrated to the other side of the river and applied all the techniques they knew from this side of the river. After few hundred years, they started looking differently across the river. After few hundred years they had their own vocal communications, customs and Gods somewhat similar and somewhat different. Each side of the river started treating them as a better species. After few hundred years their number became huge. No more jungle no more grass land remained except the desert. At that point of time, they had two options either to reduce their consumption or to produce more. But they could do neither because they were habituated to live in an expensive way and their resources were limited. So they started begging, then stealing, then robbing each other. But none of them worked. So each side across the river secretly decided to attack the other side. They secretly build up unique war-fares and thought that they had an edge. One stormy night, the war started. All the weapons used. Rest is history.</p>
+<p>Somebody said, “We all are born to consume resources”. Consume responsibly to live bit longer.</p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/food-for-thought" rel="tag">food for thought</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/life" rel="tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/philosophy" rel="tag">philosophy</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-887 -->
+
+				
+					
+	<article id="post-884" class="post-884 post type-post status-publish format-standard hentry category-inspiration category-uncategorized tag-inspiration">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/884" title="Permalink to No Excuses" rel="bookmark">No Excuses</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/884" title="9:35 am" rel="bookmark"><time class="entry-date" datetime="2011-11-05T09:35:36+00:00">November 5, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><iframe width="480" height="360" src="http://www.youtube.com/embed/obdd31Q9PqA?rel=0" frameborder="0" allowfullscreen></iframe></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/inspiration" title="View all posts in inspiration" rel="category tag">inspiration</a>, <a href="http://saumya.github.io/blogArchive/archives/category/uncategorized" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/inspiration" rel="tag">inspiration</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-884 -->
+
+				
+					
+	<article id="post-881" class="post-881 post type-post status-publish format-standard hentry category-life category-saumya tag-life">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/881" title="Permalink to It was an exciting travelling time." rel="bookmark">It was an exciting travelling time.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/881" title="12:24 am" rel="bookmark"><time class="entry-date" datetime="2011-10-26T00:24:56+00:00">October 26, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>After a small travel around the country, meeting old friends, making new friends, visiting old places, going to new places and what not, finally I am back home. So the delay and posting here. Though travelling could not hold me back from posting, but then I took some time off to be back again and posting here.<br />
+By the way, thank you all who are visiting it, I must say the amount of crowd I am getting here is really motivating. Please do leave a comment, they are equally valuable to me too <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/life" rel="tag">life</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-881 -->
+
+				
+					
+	<article id="post-877" class="post-877 post type-post status-publish format-standard hentry category-life category-saumya tag-life tag-saumya">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="http://saumya.github.io/blogArchive/archives/877" title="Permalink to My on the move partners, thanks." rel="bookmark">My on the move partners, thanks.</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/877" title="10:36 pm" rel="bookmark"><time class="entry-date" datetime="2011-10-09T22:36:59+00:00">October 9, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>			</div><!-- .entry-meta -->
+			
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Well, lately I am travelling a lot arround India. Most of the time I want to be online and do my job as well of continuous blogging and studying stuffs I like. <br />
+I must thank my HTC wildfire phone which runs Android OS, Airtel prepaid with 2g and rooming, my MacBook Pro, and my phone hotspot. These things made me a complete mobile office, productive and fun. Though slow connection but I did almost all of my travel tickets, voice chat over Skype, through these only things. <br />
+Love you guys and thank you for supporting me at my need.</p>
+<p><span class="post_sig">Posted from WordPress for Android through my &#8220;HTC Wildfire&#8221;.</span></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://saumya.github.io/blogArchive/archives/category/life" title="View all posts in life" rel="category tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/category/saumya" title="View all posts in saumya" rel="category tag">saumya</a>			</span>
+															<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="http://saumya.github.io/blogArchive/archives/tag/life" rel="tag">life</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/saumya" rel="tag">saumya</a>			</span>
+						
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-877 -->
+
+				
+						<nav id="nav-below">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous"><a href="http://saumya.github.io/blogArchive/page/8" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			<div class="nav-next"><a href="http://saumya.github.io/blogArchive/page/6" >Newer posts <span class="meta-nav">&rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	
+			
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="16">android&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="3">css3&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="47">haxe&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">html5&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="5">inspiration&nbsp;&nbsp;(39)</option>
+	<option class="level-0" value="6">ipad development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="7">iphone development&nbsp;&nbsp;(47)</option>
+	<option class="level-0" value="8">javascript&nbsp;&nbsp;(66)</option>
+	<option class="level-0" value="9">life&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="10">misc&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="11">mobile&nbsp;&nbsp;(40)</option>
+	<option class="level-0" value="12">objectiveC&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="13">opensource&nbsp;&nbsp;(72)</option>
+	<option class="level-0" value="14">saumya&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="15">tutorial&nbsp;&nbsp;(70)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(8)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://saumya.github.io/blogArchive/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://saumya.github.io/blogArchive/archives/date/2014/01' title='January 2014'>January 2014</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/12' title='December 2013'>December 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/11' title='November 2013'>November 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/10' title='October 2013'>October 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/08' title='August 2013'>August 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/07' title='July 2013'>July 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/06' title='June 2013'>June 2013</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/05' title='May 2013'>May 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/04' title='April 2013'>April 2013</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/03' title='March 2013'>March 2013</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/02' title='February 2013'>February 2013</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2013/01' title='January 2013'>January 2013</a>&nbsp;(9)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/11' title='November 2012'>November 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/09' title='September 2012'>September 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/04' title='April 2012'>April 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/03' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/02' title='February 2012'>February 2012</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2012/01' title='January 2012'>January 2012</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/12' title='December 2011'>December 2011</a>&nbsp;(19)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/11' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/10' title='October 2011'>October 2011</a>&nbsp;(5)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/09' title='September 2011'>September 2011</a>&nbsp;(31)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/08' title='August 2011'>August 2011</a>&nbsp;(11)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/07' title='July 2011'>July 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/06' title='June 2011'>June 2011</a>&nbsp;(6)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/05' title='May 2011'>May 2011</a>&nbsp;(13)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/04' title='April 2011'>April 2011</a>&nbsp;(2)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/02' title='February 2011'>February 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2011/01' title='January 2011'>January 2011</a>&nbsp;(1)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/12' title='December 2010'>December 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/11' title='November 2010'>November 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/10' title='October 2010'>October 2010</a>&nbsp;(10)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/09' title='September 2010'>September 2010</a>&nbsp;(3)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/08' title='August 2010'>August 2010</a>&nbsp;(4)</li>
+	<li><a href='http://saumya.github.io/blogArchive/archives/date/2010/07' title='July 2010'>July 2010</a>&nbsp;(9)</li>
+		</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

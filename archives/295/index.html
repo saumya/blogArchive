@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Referring to an element in HTML page | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='jQuery : Referring to an element in HTML page' href='http://saumya.github.io/blogArchive/archives/671' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/295' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=295' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-295 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/639" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/671" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-295" class="post-295 post type-post status-publish format-standard hentry category-css3 category-html5 category-tutorial tag-css tag-html tag-javascript tag-tutorial tag-tutorials">
+	<header class="entry-header">
+		<h1 class="entry-title">Referring to an element in HTML page</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/295" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-11T01:00:44+00:00">September 11, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>How to select an element in an HTML page? This is often get in my way, while beginning to learn Javascript, CSS and HTML. The simple answer is with javascript we have a method named &#8220;getElementById()&#8221; and always works as</p>
+<pre lang="javascript">
+document.getElementById('element ID');
+</pre>
+<p>Lets dive into code and see how things work. Lets say we have an HTML page as </p>
+<pre lang="html">
+<!DOCTYPE HTML>
+<html>
+	<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+		
+		<link type="text/css" rel="stylesheet" media="screen" href="general.css"/>
+		<script type="text/javascript" src="general.js"></script>
+	</head>
+	<body onload="onPageLoad()">
+		<div id="one" class="blockBase">
+			Hello World.
+		</div>
+		<div id="two" class="blockBase">
+			Hello you, this is JS.
+			<button id="btnOne" type="button">one</button>
+			<button id="btnTwo" type="button">two</button>
+		</div>
+	</body>
+</html>
+</pre>
+<p>There are two &#8220;div&#8221; tags in it and they are having id values as &#8220;one&#8221; and &#8220;two&#8221; respectively. Then we have two buttons inside the second &#8220;div&#8221;. These buttons are having id values as &#8220;btnOne&#8221; and &#8220;btnTwo&#8221;. Why we are adding id values?! Well, these are basics of how to access items from inside a page. Its kind of naming a new born in family <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  Lets move on and see how we are accessing these elements.<br />
+Our javascript file looks as below</p>
+<pre lang="javascript">
+var onPageLoad = function ()
+{
+	 alert("Page is loaded");
+	 var myBtnOne = document.getElementById('btnOne');
+	 var myBtnTwo = document.getElementById('btnTwo');
+	 //alert(myBtnOne+' : '+myBtnTwo);
+	 
+	 myBtnOne.onclick=function(){
+	 	alert ('one');
+	 };
+	 
+	 myBtnTwo.onclick=function(){
+	 	alert ('two');
+	 };
+	 
+};
+</pre>
+<p>Before going into the javascript, lets see our HTML code again. There is something, we did not look previously. Its</p>
+<pre lang="html">
+	<body onload="onPageLoad()">
+</pre>
+<p>What this does ?!! To be very basic, it actually calls a javascript function named &#8220;onPageLoad()&#8221; , when all the elements on the HTMl page is loaded. That means, we can add any interactivity after the page is loaded. For, if we try to add interactivity before all elements of the page is loaded, then there is a chance javascript engine will ignore those commands which will result in wrong behavior of the page. Therefore its recommended to add functionality to a page after confirming that everything in the page is loaded and this code is exactly doing the same.<br />
+Coming to out javascript file, we have to written everything in our &#8220;onPageLoad()&#8221; function. So the first thing is taken care of, now lets move on and see what else we are doing. Upon page loaded it will &#8220;alert&#8221; a message to the user saying we are ready to start adding interactivity. Now our main ambition here is to upon clicking those two buttons, we have to alert different messages to the user. We select those button elements with the code</p>
+<pre lang="javascript">
+document.getElementById('btnOne');
+</pre>
+<p>Next, we have to store these values so as to refer them in our code. We do this by assigning them to a variable as </p>
+<pre lang="javascript">
+var myBtnOne = document.getElementById('btnOne');
+</pre>
+<p>For the second button we have to do the same thing and the code looks </p>
+<pre>
+ var myBtnOne = document.getElementById('btnOne');
+ var myBtnTwo = document.getElementById('btnTwo');
+</pre>
+<p>Now we know how to access elements from an HTML page. The process is add an id value to the element in HTML page and access them with &#8220;document.getElementById(elementName)&#8221;. Thats all.<br />
+Next we are simply going to add the interactivity. Those are done with </p>
+<pre lang="javascript">
+ myBtnOne.onclick=function(){
+	 	alert ('one');
+	 };
+myBtnTwo.onclick=function(){
+	 	alert ('two');
+	 };
+</pre>
+<p>Thats simple, but then there are libraries which make our job even simpler. <a href="http://jquery.com/" target="_blank">JQuery</a> is such a library, but that is for a future post.<br />
+<a href="http://www.box.net/shared/oafbnm21czt9nedt3hxs" target="_blank">All the sourceCode can be downloaded from here</a> for your reference.</p>
+<p>Hope that helps some one. I would like to listen back from you about the post, leave a comment for suggestions, mistakes or simply thanks.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/css" rel="tag">css</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html" rel="tag">html</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorial" rel="tag">tutorial</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/tutorials" rel="tag">tutorials</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/295" title="Permalink to Referring to an element in HTML page" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-295 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

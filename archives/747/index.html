@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>HTML5 : Drawing lines on Canvas | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='HTML5 : Drawing shapes in Canvas' href='http://saumya.github.io/blogArchive/archives/755' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/747' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=747' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-747 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/741" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/755" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-747" class="post-747 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource category-tutorial tag-css3 tag-html5 tag-javascript">
+	<header class="entry-header">
+		<h1 class="entry-title">HTML5 : Drawing lines on Canvas</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/747" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-19T01:00:52+00:00">September 19, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Lets start drawing some lines in the Canvas. The point here is, it may feel like we are drawing in Bitmap, but actually its a vector drawing while its being drawn. But then once drawing is complete, it can not be modified directly. The Canvas does not remember any reference to the drawings we have already drawn. So the point to remember is its one time vector drawing. If at all we need to modify it, we have to redraw everything or may save everything inside our code.<br />
+The drawing is all javascript. The drawing itself is kind of two part process. First part is to draw the lines. The second part is making them visible. That means the first part draws in memory but not visible. Its only visible after we call the required methods to make them visible.<br />
+Lets dive into the code, yay.</p>
+<pre lang="javascript">
+canvas_one=document.getElementById('board_one');
+context_one=canvas_one.getContext("2d");
+</pre>
+<p>We got the context. Now the drawing code comprises of</p>
+<pre lang="javascript">
+moveTo(xPosition,yPosition);
+lineTo(xPosition,yPosition);
+</pre>
+<p>The first command ie; moveTo(xPos,yPos), takes the pen to the &#8220;xPos,yPos&#8221; position. The next command lineTo(xPos,yPos), draws a line from the pen position to the new position specified by &#8220;lineTo&#8221;. Thats all, the more number of these commands are called, the points get connected by a straight line. Till now we are only drawing but the are not visible yet.<br />
+Lets make the lines visible. These are done by</p>
+<pre lang="javascript">
+//define the pen
+context_one.strokeStyle = "#000";
+context_one.lineWidth   = 5;
+//make the lines visible
+context_one.stroke();
+</pre>
+<p>Thats beautiful. Now are lines are visible. All is well and good, but how to create new kind of lines, means how to create lines with different colour and thickness? This is simply done with</p>
+<pre lang="javascript">
+//beginPath() creates a new line
+context_one.beginPath();
+</pre>
+<p>After this all we are going to do is moveTo and lineTo commands to draw and the stroke with a different pen.</p>
+<p>The <a href="http://www.box.net/shared/9domulcuyruarmi1ymqu" target="_blank">source files are here for you to download</a> and test.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/747" title="Permalink to HTML5 : Drawing lines on Canvas" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-747 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

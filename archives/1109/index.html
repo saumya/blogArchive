@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Two absolutely necessary Node packages, within a week of Nodding | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='Some interestin Dartlang packages' href='http://saumya.github.io/blogArchive/archives/1115' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/1109' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=1109' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-1109 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/1103" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/1115" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-1109" class="post-1109 post type-post status-publish format-standard hentry category-html5 category-javascript category-opensource tag-javascript tag-nodejs">
+	<header class="entry-header">
+		<h1 class="entry-title">Two absolutely necessary Node packages, within a week of Nodding</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/1109" title="7:52 pm" rel="bookmark"><time class="entry-date" datetime="2013-01-15T19:52:07+00:00">January 15, 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/admin" title="View all posts by admin" rel="author">admin</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>As my learning continues with NodeJS, it is now becoming obvious to me that probably I could never live without Node in future from now on, even if I do not continue developing on NodeJS. In just about a week there are the below two packages which became absolutely necessary for me in day to day work, while doing front-end web work or just playing around with javascript in general.<br />
+<a href="https://npmjs.org/package/serve" target="_blank">serve</a><br />
+<a href="https://npmjs.org/package/nodemon" target="_blank">nodemon</a><br />
+These two enable any folder to act as a web server. Once installed from &#8220;npm&#8221; one can directly fire up these commands and see the folder as a website through a browser.<br />
+If you want to run the webserver at port &#8220;1234&#8243;, just navigate to the folder you want to serve as a website and fire up the command below.</p>
+<pre lang=''>
+serve -p 1234
+</pre>
+<p>If you do not care about the port, just</p>
+<pre lang=''>serve</pre>
+<p>will do the job, where the site will be served at a default port &#8220;3000&#8243;.<br />
+Now to access the website go to &#8220;http://localhost:3000/&#8221; in your favorite browser.<br />
+If you change a file, you have to manually restart the server.<br />
+Now &#8220;nodemon&#8221; helps us in automatically restarting the server on any file change. If one is working on any web application and does continuous changes to the files, one just have to refresh the webpage (No need to restart the server over and again for updates). That gives continuous focus on development.<br />
+Happy Nodding <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/nodejs" rel="tag">nodeJS</a> by <a href="http://saumya.github.io/blogArchive/archives/author/admin">admin</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/1109" title="Permalink to Two absolutely necessary Node packages, within a week of Nodding" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-1109 -->
+
+						<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			One thought on &ldquo;<span>Two absolutely necessary Node packages, within a week of Nodding</span>&rdquo;		</h2>
+
+		
+		<ol class="commentlist">
+				<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-73">
+		<article id="comment-73" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt='' src='http://1.gravatar.com/avatar/53b4fd050bc798ddb55e958b5b2850d5?s=68&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D68&amp;r=G' class='avatar avatar-68 photo' height='68' width='68' /><span class="fn">saumya</span> on <a href="http://saumya.github.io/blogArchive/archives/1109#comment-73"><time datetime="2013-01-19T10:52:23+00:00">January 19, 2013 at 10:52 am</time></a> <span class="says">said:</span>
+									</div><!-- .comment-author .vcard -->
+
+				
+			</footer>
+
+			<div class="comment-content"><p>While working with &#8220;serve&#8221; there may be situations as follows.<br />
+Instead of global install with &#8220;-g&#8221; if the serve package is installed locally, then to fire it up one has to type
+<pre lang=''>"serv"</pre>
+<p>, look the &#8220;e&#8221; is not present at the end. This way it defaults to port &#8220;8000&#8243;. Now to define a particular port instead of default, the command is</p>
+<pre lang=''>serv 1234 </pre>
+<p>(note, there is no &#8220;e&#8221; at the end, its only &#8220;serv&#8221;)<br />
+This is in contrast with the global install as that can be fired up as</p>
+<pre lang=''>serve -p 1234 </pre>
+<p> (here its &#8220;serve&#8221; from global install)</p>
+<p>Happy Nodding <img src='http://saumya.github.io/blogArchive/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li>
+		</ol>
+
+		
+				<p class="nocomments">Comments are closed.</p>
+		
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

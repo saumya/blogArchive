@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>HTML5 : Canvas and Context , code and hack! clear and reset. | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='HTML5 : Text on canvas' href='http://saumya.github.io/blogArchive/archives/781' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/772' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=772' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-772 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/762" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/781" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-772" class="post-772 post type-post status-publish format-standard hentry category-css3 category-html5 category-javascript category-opensource category-tutorial tag-css3 tag-html5 tag-javascript">
+	<header class="entry-header">
+		<h1 class="entry-title">HTML5 : Canvas and Context , code and hack! clear and reset.</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/772" title="1:00 am" rel="bookmark"><time class="entry-date" datetime="2011-09-22T01:00:50+00:00">September 22, 2011</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>In one of our previous tutorials, we have seen how Canvas element is reset. And we also know that its a hack but we can use that to our advantage so as to clear the whole drawing, which was previously drawn through code.<br />
+Now, lets see the actual API, which is available to us to clear the whole Context of the Canvas element. The code looks as below.</p>
+<pre lang="javascript">
+context.clearRect(topLeftX,topLeftY,width,height);
+</pre>
+<p>This actually gives us the ability to clear a rectangular part of the Context of the Canvas. For the whole context to be cleared, just pass on the Canvas width and height as below.</p>
+<pre lang="javascript">
+contextRef.clearRect(0,0,canvasRef.width,canvasRef.height);
+</pre>
+<p>That simply clears of the drawings from the context. The thing is its the context that is being cleared.<br />
+Now lets revisit the hack. the quick hack to clear everything from the Canvas. This is done by setting either height or width of the Canvas element itself. Even if its the same width and same height, but it resets the whole canvas, clears everything form it. So this hack works on Canvas element but the actual code to clear, works on the context of that canvas. The hack code looks as </p>
+<pre lang="javascript">
+canvasRef.width=canvasRef.width;
+canvasRef.height=canvasRef.height;
+</pre>
+<p>If you look at <a href="http://www.box.net/shared/h01gerocvmaog3q22aba" target="_blank">the source code</a>, you can find I have written two different functions to call, one using the actual API and one using the hack. The codes are here for the reference.</p>
+<pre lang="javascript">
+//resetting the width and height, it automatically resets the canvas
+	//clear the board, quick and dirty, its a HACK!!
+	resetCanvas = function (canvasRef){
+		canvasRef.width=canvasRef.width;
+		canvasRef.height=canvasRef.height;
+	};
+</pre>
+<p>Now the clear context function is as below.</p>
+<pre lang="javascript">
+//clear the board
+	resetContext=function(canvasRef,contextRef){
+		contextRef.clearRect(0,0,canvasRef.width,canvasRef.height);
+	};
+</pre>
+<p>Just to enforce the idea one more time, the clear function works on the Context object of the Canvas, while the reset hack works on the Canvas element itself.</p>
+<p>Hope that clears the concept.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/css3" title="View all posts in css3" rel="category tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/category/html5" title="View all posts in html5" rel="category tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/category/javascript" title="View all posts in javascript" rel="category tag">javascript</a>, <a href="http://saumya.github.io/blogArchive/archives/category/opensource" title="View all posts in opensource" rel="category tag">opensource</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> and tagged <a href="http://saumya.github.io/blogArchive/archives/tag/css3" rel="tag">css3</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/html5" rel="tag">html5</a>, <a href="http://saumya.github.io/blogArchive/archives/tag/javascript" rel="tag">javascript</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/772" title="Permalink to HTML5 : Canvas and Context , code and hack! clear and reset." rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-772 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

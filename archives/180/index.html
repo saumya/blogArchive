@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<base href="http://saumya.github.io/blogArchive" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Category | saumya</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/style.css" />
+
+<!--[if lt IE 9]>
+<script src="http://saumya.github.io/blogArchive/wp-content/themes/twentyeleven/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type='text/javascript' src='http://saumya.github.io/blogArchive/wp-includes/js/comment-reply.min.js?ver=3.5'></script>
+
+ 
+
+<link rel='next' title='Thinking the designer&#8217;s way and making things better' href='http://saumya.github.io/blogArchive/archives/193' />
+
+<link rel='canonical' href='http://saumya.github.io/blogArchive/archives/180' />
+<link rel='shortlink' href='http://saumya.github.io/blogArchive/?p=180' />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+</head>
+
+<body class="single single-post postid-180 single-format-standard custom-background singular two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://saumya.github.io/blogArchive/" title="saumya" rel="home">saumya</a></span></h1>
+				<h2 id="site-description">Where there is a will, there is a way.</h2>
+			</hgroup>
+
+						<a href="http://saumya.github.io/blogArchive/">
+									<img src="http://saumya.github.io/blogArchive/wp-content/uploads/2011/08/sanchi.jpg" width="1000" height="288" alt="" />
+							</a>
+			
+			
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+								<div class="menu"><ul><li ><a href="http://saumya.github.io/blogArchive/" title="Home">Home</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://saumya.github.io/blogArchive/archives/187" rel="prev"><span class="meta-nav">&larr;</span> Previous</a></span>
+						<span class="nav-next"><a href="http://saumya.github.io/blogArchive/archives/193" rel="next">Next <span class="meta-nav">&rarr;</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-180" class="post-180 post type-post status-publish format-standard hentry category-ipad-development category-iphone-development category-objectivec category-tutorial">
+	<header class="entry-header">
+		<h1 class="entry-title">Category</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://saumya.github.io/blogArchive/archives/180" title="10:46 pm" rel="bookmark"><time class="entry-date" datetime="2010-11-02T22:46:05+00:00">November 2, 2010</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://saumya.github.io/blogArchive/archives/author/saumya" title="View all posts by saumya" rel="author">saumya</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Coming from an object oriented programming such as actionscript or java this feature may seem a little different. At least it felt different to me. It took sometime for me to get the understanding. It was un-believable for me, at first, and all magical.<br />
+In ObjectiveC there is a feature called Category. Its another way to extend a class. If we compare with inheritance, well it can not be compared to that. As one might be knowing that, ObjectiveC itself, provides option for inheritance.<br />
+Category adds functionality to the class itself.<br />
+What?!! Yes, its that powerful. I must say it again. It adds functionality to the class itself. Its not inheritance. As with inheritance one must use the child class, to get the added functionality. But with &#8220;Category&#8221; the added functionality is available to the class itself. Wherever one might have used the class, if a new Category is added, that class just gets the functionality. Thats magic!! Yes, kind of. But then its fun and powerful, when you know the real power of it. &#8220;I can do that by adding functionality to my class file itself&#8221;, there you said it. Lets talk about situations. </p>
+<p>Just imagine, you have a class and used it everywhere, and later you wanted to add some functionality to the class itself without ever touching the class file. The situation may arise, that one is using an external library of some kind. That library is maintained by someone else. So, you never worry about it and just use it. What if, you want to add some functionality to some class of that library. Ohh well, &#8220;I will change the class&#8221;. What if the licensing policy do not allow you to do it? Or better, lets say, if you change it and the library is updated! You have to change the updated class again! And chances are that, the functionality is now written with some other logic in the library, which makes your implementation of the class unusable. You have to re-write it in the class. And thats a lot of work, if you think the library is getting updated regularly.</p>
+<p>Lets take a situation, where one subclasses a class and used it. Well, the same thing may happen, that the root lib is updated and used a different approach this time. All the subclass logic need to be updated!</p>
+<p>In another scenario, one may need some more functionality to the class. Well, we subclass it again. Nice and fine as long as you have used it in some places you remember. There may be cases one need to remove the first subclass and add the subclass of the first subclass. And thats a lot of work too.</p>
+<p>Lastly, what if one needs to add functionality to the base SDK or the parent library. Subclass it and use it, simple. But we have already seen problems with subclassing. One has already used the base class through out the project, but later on it is required to add some functionality to the class. Either some how one has to add the functionality to the base class or subclass it and use the subclass everywhere, the base class was used previously.</p>
+<p>Ok, coming back to Category. It allows a user to add functionality to the base class itself. One need not touch the class itself. It can be done even to the original ObjectiveC classes shipped with Apple SDK. That means, if we have used a class and later decide we need to add some more functionality to it, we are safe on with Category. As soon as it is declared, the functionality is available to all the places, where the base class is used.</p>
+<p>Lets see how we can do it, some syntaxes and naming conventions.</p>
+<p>Defining a Category, is kind of same a defining an ObjectiveC class. One needs 2 files for it. An interface file and an implementation file. The file naming conventions are generally as &#8220;ClassName+CategoryName.h&#8221; and &#8220;ClassName+CategoryName.m&#8221;. Where &#8220;ClassName&#8221; is the name of the class one needs to extend or add functionality to and &#8220;CategoryName&#8221; is the name of the Category one is defining now.<br />
+<strong>Each Category in a project must have a different name.<br />
+Categories can not define or add instance variables to a class.<br />
+Categories can override methods of the parent class.</strong><br />
+Lets define a category :</p>
+<pre lang="objc">
+//file name GameAddition+ShadowText.h
+#import <GameAddition.h>
+@interface GameAddition (ShadowText) 
+-(SPSprite *)makeText:(NSString *)text 
+			withColor:(int)colorValue 
+			  andSize:(int)size 
+	  withShadowColor:(int)shadowColor;
+@end
+</pre>
+<p>And the implementation file will look as</p>
+<pre lang="objc">
+//file name GameAddition+ShadowText.m
+#import "GameAddition+ShadowText.h"
+@implementation GameAddition(ShadowText)
+-(SPSprite *)makeText:(NSString *)text 
+                    withColor:(int)colorValue 
+                       andSize:(int)size 
+        withShadowColor:(int)shadowColor
+{
+	//custom code goes here
+}
+@end
+</pre>
+<p>the difference here is both in interface and implementation file the declaration is changed to</p>
+<pre lang="objc">@interface ClassName (CategoryName)</pre>
+<p> instead of just
+<pre lang="objc">@interface ClassName </pre>
+<p> And same happens with implementation file too, instead of
+<pre lang="objc">@implementation ClassName </pre>
+<p> the category implementation file will declare it as
+<pre lang="objc">@implementation ClassName (CategoryName) </pre>
+<p>. The category name will be on parenthesis.</p>
+<p>Now thats all to it. Wherever we would have used the class &#8220;GameAddition&#8221;, a new method is available to it. But then we need some work there too. Just to make the application know we are using the category, wherever we have imported &#8220;GameAddition.h&#8221;, we have to import &#8220;GameAddition+ShadowText.h&#8221; instead. And there we go. </p>
+<p>Hope that helps someone out there.</p>
+<p>References :<br />
+1. <a href="http://cocoadevcentral.com/d/learn_objectivec/">http://cocoadevcentral.com</a><br />
+2. <a href="http://macdevelopertips.com/objective-c/objective-c-categories.html">http://macdevelopertips.com</a></p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://saumya.github.io/blogArchive/archives/category/ipad-development" title="View all posts in ipad development" rel="category tag">ipad development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/iphone-development" title="View all posts in iphone development" rel="category tag">iphone development</a>, <a href="http://saumya.github.io/blogArchive/archives/category/objectivec" title="View all posts in objectiveC" rel="category tag">objectiveC</a>, <a href="http://saumya.github.io/blogArchive/archives/category/tutorial" title="View all posts in tutorial" rel="category tag">tutorial</a> by <a href="http://saumya.github.io/blogArchive/archives/author/saumya">saumya</a>. Bookmark the <a href="http://saumya.github.io/blogArchive/archives/180" title="Permalink to Category" rel="bookmark">permalink</a>.		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-180 -->
+
+						<div id="comments">
+	
+	
+	
+									
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+
+								
+				<!--
+				<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+				-->
+
+				<a href="http://wordpress.org/">Once it was Proudly powered by WordPress.</a>
+				
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>
